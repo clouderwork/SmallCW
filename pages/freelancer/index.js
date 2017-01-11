@@ -12,9 +12,10 @@ Page({
     count: 0
   },
   //事件处理函数
-  bindViewTap: function() {
+  goDetail: function(event) {
+    let id = event.currentTarget.dataset.id
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../freelancer-detail/index?id=' + id
     })
   },
   onLoad: function () {
