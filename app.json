@@ -9,7 +9,8 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "linear-gradient(0deg, #2C2C30 1%, #0F1012 100%);",
     "navigationBarTitleText": "云沃客",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle": "#ffffff",
+    "backgroundColor": "#EFEFF4"
   },
   "tabBar": {
     "color": "#6E6E70",
