@@ -12,7 +12,7 @@ Page({
   lower () {
     this.setData({
       searchData: {
-        pagenum: that.data.searchData.pagenum++
+        pagenum: this.data.searchData.pagenum++
       }
     })
     this.getData()
