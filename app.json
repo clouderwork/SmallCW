@@ -2,14 +2,14 @@
   "pages":[
     "pages/project/index",
     "pages/freelancer/index",
-    "pages/profile/index",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "linear-gradient(0deg, #2C2C30 1%, #0F1012 100%);",
     "navigationBarTitleText": "云沃客",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle": "#ffffff",
+    "backgroundColor": "#EFEFF4"
   },
   "tabBar": {
     "color": "#6E6E70",
@@ -27,11 +27,6 @@
       "iconPath": "images/icon_people.png",
       "selectedIconPath": "images/icon_people_selected.png",
       "text": "找人才"
-    }, {
-      "pagePath": "pages/profile/index",
-      "iconPath": "images/icon_profile.png",
-      "selectedIconPath": "images/icon_profile_selected.png",
-      "text": "我"
     }]
   }
 }
