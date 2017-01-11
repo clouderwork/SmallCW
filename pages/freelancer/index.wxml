@@ -1,6 +1,15 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="freelancer">
-    
+  <view wx:fow="{{users}}" wx:for-index="idx" wx:for-item="user" class="list-box">
+    <view class="top">
+      <image class="avatar" src="{{user.avatar}}" />
+      <view class="desc">
+        <view class="main">
+          <text class="name">{{user.name}}</text>
+          <text class="price">{{user.hourly}}/h</text>
+        </view>
+        <text class="name">{{user.title}}</text>
+      </view>
+    </view>
   </view>
 </view>

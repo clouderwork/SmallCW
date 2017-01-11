@@ -23,8 +23,8 @@ function ajaxJson(url, data, method = 'GET') {
           data: data,
           method: method,
           header: {
-            '_xsrf': wx.getStorageSync('_xsrf'),
-            'content-type': 'application/x-www-form-urlencoded'
+            'content-type': 'application/x-www-form-urlencoded',
+            'User-Agent': ' i/1.0.0/9.2.1/iPhone/wifi'
           },
           success: function(res){
             resolve(res)

@@ -14,7 +14,8 @@ Page({
   onLoad: function () {
     wx.showLoading()
     ywk.ajaxJson('/api/freelancers/search', {}, 'GET').then((res) => {
-      console.log(res)
+      this.users = res.users
+      console.log(this.users)
       wx.hideLoading()
     }, (err) => {
       console.log(err)
