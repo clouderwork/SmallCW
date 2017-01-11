@@ -1,10 +1,12 @@
 //index.js
+var ywk = require('../../utils/ywk')
 //获取应用实例
 var app = getApp()
 Page({
   data: {
     motto: 'Hello World',
-    userInfo: {}
+    userInfo: {},
+    project: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -21,6 +23,12 @@ Page({
       that.setData({
         userInfo:userInfo
       })
+    })
+
+    ywk.ajaxJson('/api/jobs/search', {}, 'POST').then((res) => {
+      console.log(res)
+    }, (err) => {
+      console.log(err)
     })
   }
 })
