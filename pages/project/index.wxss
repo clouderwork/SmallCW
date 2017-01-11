@@ -74,7 +74,8 @@ page {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  height: 84rpx;
+  max-height: 84rpx;
+  word-break: break-all;
 }
 .project-foot {
   padding: 15rpx 0;
