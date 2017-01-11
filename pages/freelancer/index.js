@@ -4,7 +4,11 @@ var ywk = require('../../utils/ywk')
 Page({
   data: {
     users: [],
-    windowHeight: 100
+    windowHeight: 100,
+    search: {
+      pagenum: 1,
+      ftype: 'all'
+    }
   },
   //事件处理函数
   bindViewTap: function() {
@@ -13,13 +17,19 @@ Page({
     })
   },
   onLoad: function () {
-    ywk.ajaxJson('/api/freelancers/search', {}, 'GET').then((res) => {
+    wx.showToast({
+      title: '',
+      icon: 'loading'
+    })
+    ywk.ajaxJson('/api/freelancers/search', this.data.search, 'GET').then((res) => {
       if (res.error_code === 0) {
         this.setData({
           users: res.users
         });
       }
+      wx.hideToast()
     }, (err) => {
+      wx.hideToast()
     })
   },
   onShow () {

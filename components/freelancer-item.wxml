@@ -1,14 +1,22 @@
 <template name="freelancerItem">
   <view class="list-box">
     <view class="top">
-      <image class="avatar" src="{{avatar}}" />
+      <image wx:if="{{ftype === 'f'}}" class="avatar" src="{{avatar}}" />
+      <image wx:if="{{ftype === 't'}}" class="avatar" src="{{logo}}" />
       <view class="desc">
         <view class="main">
           <text class="name">{{name}}</text>
-          <text class="price">{{hourly}}/h</text>
+          <text wx:if="{{ftype === 'f'}}" class="price">{{hourly}}/h</text>
+          <text wx:if="{{ftype === 't'}}" class="price">{{hourly_min}}-{{hourly_max}}/h</text>
         </view>
-        <text class="name">{{title}}</text>
+        <text wx:if="{{ftype === 'f'}}" class="title">{{title}}</text>
       </view>
+    </view>
+    <view class="overview">{{overview}}</view>
+    <view class="skills">
+      <block wx:for="{{skills}}" wx:key="*this" wx:for-item="skill">
+        <view class="skill">{{skill}}</view>
+      </block>
     </view>
   </view>
 </template>
