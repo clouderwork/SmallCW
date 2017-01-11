@@ -3,7 +3,9 @@
 <view class="project-container">
   <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" bindscrolltolower="lower">
     <block wx:for="{{projects}}" wx:key="project.id" wx:for-item="project">
-      <template is="projectItem" data="{{project}}" />
+      <view class="project-item">
+        <template is="projectItem" data="{{project}}" />
+      </view>
     </block>
   </scroll-view>
 </view>

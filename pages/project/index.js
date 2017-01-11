@@ -43,7 +43,7 @@ Page({
       wx.hideToast()
     })
   },
-  getWindowHeight () {
+  onShow () {
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
@@ -52,13 +52,19 @@ Page({
       }
     })
   },
+  onShareAppMessage () {
+    return {
+      title: '我的小程序',
+      desc: '我的小程序',
+      path: '/pages/project/index'
+    }
+  },
   onLoad () {
     wx.showToast({
       title: '加载中',
       icon: 'loading',
       duration: 10000
     })
-    this.getWindowHeight()
     this.getData()
   }
 })
