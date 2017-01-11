@@ -45,10 +45,10 @@ Page({
     })
     this.getData()
   },
-  bindViewTap (e, id) {
-    console.log(e, id)
-    // wx.navigateTo({
-    //   url: `../project-detail/index?id=${id}`
-    // })
+  bindViewTap (e) {
+    let id = e.currentTarget.dataset.jid
+    wx.navigateTo({
+      url: `../project-detail/index?id=${id}`
+    })
   }
 })

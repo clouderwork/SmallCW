@@ -9,7 +9,7 @@ Page({
     ywk.ajaxJson('/api/jobs', { job_id: id }, 'GET').then((res) => {
       console.log(res)
       this.setData({
-        job: res.data.job
+        job: res.job
       })
     }, (err) => {
       console.log(err)
