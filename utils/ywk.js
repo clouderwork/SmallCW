@@ -2,10 +2,7 @@ var Promise = require('./bluebird')
 
 function assemblingData (data) {
     data = typeof (data) === 'object' ? data : {}
-    data.xhrFields = wx.getStorageSync('_xsrf')
     data._xsrf = wx.getStorageSync('_xsrf')
-    // // 处理开发环境丢失用户信息的情况
-    // data.session_token = Cookies.get('session_token')
     return data
 }
 
@@ -17,18 +14,24 @@ function assemblingData (data) {
  * @return {[Promise]}        [返回结果]
  */
 function ajaxJson(url, data, method = 'GET') {
-    data = assemblingData(data)
-    console.log(data)
+    if (method !== 'GET') {
+      data = assemblingData(data)
+    }
     return new Promise((resolve, reject) => {
         wx.request({
           url: `http://m.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
           data: data,
           method: method,
           header: {
-            _xsrf: wx.getStorageSync('_xsrf')
+            'content-type': 'application/x-www-form-urlencoded',
+            'User-Agent': ' i/1.0.0/9.2.1/iPhone/wifi'
           },
           success: function(res){
-            resolve(res)
+            if (res && res.data) {
+              resolve(res.data)
+            } else {
+              reject(res)
+            }
           },
           fail: function(err) {
             reject(err)

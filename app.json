@@ -19,15 +19,20 @@
     "backgroundColor": "#ffffff",
     "position": "bottom",
     "list": [{
+      "pagePath": "pages/freelancer/index",
+      "iconPath": "images/icon_people.png",
+      "selectedIconPath": "images/icon_people_selected.png",
+      "text": "找人才"
+    }, {
       "pagePath": "pages/project/index",
       "iconPath": "images/icon_project.png",
       "selectedIconPath": "images/icon_project_selected.png",
       "text": "找项目"
     }, {
-      "pagePath": "pages/freelancer/index",
-      "iconPath": "images/icon_people.png",
-      "selectedIconPath": "images/icon_people_selected.png",
-      "text": "找人才"
+      "pagePath": "pages/profile/index",
+      "iconPath": "images/icon_profile.png",
+      "selectedIconPath": "images/icon_profile_selected.png",
+      "text": "我"
     }]
   }
 }
