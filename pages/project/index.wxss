@@ -12,6 +12,9 @@ page {
   background-color: #ffffff;
   font-size: 15px;
 }
+.project-item:last-child {
+  margin-bottom: 24px;
+}
 .item-head {
   height: 40px;
   line-height: 40px;
@@ -82,8 +85,12 @@ page {
 }
 .bid-num {
   float: left;
+  line-height: 14px;
+  vertical-align: middle;
 }
 .public-time {
    float: right;
    margin-right: 5px;
+   line-height: 14px;
+   vertical-align: middle;
 }
