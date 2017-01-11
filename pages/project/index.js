@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-var app = getApp()
+var ywk = require('../../utils/ywk')
 Page({
   data: {
     motto: 'Hello World',
@@ -10,16 +10,11 @@ Page({
     console.log('loadData')
   },
   onLoad: function () {
-    console.log('onLoad')
     var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo: {
-          nickName: '找项目'
-        }
-      })
+    ywk.ajaxJson('/api/jobs/search', {pagenum: 1}, 'POST').then((res) => {
+      console.log("111", res)
+    }, (err) => {
+      console.log("222", err)
     })
   }
 })
