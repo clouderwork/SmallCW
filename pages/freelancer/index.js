@@ -1,10 +1,10 @@
 //index.js
-//获取应用实例
-var app = getApp()
+var ywk = require('../../utils/ywk')
+
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    users: [],
+    windowHeight: 100
   },
   //事件处理函数
   bindViewTap: function() {
@@ -13,16 +13,30 @@ Page({
     })
   },
   onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo: {
-          nickName: '找人'
-        }
-      })
+    wx.showLoading()
+
+    ywk.ajaxJson('/api/freelancers/search', {}, 'GET').then((res) => {
+      if (res.error_code === 0) {
+        this.setData({
+          users: res.users
+        });
+      }
+      wx.hideLoading()
+    }, (err) => {
+      wx.hideLoading()
     })
+  },
+  onShow () {
+    // 获取页面高度
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          windowHeight: res.windowHeight
+        });
+      }
+    });
+  },
+  lower (e) {
+    console.log('lower')
   }
 })

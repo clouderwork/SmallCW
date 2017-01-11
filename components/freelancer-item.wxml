@@ -1,0 +1,14 @@
+<template name="freelancerItem">
+  <view class="list-box">
+    <view class="top">
+      <image class="avatar" src="{{avatar}}" />
+      <view class="desc">
+        <view class="main">
+          <text class="name">{{name}}</text>
+          <text class="price">{{hourly}}/h</text>
+        </view>
+        <text class="name">{{title}}</text>
+      </view>
+    </view>
+  </view>
+</template>

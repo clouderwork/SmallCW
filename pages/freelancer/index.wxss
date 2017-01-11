@@ -1,22 +1,65 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #EFEFF4;
+}
+.container {
+  margin: 0
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+.list-box {
+  background-color: #fff;
+  margin-top: 40rpx;
+  padding: 60rpx 32rpx;
+  position: relative;
+}
+
+.list-box .top {
+  display: flex;
+}
+
+.list-box .top .avatar {
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
   border-radius: 50%;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.list-box .top .desc {
+  flex: 1;
+  margin-left: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 
-.usermotto {
-  margin-top: 200px;
+.list-box .top .desc .main {
+  flex: 1;
+  font-size: 60rpx;
+  display: flex;
+  justify-content: space-between;
+}
 
+.list-box .top .desc .main .name {
+  font-family: PingFangSC-Medium;
+  color: #4B4B4B;
+  letter-spacing: 0;
+  display: block;
+  word-wrap: break-word;
+  word-break: break-all;
+  flex: 1;
+}
+
+.list-box .top .desc .main .price {
+  font-family: PingFangSC-Medium;
+  color: #FF6700;
+  letter-spacing: 0;
+}
+
+.list-box .top .desc .title {
+  flex: 1;
+  font-family: PingFangSC-Regular;
+  font-size: 52rpx;
+  color: #6E6E70;
+  letter-spacing: 0;
 }
