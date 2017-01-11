@@ -3,7 +3,6 @@
 var ywk = require('../../utils/ywk')
 Page({
   data: {
-    windowHeight: 0,
     projects: [],
     searchData: {
       pagenum: 1
@@ -66,5 +65,11 @@ Page({
       duration: 10000
     })
     this.getData()
+  },
+  bindViewTap (e) {
+    let id = e.currentTarget.dataset.jid
+    wx.navigateTo({
+      url: `../project-detail/index?id=${id}`
+    })
   }
 })

@@ -2,7 +2,7 @@
   "pages":[
     "pages/project/index",
     "pages/freelancer/index",
-    "pages/logs/logs"
+    "pages/project-detail/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
