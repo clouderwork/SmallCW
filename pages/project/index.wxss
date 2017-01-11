@@ -8,89 +8,89 @@ page {
   margin: 0
 }
 .project-item {
-  margin-top: 15px;
+  margin-top: 30rpx;
   background-color: #ffffff;
-  font-size: 15px;
+  font-size: 30rpx;
 }
 .project-item:last-child {
-  margin-bottom: 24px;
+  margin-bottom: 48rpx;
 }
 .item-head {
-  height: 40px;
-  line-height: 40px;
+  height: 80rpx;
+  line-height: 80rpx;
   border-bottom: 1px solid #EFEFF4;
-  padding: 0 13px 0 18px;
+  padding: 0 27rpx 0 36rpx;
   overflow: hidden;
 }
 .post-title:before {
-  width: 18px;
-  height: 1px;
+  width: 36rpx;
+  height: 2rpx;
   overflow: hidden;
   content: '';
   background-color: #D38297;
   position: absolute;
-  left: -19px;
+  left: -38rpx;
   top: 50%;
-  margin: -0.5px 0 0 0;
+  margin: -1rpx 0 0 0;
 }
 .post-title {
   color: #D38297;
-  height: 25px;
-  line-height: 25px;
-  padding: 0 13px;
-  font-size: 13px;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 25rpx;
+  font-size: 26rpx;
   border: 1px solid #D38297;
   position: relative;
-  border-radius: 25px;
+  border-radius: 50rpx;
   display: inline-block;
   box-sizing: border-box
 }
 .project-price {
   color: #FF6700;
   float: right;
-  height: 21px;
-  line-height: 21px;
+  height: 42rpx;
+  line-height: 42rpx;
   overflow: hidden;
   position: relative;
-  top: 12px;
+  top: 24rpx;
 }
 .item-body {
   color: #6E6E70;
   font-size: 15px;
-  line-height: 21px;
-  padding: 0 8px;
+  line-height: 42rpx;
+  padding: 0 16rpx;
 }
 .project-title {
-  line-height: 36px;
+  line-height: 72rpx;
   color: #4B4B4B;
-  font-size: 15px;
+  font-size: 30rpx;
   font-family: PingFangSC-Medium;
 }
 .project-desc {
-  line-height: 21px;
-  padding: 0 12px 0 3px;
+  line-height: 42rpx;
+  padding: 0 24rpx 0 6rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  height: 42px;
+  height: 84rpx;
 }
 .project-foot {
-  padding: 7.5px 0;
-  line-height: 17px;
-  font-size: 12px;
+  padding: 15rpx 0;
+  line-height: 33rpx;
+  font-size: 24rpx;
   color: #9E9E9E;
   overflow: hidden;
 }
 .bid-num {
   float: left;
-  line-height: 14px;
+  line-height: 28rpx;
   vertical-align: middle;
 }
 .public-time {
    float: right;
-   margin-right: 5px;
-   line-height: 14px;
+   margin-right: 10rpx;
+   line-height: 28rpx;
    vertical-align: middle;
 }

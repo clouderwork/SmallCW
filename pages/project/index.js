@@ -3,14 +3,20 @@
 var ywk = require('../../utils/ywk')
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    windowHeight: 0
   },
   lower: function (e) {
     console.log('loadData')
   },
   onLoad: function () {
     var that = this
+    wx.getSystemInfo({
+      success: ( res ) => {
+        this.setData({
+          windowHeight: res.windowHeight
+        })
+      }
+    })
     ywk.ajaxJson('/api/jobs/search', {pagenum: 1}, 'POST').then((res) => {
       console.log("111", res)
     }, (err) => {
