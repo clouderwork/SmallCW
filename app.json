@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/project/index",
+    "pages/project-detail/index",
     "pages/freelancer/index",
     "pages/logs/logs"
   ],

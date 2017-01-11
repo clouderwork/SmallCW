@@ -22,5 +22,10 @@ Page({
     }, (err) => {
       console.log("222", err)
     })
+  },
+  bindViewTap () {
+    wx.navigateTo({
+      url: '../project-detail/index?id=ca7e238e1920a854'
+    })
   }
 })
