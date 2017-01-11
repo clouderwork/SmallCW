@@ -82,8 +82,12 @@ page {
 }
 .bid-num {
   float: left;
+  line-height: 14px;
+  vertical-align: middle;
 }
 .public-time {
    float: right;
    margin-right: 5px;
+   line-height: 14px;
+   vertical-align: middle;
 }
