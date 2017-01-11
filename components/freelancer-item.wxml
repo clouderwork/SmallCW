@@ -18,5 +18,6 @@
         <view class="skill">{{skill}}</view>
       </block>
     </view>
+    <image wx:if="{{ftype === 't'}}" class="icon-tuan" src="./images/icon-tuan.png" />
   </view>
 </template>

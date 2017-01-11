@@ -14,6 +14,15 @@ page {
   position: relative;
 }
 
+.list-box .icon-tuan {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 68rpx;
+  height: 61rpx;
+}
+
 .list-box .top {
   display: flex;
 }
