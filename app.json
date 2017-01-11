@@ -2,6 +2,7 @@
   "pages":[
     "pages/project/index",
     "pages/project-detail/index",
+    "pages/freelancer/index",
     "pages/profile/index",
     "pages/logs/logs"
   ],

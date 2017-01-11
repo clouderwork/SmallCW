@@ -3,7 +3,6 @@
 var ywk = require('../../utils/ywk')
 Page({
   data: {
-    windowHeight: 0,
     projects: [],
     searchData: {
       pagenum: 1
