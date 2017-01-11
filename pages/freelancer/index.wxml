@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <import src="../../components/freelancer-item.wxml"/>
 <view class="container">
-  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" bindscrolltolower="lower">
-    <block wx:fow="{{users}}" class="list-box">
-      <template is="freelancerItem" data="{{item}}" />
+  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" lower-threshold="50" bindscrolltolower="lower">
+    <block wx:for="{{users}}" wx:key="*this" wx:for-item="user">
+      <template is="freelancerItem" data="{{...user}}" />
     </block>
   </scroll-view>
 </view>

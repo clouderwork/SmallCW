@@ -16,13 +16,13 @@ Page({
     wx.showLoading()
 
     ywk.ajaxJson('/api/freelancers/search', {}, 'GET').then((res) => {
-      if (res && res.data) {
-        this.users = res.data.users
+      if (res.error_code === 0) {
+        this.setData({
+          users: res.users
+        });
       }
-      console.log(this.users)
       wx.hideLoading()
     }, (err) => {
-      console.log(err)
       wx.hideLoading()
     })
   },
@@ -32,8 +32,11 @@ Page({
       success: (res) => {
         this.setData({
           windowHeight: res.windowHeight
-        })
+        });
       }
     });
+  },
+  lower (e) {
+    console.log('lower')
   }
 })

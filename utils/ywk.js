@@ -27,7 +27,11 @@ function ajaxJson(url, data, method = 'GET') {
             'User-Agent': ' i/1.0.0/9.2.1/iPhone/wifi'
           },
           success: function(res){
-            resolve(res)
+            if (res && res.data) {
+              resolve(res.data)
+            } else {
+              reject(res)
+            }
           },
           fail: function(err) {
             reject(err)
