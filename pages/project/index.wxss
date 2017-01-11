@@ -12,6 +12,9 @@ page {
   background-color: #ffffff;
   font-size: 15px;
 }
+.project-item:last-child {
+  margin-bottom: 24px;
+}
 .item-head {
   height: 40px;
   line-height: 40px;
