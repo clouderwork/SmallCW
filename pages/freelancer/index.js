@@ -13,17 +13,13 @@ Page({
     })
   },
   onLoad: function () {
-    wx.showLoading()
-
     ywk.ajaxJson('/api/freelancers/search', {}, 'GET').then((res) => {
       if (res.error_code === 0) {
         this.setData({
           users: res.users
         });
       }
-      wx.hideLoading()
     }, (err) => {
-      wx.hideLoading()
     })
   },
   onShow () {
