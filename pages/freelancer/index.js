@@ -8,7 +8,8 @@ Page({
     search: {
       pagenum: 1,
       ftype: 'all'
-    }
+    },
+    count: 0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -21,16 +22,7 @@ Page({
       title: '',
       icon: 'loading'
     })
-    ywk.ajaxJson('/api/freelancers/search', this.data.search, 'GET').then((res) => {
-      if (res.error_code === 0) {
-        this.setData({
-          users: res.users
-        });
-      }
-      wx.hideToast()
-    }, (err) => {
-      wx.hideToast()
-    })
+    this.getData();
   },
   onShow () {
     // 获取页面高度
@@ -43,6 +35,25 @@ Page({
     });
   },
   lower (e) {
-    console.log('lower')
+    if (this.data.search.pagenum * 10 < this.data.count) {
+      let search = Object.assign({}, this.data.search, {pagenum: ++this.data.search.pagenum})
+      this.setData({
+        'search': search
+      })
+      this.getData()
+    }
+  },
+  getData () {
+    ywk.ajaxJson('/api/freelancers/search', this.data.search, 'GET').then((res) => {
+      if (res.error_code === 0) {
+        this.setData({
+          users: this.data.users.concat(res.users),
+          count: res.count
+        });
+      }
+      wx.hideToast()
+    }, (err) => {
+      wx.hideToast()
+    })
   }
 })
