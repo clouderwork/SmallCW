@@ -28,7 +28,7 @@ function ajaxJson(url, data, method = 'GET') {
             _xsrf: wx.getStorageSync('_xsrf')
           },
           success: function(res){
-            resolve(res)
+            resolve(res.data)
           },
           fail: function(err) {
             reject(err)
