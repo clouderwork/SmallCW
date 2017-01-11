@@ -2,7 +2,6 @@
   "pages":[
     "pages/project/index",
     "pages/freelancer/index",
-    "pages/profile/index",
     "pages/logs/logs"
   ],
   "window":{
@@ -10,7 +9,7 @@
     "navigationBarBackgroundColor": "linear-gradient(0deg, #2C2C30 1%, #0F1012 100%);",
     "navigationBarTitleText": "云沃客",
     "navigationBarTextStyle": "#ffffff",
-    "backgroundColor": "#eeeeee"
+    "backgroundColor": "#EFEFF4"
   },
   "tabBar": {
     "color": "#6E6E70",

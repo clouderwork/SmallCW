@@ -1,0 +1,20 @@
+<template name="projectItem">
+  <view class="project-item">
+    <view class="item-head">
+      <view class="post-title">
+        <text>UI/UE设计师</text>
+      </view>
+      <view class="project-price">
+        <text>¥800/h</text>
+      </view>
+    </view>
+    <view class="item-body">
+      <view class="project-title"><text>工程机械WEB、 移动端及APP开发</text></view>
+      <view class="project-desc">本公司为初创型的科技公司.需要设计一个logo，1的有upsc四个字母组成，2、色调：以蓝色为主调打算的撒</view>
+      <view class="project-foot">
+        <view class="bid-num"><image style="width: 9px; height: 12px; margin: 0 8px 0 2px;" src="image/icon_bid.png"></image>已有23人投标</view>
+        <view class="public-time"><image style="width: 10px; height: 10px; margin: 0 4.5px 0 0;" src="image/icon_time.png"></image>发布于16/12/23</view>
+      </view>
+    </view>
+  </view>
+</template>
