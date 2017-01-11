@@ -2,7 +2,7 @@
 <import src="../../components/project-item.wxml"/>
 <view class="project-container">
   <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" bindscrolltolower="lower">
-    <block wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="*this" wx:for-item="project">
+    <block wx:for="{{projects}}" wx:key="*this" wx:for-item="project">
       <template is="projectItem" data="{{project}}" />
     </block>
   </scroll-view>
