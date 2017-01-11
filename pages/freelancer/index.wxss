@@ -3,14 +3,14 @@ page {
   min-height: 100%;
   background-color: #EFEFF4;
 }
-.container {
+.user-container {
   margin: 0
 }
 
 .list-box {
   background-color: #fff;
-  margin-top: 40rpx;
-  padding: 60rpx 32rpx;
+  margin-top: 20rpx;
+  padding: 30rpx 16rpx;
   position: relative;
 }
 
@@ -20,22 +20,22 @@ page {
 
 .list-box .top .avatar {
   display: inline-block;
-  width: 150rpx;
-  height: 150rpx;
+  width: 75rpx;
+  height: 75rpx;
   border-radius: 50%;
 }
 
 .list-box .top .desc {
   flex: 1;
-  margin-left: 40rpx;
+  margin-left: 20rpx;
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  align-content: center;
 }
 
 .list-box .top .desc .main {
   flex: 1;
-  font-size: 60rpx;
+  font-size: 30rpx;
   display: flex;
   justify-content: space-between;
 }
@@ -59,7 +59,32 @@ page {
 .list-box .top .desc .title {
   flex: 1;
   font-family: PingFangSC-Regular;
-  font-size: 52rpx;
+  font-size: 26rpx;
   color: #6E6E70;
   letter-spacing: 0;
+}
+
+.list-box .overview {
+  margin-top: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #6E6E70;
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-all;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.list-box .skills .skill {
+  display: inline-block;
+  color: #6e6e70;
+  font-size: 24rpx;
+  background: #eef1f8;
+  padding: 15rpx 25rpx;
+  border-radius: 20rpx;
+  margin: 20rpx 20rpx 0 0;
 }
