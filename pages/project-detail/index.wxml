@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="project-details">
+  <p>project-details</p>
+</view>
