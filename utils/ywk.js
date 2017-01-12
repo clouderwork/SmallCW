@@ -8,7 +8,6 @@ var Promise = require('./bluebird')
  * @return {[Promise]}        [返回结果]
  */
 function ajaxJson(url, data, method = 'GET') {
-
     // 非get请求加上_xsrf参数
     if (method !== 'GET') {
       data = typeof (data) === 'object' ? data : {}
@@ -24,27 +23,26 @@ function ajaxJson(url, data, method = 'GET') {
       let networkType = wx.getStorageSync('networkType')
       header['CW-Agent'] = `x/${sys.version}/${sys.system}/${sys.model}/${networkType}`
     }
-    console.log(url)
     return new Promise((resolve, reject) => {
-        wx.request({
-          url: `http://m.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
-          data: data,
-          method: method,
-          header: header,
-          success: function(res){
-            if (res && res.data) {
-              resolve(res.data)
-            } else {
-              reject(res)
-            }
-          },
-          fail: function(err) {
-            reject(err)
+      wx.request({
+        url: `http://m.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
+        data: data,
+        method: method,
+        header: header,
+        success: function(res){
+          if (res && res.data) {
+            resolve(res.data)
+          } else {
+            reject(res)
           }
-        })
-    });
+        },
+        fail: function(err) {
+          reject(err)
+        }
+      })
+  })
 }
 
 module.exports = {
   ajaxJson: ajaxJson
-};
+}
