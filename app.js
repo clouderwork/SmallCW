@@ -11,10 +11,37 @@ App({
     if (!wx.getStorageSync('_xsrf')) {
       // 获取_xsrf
       ywk.ajaxJson('/api/user/signed', {}).then((res) => {
-        if (res && res.data) {
-          wx.setStorageSync('_xsrf', res.data._xsrf || '')
+        if (res && res._xsrf) {
+          wx.setStorageSync('_xsrf', res._xsrf || '')
         }
       })
+    }
+
+    // 微信授权
+    if (!wx.getStorageSync('session_key')) {
+      wx.login({
+        success: function(res) {
+          if (res.code) {
+            //获取微信code
+            ywk.ajaxJson('/api/weixin/minip/code', {code: res.code}).then((res) => {
+              if (res && res.data) {
+                wx.setStorageSync('session_key', res.data.session_key || '')
+              }
+            })
+            // 获取用户数据保存入库
+            wx.getUserInfo({
+              success: function(user) {
+                console.log(user)
+                var userInfo = user.userInfo
+                userInfo.openid = user.openid
+                ywk.ajaxJson('/api/weixin/minip/bind', userInfo, 'POST').then((resp) => {})
+              }
+            })
+          } else {
+            console.log('获取用户登录态失败！' + res.errMsg)
+          }
+        }
+      });
     }
 
     //  获取系统信息

@@ -8,7 +8,10 @@ Page({
     project: [],
     jobs: [],
     edus: [],
-    teams: []
+    teams: [],
+    descShow: 'down',
+    descClass: 'desc-down',
+    descImg: './images/icon-down.png'
   },
   onLoad: function (opt) {
     if (opt && opt.id) {
@@ -25,8 +28,14 @@ Page({
   // 获取用户基本信息
   getBasicInfo () {
     ywk.ajaxJson('/api/freelancers/profile', {uuid: this.data.id}).then((res) => {
-      console.log(res)
       if (res.error_code === 0) {
+        let profile = res.profile;
+        profile.workloadStr = '超过30小时每周'
+        if (res.profile.workload === 2) {
+          profile.workloadStr = '超过30小时每周'
+        } else if (res.profile.workload === 3) {
+          profile.workloadStr = '超过30小时每周'
+        }
         this.setData({
           'profile': res.profile
         })
@@ -49,7 +58,7 @@ Page({
   // 获取工作经历
   getjobs () {
     ywk.ajaxJson('/api/employment', {user_id: this.data.id}).then((res) => {
-      console.log(res)
+      console.log(JSON.stringify(res))
       if (res.error_code === 0) {
         this.setData({
           'jobs': res.employments
@@ -62,7 +71,7 @@ Page({
   // 获取教育经历
   getEdus () {
     ywk.ajaxJson('/api/education', {user_id: this.data.id}).then((res) => {
-      console.log(res)
+      console.log(JSON.stringify(res))
       if (res.error_code === 0) {
         this.setData({
           'edus': res.educations
@@ -94,4 +103,16 @@ Page({
       });
     }
   },
+  // 展示收起显示描述
+  changeShow () {
+    let state = 'down'
+    if (this.data.descShow === 'down') {
+      state = 'up'
+    }
+    this.setData({
+      descShow: state,
+      descClass: `desc-${state}`,
+      descImg: `./images/icon-${state}.png`
+    })
+  }
 })
