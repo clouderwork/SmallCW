@@ -1,5 +1,54 @@
 <!--index.wxml-->
 <view class="user-container">
-  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" lower-threshold="50" bindscrolltolower="lower">
+  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true">
+    <view class="profile">
+      <image class="avatar" src="{{profile.avatar}}" />
+      <text classs="nickname">{{profile.nickname}}</text>
+      <view class="info">
+        <text class="hour">时薪：¥70/小时</text>
+        <text class="su-line"> | </text>
+        <image class="biaoqian" src="./images/icon-biaoqian.png" />
+        <text class="title">{{profile.title}}</text>
+      </view>
+      <text class="{{descClass}}">{{profile.overview}}</text>
+      <image class="icon-down" src="{{descImg}}" bindtap="changeShow" />
+    </view>
+    <view class="row-item">
+      <image class="icon" src="./images/icon-shanchang.png" />
+      <text class="title">擅长技能</text>
+      <view class="detail">
+        <block wx:for="{{profile.skills}}" wx:key="*this" wx:for-item="skill">
+          <view class="skill">{{skill}}</view>
+        </block>
+      </view>
+    </view>
+    <view class="row-item">
+      <image class="icon" src="./images/icon-shichang.png" />
+      <text class="title">可工作时长：{{profile.workloadStr}}</text>
+    </view>
+    <view class="row-item" wx:if="jobs.length > 0">
+      <image class="icon" src="./images/icon-gongzuojingli.png" />
+      <text class="title">工作经历</text>
+      <view class="detail">
+        <block wx:for="{{jobs}}" wx:key="*this" wx:for-item="job">
+        </block>
+      </view>
+    </view>
+    <view class="row-item" wx:if="teams.length > 0">
+      <image class="icon" src="./images/icon-tuandui.png" />
+      <text class="title">所在团队</text>
+      <view class="detail">
+        <block wx:for="{{teams}}" wx:key="*this" wx:for-item="team">
+        </block>
+      </view>
+    </view>
+    <view class="row-item" wx:if="edus.length > 0">
+      <image class="icon" src="./images/icon-jiaoyu.png" />
+      <text class="title">教育经历</text>
+      <view class="detail">
+        <block wx:for="{{edus}}" wx:key="*this" wx:for-item="edu">
+        </block>
+      </view>
+    </view>
   </scroll-view>
 </view>

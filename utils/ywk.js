@@ -24,6 +24,7 @@ function ajaxJson(url, data, method = 'GET') {
       let networkType = wx.getStorageSync('networkType')
       header['CW-Agent'] = `x/${sys.version}/${sys.system}/${sys.model}/${networkType}`
     }
+    console.log(url)
     return new Promise((resolve, reject) => {
         wx.request({
           url: `http://m.yunwoke.com${url}?timestamp=${new Date().getTime()}`,

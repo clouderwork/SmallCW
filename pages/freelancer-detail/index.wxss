@@ -1,8 +1,133 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #EFEFF4;
 }
-.log-item {
-  margin: 10rpx;
+.user-container {
+  margin: 0
+}
+
+.profile {
+  position: relative;
+  text-align: center;
+  line-height: 1;
+  padding: 0 70rpx;
+}
+
+
+.profile .avatar {
+  margin-top: 45rpx;
+  display: inline-block;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: solid 1px #ff6700;
+}
+
+.profile .nickname {
+  font-size: 46rpx;
+  color: #4b4b4b;
+  margin-top: 30rpx;
+  font-weight: 700;
+}
+
+.profile .info {
+  margin-top: 25rpx;
+  color: #777;
+  vertical-align: middle;
+}
+
+.profile .info .hour {
+  font-size: 38rpx;
+}
+
+.profile .info .su-line {
+  color: #4b4b4b;
+}
+
+.profile .info .biaoqian {
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: middle;
+}
+
+.profile .info .title {
+  font-size: 35rpx;
+  padding: 5rpx 10rpx;
+  border: solid 1px #989898;
+  border-radius: 4px;
+  margin-left: 15rpx;
+}
+
+.profile .desc-down {
+  display: block;
+  font-size: 38rpx;
+  color: #4b4b4b;
+  margin-top: 40rpx;
+  text-align: left;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  max-height:150rpx;
+  word-break:break-all;
+  cursor: pointer;
+}
+
+.profile .desc-up {
+  display: block;
+  font-size: 38rpx;
+  color: #4b4b4b;
+  margin-top: 40rpx;
+  text-align: left;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.profile .icon-down {
+  display: inline-block;
+  width: 60rpx;
+  height: 30rpx;
+  margin-top: 25rpx;
+}
+
+.row-item {
+  padding: 35rpx 0;
+  background-color: #fff;
+  margin-top: 30rpx;
+  color: #777;
+}
+
+.row-item .icon {
+  display: inline-block;
+  width: 44rpx;
+  height: 48rpx;
+  vertical-align: bottom;
+  margin-left: 43rpx;
+}
+
+.row-item .title {
+  margin-left: 30rpx;
+  font-size: 46rpx;
+}
+
+.row-item .detail {
+  border-top: solid 2px #fbfbfb;
+  display: block;
+  margin-top: 35rpx;
+  padding: 10rpx 43rpx 0
+}
+
+.row-item .detail .skill {
+  display: inline-block;
+  color: #6e6e70;
+  font-size: 24rpx;
+  background: #eef1f8;
+  padding: 15rpx 25rpx;
+  border-radius: 20rpx;
+  margin: 20rpx 20rpx 0 0;
 }
