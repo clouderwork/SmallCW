@@ -38,6 +38,7 @@ Page({
           item.langStr = util.getLanguagesLevel(item.level)
           return item;
         })
+        profile.workloadStr = profile.workload > 0 ? '目前可工作' : '目前不想工作'
         this.setData({
           'profile': res.profile
         })
