@@ -1,0 +1,122 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #EFEFF4;
+}
+.member-container {
+  margin: 0
+}
+
+.member-list {
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx 16rpx;
+  position: relative;
+  text-align: center;
+}
+
+.member-container .title-line {
+  height: 20rpx;
+  border-bottom: 1px solid #c46c85;
+  position: relative;
+  text-align: center;
+  width: 50%;
+  margin: 20rpx 0 20px 25%;
+}
+
+.member-container .title-line .title {
+  display: inline-block;
+  padding: 20rpx 20rpx;
+  background: #EFEFF4;
+  margin-top: -30rpx;
+  font-size: 26rpx;
+}
+
+.member-container .item {
+  position: relative;
+  background-color: #fff;
+}
+
+.member-container .item .header {
+  display: flex;
+  padding: 20rpx 30rpx 20rpx 40rpx;
+  border-bottom: solid 1px #eef1f8;
+}
+
+.member-container .item .avatar{
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+
+.member-container .item .main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.member-container .item .main .hour {
+  color: #ff6700;
+  font-size: 26rpx
+}
+
+.member-container .item .main-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.member-container .item .main .name {
+  display: block;
+  flex: 1;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  color: #4b4b4b;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.member-container .role {
+  display: block;
+  color: #c46c85;
+  font-size: 26rpx;
+  padding:6rpx 14rpx;
+  border: 1px solid #c46c85;
+  border-radius: 26rpx;
+  position: relative;
+}
+
+.member-container .role::after {
+  display: block;
+  width: 30rpx;
+  height: 1rpx;
+  overflow: hidden;
+  content: '';
+  background-color: #c46c85;
+  position: absolute;
+  right: -30rpx;
+  top: 20rpx;
+}
+
+.member-container .detail {
+  padding: 20rpx 40rpx;
+}
+
+.member-container .detail .desc {
+  color: #777;
+  font-size: 26rpx;
+  word-break:break-all;
+}
+
+.member-container .skill {
+  display: inline-block;
+  color: #6e6e70;
+  font-size: 24rpx;
+  background: #eef1f8;
+  padding: 15rpx 25rpx;
+  border-radius: 20rpx;
+  margin: 20rpx 20rpx 0 0;
+}

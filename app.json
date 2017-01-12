@@ -4,6 +4,7 @@
     "pages/project/index",
     "pages/freelancer-detail/index",
     "pages/project-detail/index",
+    "pages/team-member/index",
     "pages/comment/index"
   ],
   "window":{
