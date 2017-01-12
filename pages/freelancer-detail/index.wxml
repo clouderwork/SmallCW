@@ -2,7 +2,10 @@
 <view class="user-container">
   <scroll-view style="height: {{windowHeight}}px;" scroll-y="true">
     <view class="profile">
+      <view class="workload" wx:if="{{profile.workload > 0}}"></view>
+      <text  wx:if="{{profile.workload > 0}}" class="workload-txt">目前可工作</text>
       <image class="avatar" src="{{profile.avatar}}" />
+      <image class="vip" src="./images/icon-vip.png" />
       <text class="nickname">{{profile.nickname}}</text>
       <view class="info">
         <text class="hour">时薪：¥{{profile.hourly}}/小时</text>
