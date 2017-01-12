@@ -17,6 +17,7 @@ function ajaxJson(url, data, method = 'GET') {
   if (method !== 'GET') {
     data = assemblingData(data)
   }
+  console.log(url)
   return new Promise((resolve, reject) => {
     wx.request({
       url: `http://m.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
@@ -24,7 +25,7 @@ function ajaxJson(url, data, method = 'GET') {
       method: method,
       header: {
         'content-type': 'application/x-www-form-urlencoded',
-        'User-Agent': ' i/1.0.0/9.2.1/iPhone/wifi'
+        'CW-Agent': ' x/1.0.0/9.2.1/iPhone/wifi'
       },
       success: function(res){
         if (res && res.data) {
@@ -42,4 +43,4 @@ function ajaxJson(url, data, method = 'GET') {
 
 module.exports = {
   ajaxJson: ajaxJson
-};
+}
