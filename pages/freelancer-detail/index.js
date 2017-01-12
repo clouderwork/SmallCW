@@ -15,6 +15,7 @@ Page({
   },
   onLoad: function (opt) {
     if (opt && opt.id) {
+      console.log(opt)
       this.setData({
         id: opt.id
       })
@@ -108,7 +109,6 @@ Page({
         windowHeight: sys.windowHeight
       });
     }
-<<<<<<< HEAD
   },
   // 展示收起显示描述
   changeShow () {
@@ -121,7 +121,5 @@ Page({
       descClass: `desc-${state}`,
       descImg: `./images/icon-${state}.png`
     })
-=======
->>>>>>> 9acba15009d70a9f8eed48bc3d274e677ccaff80
   }
 })
