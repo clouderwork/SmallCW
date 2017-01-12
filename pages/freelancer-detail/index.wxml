@@ -1,131 +1,130 @@
 <!--index.wxml-->
 <view class="user-container">
-  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true">
-    <view class="profile">
-      <view class="workload"></view>
-      <text wx:if="{{profile.workload > 0}}" class="workload-txt">{{profile.canWork}}</text>
-      <image class="avatar" src="{{profile.avatar}}" />
-      <image wx:if="{{profile.vip_expire > 0}}" class="vip" src="./images/icon-vip.png" />
-      <text class="nickname">{{profile.nickname}}</text>
-      <view class="info">
-        <text class="hour">时薪：¥{{profile.hourly}}/小时</text>
-        <text class="su-line"> | </text>
-        <image class="biaoqian" src="./images/icon-biaoqian.png" />
-        <text class="title">{{profile.title}}</text>
-      </view>
-      <text class="{{descClass}}">{{profile.overview}}</text>
-      <image class="icon-down" src="{{descImg}}" bindtap="changeShow" />
+  <view class="profile">
+    <view class="workload"></view>
+    <text wx:if="{{profile.workload > 0}}" class="workload-txt">{{profile.canWork}}</text>
+    <image class="avatar" src="{{profile.avatar}}" />
+    <image wx:if="{{profile.vip_expire > 0}}" class="vip" src="./images/icon-vip.png" />
+    <text class="nickname">{{profile.nickname}}</text>
+    <view class="info">
+      <text class="hour">时薪：¥{{profile.hourly}}/小时</text>
+      <text class="su-line"> | </text>
+      <image class="biaoqian" src="./images/icon-biaoqian.png" />
+      <text class="title">{{profile.title}}</text>
     </view>
-    <view class="row-item">
-      <image class="icon" src="./images/icon-shanchang.png" />
-      <text class="title">擅长技能</text>
-      <view class="detail">
-        <block wx:for="{{profile.skills}}" wx:key="*this" wx:for-item="skill">
-          <view class="skill">{{skill}}</view>
-        </block>
-      </view>
+    <text class="{{descClass}}">{{profile.overview}}</text>
+    <image class="icon-down" src="{{descImg}}" bindtap="changeShow" />
+  </view>
+
+  <view class="row-item">
+    <image class="icon" src="./images/icon-shanchang.png" />
+    <text class="title">擅长技能</text>
+    <view class="detail">
+      <block wx:for="{{profile.skills}}" wx:key="*this" wx:for-item="skill">
+        <view class="skill">{{skill}}</view>
+      </block>
     </view>
-    <view class="row-item">
-      <image class="icon" src="./images/icon-shichang.png" />
-      <text class="title">可工作时长：{{profile.workloadStr}}</text>
-    </view>
-    <view class="row-item" wx:if="{{projects.length > 0}}">
-      <image class="icon" src="./images/icon-xiangmujingyan.png" />
-      <text class="title">项目经验</text>
-      <view class="detail">
-        <block wx:for="{{projects}}" wx:key="id" wx:for-item="project">
-          <view class="detail-item">
-            <text class="name">{{project.name}}</text>
-            <view class="time-row">
-              <image class="time-icon" src="./images/icon-shijian.png" />
-              <text class="time">{{project.end_at}}</text>
-            </view>
-            <view class="detail-desc">
-              <text class="s-title">项目简介及职责：</text>
-              <text>{{project.detail}}</text>
-            </view>
+  </view>
+  <view class="row-item">
+    <image class="icon" src="./images/icon-shichang.png" />
+    <text class="title">可工作时长：{{profile.workloadStr}}</text>
+  </view>
+  <view class="row-item" wx:if="{{projects.length > 0}}">
+    <image class="icon" src="./images/icon-xiangmujingyan.png" />
+    <text class="title">项目经验</text>
+    <view class="detail">
+      <block wx:for="{{projects}}" wx:key="id" wx:for-item="project">
+        <view class="detail-item">
+          <text class="name">{{project.name}}</text>
+          <view class="time-row">
+            <image class="time-icon" src="./images/icon-shijian.png" />
+            <text class="time">{{project.end_at}}</text>
           </view>
-        </block>
-      </view>
-    </view>
-    <view class="row-item" wx:if="{{jobs.length > 0}}">
-      <image class="icon" src="./images/icon-gongzuojingli.png" />
-      <text class="title">工作经历</text>
-      <view class="detail">
-        <block wx:for="{{jobs}}" wx:key="id" wx:for-item="job">
-          <view class="detail-item">
-            <text class="name">{{job.company}}</text>
-            <view class="time-row">
-              <image class="time-icon" src="./images/icon-shijian.png" />
-              <view class="time">
-                {{job.start_at}} -- {{job.end_at}} |
-                <text class="job-title">{{job.title}}</text>
-              </view>
-            </view>
-            <view class="detail-desc">
-              <text class="s-title">项目简介及职责：</text>
-              <text>{{job.detail}}</text>
-            </view>
-          </view>
-        </block>
-      </view>
-    </view>
-    <view class="row-item" wx:if="{{teams.length > 0}}">
-      <image class="icon" src="./images/icon-tuandui.png" />
-      <text class="title">所在团队{{teams.length}}</text>
-      <view class="detail">
-        <block wx:for="{{teams}}" wx:key="id" wx:for-item="team">
-          <view class="team-item">
-            <image class="team-avatar" src="{{team.avatar}}" />
-            <view class="team-main">
-              <text class="team-name">{{team.name}}</text>
-              <view class="team-content">
-                <image class="peole-icon" src="./images/icon-people.png" />
-                <text>管理员</text>
-              </view>
-            </view>
-          </view>
-        </block>
-      </view>
-    </view>
-    <view class="row-item" wx:if="{{edus.length > 0}}">
-      <image class="icon" src="./images/icon-jiaoyu.png" />
-      <text class="title">教育经历</text>
-      <view class="detail">
-        <block wx:for="{{edus}}" wx:key="id" wx:for-item="edu">
-          <view class="detail-item">
-            <text class="name">{{edu.school}}</text>
-            <view class="time-row">
-              <image class="time-icon" src="./images/icon-shijian.png" />
-              <text class="time">{{edu.start_at}} -- {{edu.end_at}}</text>
-            </view>
-            <view>
-              <text class="s-title">所学专业：</text>
-              <text>{{edu.area}}</text>
-            </view>
-            <view>
-              <text class="s-title">学历：</text>
-              <text>{{edu.degreeStr}}</text>
-            </view>
-          </view>
-        </block>
-      </view>
-    </view>
-    <view class="row-item">
-      <image class="icon" src="./images/icon-yuyan.png" />
-      <text class="title">语言</text>
-      <view class="detail">
-        <view class="detail-desc">
-          <text class="s-title">英语：</text>
-          <text>{{profile.englishStr}}</text>
-        </view>
-        <block wx:for="{{profile.languages}}" wx:key="id" wx:for-item="language">
           <view class="detail-desc">
-            <text class="s-title">{{language.name}}：</text>
-            <text>{{language.langStr}}</text>
+            <text class="s-title">项目简介及职责：</text>
+            <text>{{project.detail}}</text>
           </view>
-        </block>
-      </view>
+        </view>
+      </block>
     </view>
-  </scroll-view>
+  </view>
+  <view class="row-item" wx:if="{{jobs.length > 0}}">
+    <image class="icon" src="./images/icon-gongzuojingli.png" />
+    <text class="title">工作经历</text>
+    <view class="detail">
+      <block wx:for="{{jobs}}" wx:key="id" wx:for-item="job">
+        <view class="detail-item">
+          <text class="name">{{job.company}}</text>
+          <view class="time-row">
+            <image class="time-icon" src="./images/icon-shijian.png" />
+            <view class="time">
+              {{job.start_at}} -- {{job.end_at}} |
+              <text class="job-title">{{job.title}}</text>
+            </view>
+          </view>
+          <view class="detail-desc">
+            <text class="s-title">项目简介及职责：</text>
+            <text>{{job.detail}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="row-item" wx:if="{{teams.length > 0}}">
+    <image class="icon" src="./images/icon-tuandui.png" />
+    <text class="title">所在团队{{teams.length}}</text>
+    <view class="detail">
+      <block wx:for="{{teams}}" wx:key="id" wx:for-item="team">
+        <view class="team-item">
+          <image class="team-avatar" src="{{team.avatar}}" />
+          <view class="team-main">
+            <text class="team-name">{{team.name}}</text>
+            <view class="team-content">
+              <image class="peole-icon" src="./images/icon-people.png" />
+              <text>管理员</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="row-item" wx:if="{{edus.length > 0}}">
+    <image class="icon" src="./images/icon-jiaoyu.png" />
+    <text class="title">教育经历</text>
+    <view class="detail">
+      <block wx:for="{{edus}}" wx:key="id" wx:for-item="edu">
+        <view class="detail-item">
+          <text class="name">{{edu.school}}</text>
+          <view class="time-row">
+            <image class="time-icon" src="./images/icon-shijian.png" />
+            <text class="time">{{edu.start_at}} -- {{edu.end_at}}</text>
+          </view>
+          <view>
+            <text class="s-title">所学专业：</text>
+            <text>{{edu.area}}</text>
+          </view>
+          <view>
+            <text class="s-title">学历：</text>
+            <text>{{edu.degreeStr}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="row-item">
+    <image class="icon" src="./images/icon-yuyan.png" />
+    <text class="title">语言</text>
+    <view class="detail">
+      <view class="detail-desc">
+        <text class="s-title">英语：</text>
+        <text>{{profile.englishStr}}</text>
+      </view>
+      <block wx:for="{{profile.languages}}" wx:key="id" wx:for-item="language">
+        <view class="detail-desc">
+          <text class="s-title">{{language.name}}：</text>
+          <text>{{language.langStr}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
 </view>

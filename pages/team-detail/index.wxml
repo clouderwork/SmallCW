@@ -1,0 +1,59 @@
+<view class="team-info">
+  <image class="avatar" src="http://static.clouderwork.com/static/images/default-logo05.png" />
+  <text class="nickname">响亮亮团队</text>
+  <p class="team-hourly-money">
+    <image class="icon" src="http://static.clouderwork.com/m-test/dist/img/hourly_icon.png" />
+    100元~222元/小时
+  </p>
+  <text class="team-slogan">啊啊啊</text>
+</view>
+<view class="team-info-list">
+  <label>团队简介</label>
+  <span>饿饿饿啊啊啊阿斯顿发阿斯顿发阿斯顿发阿斯顿发</span>
+</view>
+
+<view class="team-info-list">
+  <label>经验水平</label>
+  <span>入门级</span>
+</view>
+
+<view class="team-card">
+  <text class="title">语言水平</text>
+  <view class="body">
+    <label>英语:</label>
+    <span>可以对话</span>
+  </view>
+</view>
+
+<view class="team-card">
+  <text class="title">擅长技能</text>
+  <view class="body skill">
+    <span>Eclipse PDE/RCP</span>
+    <span>dojo</span>
+    <span>CSS/CSS3</span>
+  </view>
+</view>
+
+<view class="team-card">
+  <p class="title">团队成员<span>3人<image class="icon-arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAABhklEQVQ4y53TL2iVYRTH8c97BYPBIqhT6/y3ahNk1yKDY5tFBK/FMtYFq2lNQTSIhjGwaTggCCpOs83m/hstFoMwNewMrrLrfd897YHz/Z7f85znaTJzEs8wiIgvOq4eHuIiljNzaj+C6/iECbzPzAudBBHxDZfxEUfwJjMvdUkgIr7jCl7jMF5l5kxrQUl+4Cpe4BBeZuZsa0FJfuIaFnEQzzNz0FpQkm3cxCMcwNPMnG8tKMlvzGEBDR5k5t29aptxZyzwXm0XcKcatBOUZB73q/4x5iLiV2tBSQZ4UveyiFsRsd1aUJJZLNmZ0GfMdBKU5EYlgOWuCY7iLabwFdO9fcJbmI6IlbZTOFbweWyiHxGrtHsHI+Gxgsw8XvA5bBS8NlzTjIHf4ewomBF/ITMnhuD1urC1vWqb/8BnCu5HxPqopL1/4BND8Fp1Hgn/lWAIPl1wPyI2xk2pV/DJIXi1Oo+FocnMU3ZGNVlwPyI228C7CZYKXqnOreFdwW18KHirCwx/AGsomIc+KotJAAAAAElFTkSuQmCC" /></span></p>
+  <view class="team-owner">
+    <p><label>团队创建人：</label>头痛</p>
+    <p><span class="address"><image class="icon-address" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAgCAYAAAAMq2gFAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAACiElEQVRIx63WT6hVVRTH8c89CIVkAw0DIwi2y4FQmCSCRNAgCoTkhaAUlSSNatA/wSJCg4YNosIgbRTUoJJyYEkOCokySB0kwX6HQBOK1+BJmIGIDc65cH3es++5Pn+zs3/r7O9e++yz1h4oqM55gE3Ygo1YhTtwCefwB47h8xTxa2muQQEyg724Wz99hzdSxPe9QHXOK3CgzWJaXcGHeDFF/NsJqnO+C99gzXVARnUcm1PE39eA2kx+xOpFQob6GQ+miAtQjRgf9YT8g4s94jZg3/CharN5GI8WXjqL57AyRdyaIpYiYU8L7tKTdc6PwKA9wr9gXUfwUWxNEfPjzDrn1fi6BY/TiRSxflDnvEHz8cZpFveliPOlPWphJ3BLR8imasKWvT4JAiliFu8WQmYqPNRh/oevJkFG9FnBu7/SvbdnUkSf0zXU6YIXFZZ3mDdNAYGbC97yCvMd5p11ziunAK0veBcqnOowK+ycAvRswTtV4ctCwKt1zhOrd53zFmwrhHxR4WPdJWUZjtQ5P1CAPI1Pdbeci/hk0Aa/jZcKK7qCQ5ojPIslmj71lKYhlvR+inh+CLoNv2HFpG2aUvNYkyLmKmj7xu4bDIHXUsQcV7eJA5rieKN0GB8MHxZ22Ns1lXzVIiFzuCdF/DkcGM1IivgLj+nX2Lp0GY+PQq4BtbCfNEf+evVyivh24WDVEfyC7opR0v4U8c44YyyovSrN6K6D45TbBY5VV0ZSxO94RvOzTtJl7BjeeKYCtbCDeK8H6M0U8UMpoOoxyS6cLPhH8NakSQaTAqDOea3mQrh0gXUO9w7//sVmJEWcxisLhi9hex9Ib1AL26e5MJ7XXCifSBHH+r7/PyiwrnygSnL1AAAAAElFTkSuQmCC" />河北</span>
+    <time><image class="icon-time" src="http://static.clouderwork.com/m-test/dist/img/time_icon.png" />2015-09</time>
+    </p>
+  </view>
+</view>
+
+<view class="team-card">
+  <text class="title">成功案例</text>
+  <view class="project-list">
+    <text class="name">啊啊啊啊啊啊啊</text>
+    <p class="info">
+      <span>类型：产品设计</span>
+      <time><image class="icon-time" src="http://static.clouderwork.com/m-test/dist/img/time_icon.png" />2014-06</time>
+    </p>
+    <p class="description">
+      <span>项目简介：</span> 阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发
+    </p>
+  </view>
+</view>
