@@ -1,4 +1,5 @@
 var ywk = require('../../utils/ywk')
+var WxParse = require('../../wxParse/wxParse.js')
 
 let format = {
   getDuration (val) {
@@ -48,11 +49,31 @@ let format = {
     } else {
       return '专家级'
     }
+  },
+  getStage (val) {
+    let str = '有设计'
+    switch (val) {
+    case 'design':
+      str = '有设计'
+      break
+    case 'introduction':
+      str = '有详细的需求说明'
+      break
+    case 'idea':
+      str = '只有一个想法'
+      break
+    default:
+      str = '啥也没有'
+      break
+    }
+    return str
   }
 }
 
 Page({
-  data: {},
+  data: {
+    panel: 'more'
+  },
   onLoad (e) {
     this.getDetail(e.id)
   },
@@ -65,12 +86,23 @@ Page({
       if (job.level === 'expert') { job.hourPrice = '> 300元/时'}
       job.duration = format.getDuration(job.duration)
       job.workload = format.getHour(job.workload)
-      job.level = format.getLevel(job.workload)
+      job.level = format.getLevel(job.level)
+      job.stage = format.getStage(job.stage)
       this.setData({
         job: job
       })
+      // 处理html渲染
+      let article = job.description
+      let that = this;
+      WxParse.wxParse('article', 'html', article, that, 5)
     }, (err) => {
       console.log(err)
+    })
+  },
+  changePanel (e) {
+    console.log(e.currentTarget.dataset.panel)
+    this.setData({
+      panel: e.currentTarget.dataset.panel
     })
   }
 })

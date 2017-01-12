@@ -89,9 +89,85 @@
   vertical-align: middle;
 }
 
+.job-description {
+  border-top: 10px solid #f4f4f4;
+}
+
 .job-info .icon {
   width: 15px;
   height: 15px;
   vertical-align: middle;
   margin-right: 10px;
+  font-size: 14px;
+}
+.job-description .nav{
+  display: block;
+  margin-top: 10px;
+  padding: 0 40px;
+  height: 50px;
+  border-bottom: 1px solid #f4f4f4;
+  background-color: #fff;
+  text-align: center;
+}
+
+.job-description .nav li {
+  display: inline-block;
+  margin: 0 20px;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  color: #777777;
+}
+.job-description .active {
+  color: #ff6700;
+  border-bottom: 1px solid #ff6700;
+}
+
+.job-description .description {
+  padding: 15px;
+  font-size: 14px;
+  color: #4b4b4b;
+  line-height: 1.5;
+}
+.panel-more {
+  display: block;
+  padding: 15px 20px;
+}
+
+.panel-more li {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 15px;
+  color: #4b4b4b;
+}
+
+.list-name {
+  display: block;
+  color: #aaaaaa;
+  border-left: 2px solid #ff6700;
+  font-size: 15px;
+  padding-left: 15px;
+}
+
+.skills span{
+  padding: 0 12px;
+  height: 25px;
+  line-height: 25px;
+  display: inline-block;
+  border: 1px solid #cacaca;
+  border-radius: 12px;
+  margin: 9px 10px 0 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #4b4b4b;
+}
+
+.panel-more .text {
+  display: block;
+  margin: 5px 0 0;
+  line-height: 25px;
+  font-size: 15px;
+  color: #4b4b4b;
 }
