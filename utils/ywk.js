@@ -14,30 +14,30 @@ function assemblingData (data) {
  * @return {[Promise]}        [返回结果]
  */
 function ajaxJson(url, data, method = 'GET') {
-    if (method !== 'GET') {
-      data = assemblingData(data)
-    }
-    return new Promise((resolve, reject) => {
-        wx.request({
-          url: `http://m.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
-          data: data,
-          method: method,
-          header: {
-            'content-type': 'application/x-www-form-urlencoded',
-            'User-Agent': ' i/1.0.0/9.2.1/iPhone/wifi'
-          },
-          success: function(res){
-            if (res && res.data) {
-              resolve(res.data)
-            } else {
-              reject(res)
-            }
-          },
-          fail: function(err) {
-            reject(err)
-          }
-        })
-    });
+  if (method !== 'GET') {
+    data = assemblingData(data)
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `http://m.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
+      data: data,
+      method: method,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'User-Agent': ' i/1.0.0/9.2.1/iPhone/wifi'
+      },
+      success: function(res){
+        if (res && res.data) {
+          resolve(res.data)
+        } else {
+          reject(res)
+        }
+      },
+      fail: function(err) {
+        reject(err)
+      }
+    })
+  })
 }
 
 module.exports = {
