@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<import src="../../components/comment-item.wxml"/>
+<view class="comment-container">
+  <view class="comment-page-title">共{{count}}条评论</view>
+  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" bindscrolltolower="lower">
+    <block wx:for="{{[1]}}" wx:key="*this" wx:for-item="comment">
+      <view class="comment-item">
+        <template is="commentItem" data="{{comment}}" />
+      </view>
+    </block>
+  </scroll-view>
+</view>

@@ -1,6 +1,7 @@
-<!--logs.wxml-->
+<!--project.wxml-->
 <view class="container log-list">
   <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
     <text class="log-item">{{index + 1}}. {{log}}</text>
   </block>
+  <view bindtap="bindViewTap" data-fid="{{profile.id}}">去评价列表</view>
 </view>

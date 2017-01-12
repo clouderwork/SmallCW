@@ -22,7 +22,7 @@ Page({
   },
   // 获取用户基本信息
   getBasicInfo () {
-    ywk.ajaxJson('/api/user/profile', {uuid: this.data.id}).then((res) => {
+    ywk.ajaxJson('/api/freelancers/profile', {uuid: this.data.id}).then((res) => {
       console.log(res)
       if (res.error_code === 0) {
         this.setData({
@@ -81,6 +81,12 @@ Page({
       }
     }, (err) => {
       console.log(err);
+    })
+  },
+  bindViewTap (e) {
+    let id = e.currentTarget.dataset.fid
+    wx.navigateTo({
+      url: `../comment/index?id=${id}`
     })
   }
 })

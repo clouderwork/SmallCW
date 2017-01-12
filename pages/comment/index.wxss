@@ -1,0 +1,8 @@
+.comment-page-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 23rpx;
+  color: #4b4b4b;
+  font-size: 30rpx;
+  background-color: #F1F4F9;
+}

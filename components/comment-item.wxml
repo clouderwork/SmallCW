@@ -1,0 +1,4 @@
+<template name="commentItem">
+  <view class="item-head">111</view>
+  <view class="item-body">222</view>
+</template>
