@@ -4,7 +4,8 @@ var ywk = require('../../utils/ywk')
 Page({
   data: {
     projects: [],
-    pagenum: 0
+    pagenum: 1,
+    count: 0
   },
   filterTime (time) {
     let date = new Date(time)
@@ -16,9 +17,9 @@ Page({
     return year + '/' + month + '/' + day
   },
   getData () {
-    this.setData({
-      pagenum: this.data.pagenum++
-    })
+    if (this.data.count !== 0 && this.data.count <= (this.data.pagenum - 1) * 10) {
+      return
+    }
     ywk.ajaxJson('/api/jobs/search', {pagenum: this.data.pagenum}, 'POST').then((res) => {
       wx.hideToast()
       if (res.error_code === 0) {
@@ -26,7 +27,9 @@ Page({
           projects: this.data.projects.concat(res.jobs.map((item) => {
             item.publish_at = this.filterTime(item.publish_at)
             return item
-          }))
+          })),
+          pagenum: res.pagenum + 1,
+          count: res.count
         })
       } else {
         console.log(res)
