@@ -94,6 +94,12 @@ Page({
       console.log(err);
     })
   },
+  bindViewTap (e) {
+    let id = e.currentTarget.dataset.fid
+    wx.navigateTo({
+      url: `../comment/index?id=${id}`
+    })
+  },
   onShow () {
     // 获取页面高度
     if (wx.getStorageSync('systemInfo')) {
@@ -102,6 +108,7 @@ Page({
         windowHeight: sys.windowHeight
       });
     }
+<<<<<<< HEAD
   },
   // 展示收起显示描述
   changeShow () {
@@ -114,5 +121,7 @@ Page({
       descClass: `desc-${state}`,
       descImg: `./images/icon-${state}.png`
     })
+=======
+>>>>>>> 9acba15009d70a9f8eed48bc3d274e677ccaff80
   }
 })

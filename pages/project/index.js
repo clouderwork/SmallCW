@@ -4,17 +4,7 @@ var ywk = require('../../utils/ywk')
 Page({
   data: {
     projects: [],
-    searchData: {
-      pagenum: 1
-    }
-  },
-  lower () {
-    this.setData({
-      searchData: {
-        pagenum: this.data.searchData.pagenum++
-      }
-    })
-    this.getData()
+    pagenum: 0
   },
   filterTime (time) {
     let date = new Date(time)
@@ -26,7 +16,10 @@ Page({
     return year + '/' + month + '/' + day
   },
   getData () {
-    ywk.ajaxJson('/api/jobs/search', this.searchData, 'POST').then((res) => {
+    this.setData({
+      pagenum: this.data.pagenum++
+    })
+    ywk.ajaxJson('/api/jobs/search', {pagenum: this.data.pagenum}, 'POST').then((res) => {
       wx.hideToast()
       if (res.error_code === 0) {
         this.setData({
@@ -43,13 +36,13 @@ Page({
     })
   },
   onShow () {
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          windowHeight: res.windowHeight
-        })
-      }
-    })
+    // 获取页面高度
+    if (wx.getStorageSync('systemInfo')) {
+      let sys = wx.getStorageSync('systemInfo')
+      this.setData({
+        windowHeight: sys.windowHeight
+      });
+    }
   },
   onShareAppMessage () {
     return {
