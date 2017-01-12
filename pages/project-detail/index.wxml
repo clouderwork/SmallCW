@@ -75,19 +75,19 @@
       </li>
       <li wx:if="{{job.api.length}}">
         <p class="list-name">集成API：</p>
-        <p class="words"><span wx:for="{{job.api}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+        <p class="text"><span wx:for="{{job.api}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
       <li wx:if="{{job.frameworks.length}}">
         <p class="list-name">集成API：</p>
-        <p class="words"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+        <p class="text"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
       <li wx:if="{{job.frameworks.length}}">
         <p class="list-name">集成API：</p>
-        <p class="words"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+        <p class="text"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
       <li wx:if="{{job.languages.length}}">
         <p class="list-name">集成API：</p>
-        <p class="words"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+        <p class="text"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
     </ul>
   </block>
