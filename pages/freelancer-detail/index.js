@@ -1,11 +1,12 @@
 //logs.js
 var ywk = require('../../utils/ywk')
+var util = require('../../utils/util')
 
 Page({
   data: {
     id: '',
     profile: {},
-    project: [],
+    projects: [],
     jobs: [],
     edus: [],
     teams: [],
@@ -31,12 +32,12 @@ Page({
     ywk.ajaxJson('/api/freelancers/profile', {uuid: this.data.id}).then((res) => {
       if (res.error_code === 0) {
         let profile = res.profile;
-        profile.workloadStr = '超过30小时每周'
-        if (res.profile.workload === 2) {
-          profile.workloadStr = '超过30小时每周'
-        } else if (res.profile.workload === 3) {
-          profile.workloadStr = '超过30小时每周'
-        }
+        profile.workloadStr = util.getHour(profile.workload)
+        profile.englishStr = util.getLanguagesLevel(profile.english)
+        profile.languages = profile.languages.map((item) => {
+          item.langStr = util.getLanguagesLevel(item.level)
+          return item;
+        })
         this.setData({
           'profile': res.profile
         })
@@ -47,19 +48,19 @@ Page({
   },
   // 获取项目经历
   getProject () {
-    ywk.ajaxJson('/api/portfolio', {user_id: this.data.id}, (res) => {
-      console.log(res)
+    ywk.ajaxJson('/api/portfolio', {user_id: this.data.id}).then((res) => {
       if (res.error_code === 0) {
         this.setData({
-          'project': res.portfolios
+          'projects': res.portfolios
         })
       }
+    }, (err) => {
+      console.log(err);
     })
   },
   // 获取工作经历
   getjobs () {
     ywk.ajaxJson('/api/employment', {user_id: this.data.id}).then((res) => {
-      console.log(JSON.stringify(res))
       if (res.error_code === 0) {
         this.setData({
           'jobs': res.employments
@@ -72,8 +73,11 @@ Page({
   // 获取教育经历
   getEdus () {
     ywk.ajaxJson('/api/education', {user_id: this.data.id}).then((res) => {
-      console.log(JSON.stringify(res))
       if (res.error_code === 0) {
+        let edus = res.educations.map((item) => {
+          item.degreeStr = util.getDegree(item.degree)
+          return item
+        })
         this.setData({
           'edus': res.educations
         })
@@ -85,7 +89,7 @@ Page({
   // 获取服务方所在团队
   getTeam () {
     ywk.ajaxJson('/api/user/team', {user_id: this.data.id}).then((res) => {
-      console.log(res)
+      console.log(JSON.stringify(res))
       if (res.error_code === 0) {
         this.setData({
           'teams': res.teams

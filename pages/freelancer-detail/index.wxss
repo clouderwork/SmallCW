@@ -25,6 +25,7 @@ page {
 }
 
 .profile .nickname {
+  display: block;
   font-size: 46rpx;
   color: #4b4b4b;
   margin-top: 30rpx;
@@ -130,4 +131,90 @@ page {
   padding: 15rpx 25rpx;
   border-radius: 20rpx;
   margin: 20rpx 20rpx 0 0;
+}
+
+.row-item .detail .detail-item {
+  padding: 30rpx 0;
+  border-bottom: solid 2px #fbfbfb;
+}
+
+.row-item .detail .detail-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.row-item .detail .time-row {
+  display: flex;
+  margin-top: 35rpx;
+}
+
+.row-item .detail .time-icon {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: bottom;
+}
+
+.row-item .detail .time {
+  font-size: 37rpx;
+  color: #9e9e9e;
+  margin-left: 25rpx;
+  flex: 1;
+}
+
+.row-item .detail .name {
+  display: block;
+  font-size: 43rpx;
+  color: #4b4b4b;
+}
+
+.row-item .detail .detail-desc {
+  line-height: 1.3;
+}
+
+.row-item .detail .job-title {
+  font-size: 38rpx;
+  color: #4b4b4b;
+}
+
+.row-item .detail .s-title {
+  color: #9e9e9e;
+  margin-top: 30rpx;
+  display:inline-block;
+}
+
+.row-item .detail .team-item {
+  display: flex;
+  padding: 30rpx 0;
+}
+
+.row-item .team-item .team-avatar {
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 30rpx;
+}
+
+.row-item .team-item .team-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.row-item .team-item .team-name {
+  font-size: 43rpx;
+}
+
+.row-item .team-item .peole-icon {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+  vertical-align: bottom;
+}
+
+.row-item .team-item .team-content {
+  display: block;
+  margin-top: 15rpx;
 }
