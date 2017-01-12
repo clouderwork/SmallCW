@@ -1,8 +1,258 @@
-.log-list {
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #EFEFF4;
+}
+.user-container {
+  margin: 0
+}
+
+.profile {
+  position: relative;
+  text-align: center;
+  line-height: 1;
+  padding: 0 60rpx;
+}
+
+.profile .workload {
+  display: inline-block;
+  width: 30rpx;
+  height: 4px;
+  border-bottom: 1px solid #c46c85;
+  position: absolute;
+  top: 50rpx;
+  left: 0;
+}
+
+.profile .workload-txt {
+  position: absolute;
+  top: 40rpx;
+  left: 30rpx;
+  font-size: 26rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 18rpx;
+  color: #c46c85;
+  border: solid 1px #c46c85;
+}
+
+.profile .avatar {
+  margin-top: 30rpx;
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: solid 1px #ff6700;
+}
+
+.profile .vip {
+  display: inline-block;
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  top: 150rpx;
+  left: 48%;
+}
+
+.profile .nickname {
+  display: block;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  margin-top: 30rpx;
+  font-weight: 700;
+  color: #4b4b4b;
+}
+
+.profile .info {
+  margin-top: 20rpx;
+  color: #777;
+  vertical-align: middle;
+}
+
+.profile .info .hour {
+  font-size: 26rpx;
+}
+
+.profile .info .su-line {
+  color: #4b4b4b;
+}
+
+.profile .info .biaoqian {
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+
+.profile .info .title {
+  font-size: 26rpx;
+  padding: 5rpx 10rpx;
+  border: solid 1px #989898;
+  border-radius: 4px;
+  margin-left: 15rpx;
+}
+
+.profile .desc-down {
+  display: block;
+  font-size: 26rpx;
+  color: #4b4b4b;
+  margin-top: 30rpx;
+  text-align: left;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  max-height: 150rpx;
+  word-break:break-all;
+  cursor: pointer;
+}
+
+.profile .desc-up {
+  display: block;
+  font-size: 26rpx;
+  color: #4b4b4b;
+  margin-top: 30rpx;
+  text-align: left;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.profile .icon-down {
+  display: inline-block;
+  width: 55rpx;
+  height: 30rpx;
+  margin-top: 20rpx;
+}
+
+.row-item {
+  padding: 25rpx 0;
+  background-color: #fff;
+  margin-top: 20rpx;
+  color: #777;
+}
+
+.row-item .icon {
+  display: inline-block;
+  width: 35rpx;
+  height: 38rpx;
+  vertical-align: bottom;
+  margin-left: 43rpx;
+}
+
+.row-item .title {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  vertical-align: bottom;
+}
+
+.row-item .detail {
+  border-top: solid 2px #fbfbfb;
+  display: block;
+  margin-top: 35rpx;
+  padding: 0 43rpx
+}
+
+.row-item .detail .skill {
+  display: inline-block;
+  color: #6e6e70;
+  font-size: 24rpx;
+  background: #eef1f8;
+  padding: 15rpx 25rpx;
+  border-radius: 20rpx;
+  margin: 20rpx 20rpx 0 0;
+}
+
+.row-item .detail .detail-item {
+  padding: 20rpx 0;
+  border-bottom: solid 2px #fbfbfb;
+  color: #6e6e70;
+  font-size: 30rpx;
+}
+
+.row-item .detail .detail-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.row-item .detail .time-row {
+  display: flex;
+  margin-top: 25rpx;
+}
+
+.row-item .detail .time-icon {
+  display: inline-block;
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+}
+
+.row-item .detail .time {
+  font-size: 26rpx;
+  color: #9e9e9e;
+  margin-left: 15rpx;
+  flex: 1;
+  vertical-align: bottom;
+}
+
+.row-item .detail .name {
+  display: block;
+  font-size: 30rpx;
+  color: #4b4b4b;
+}
+
+.row-item .detail .detail-desc {
+  line-height: 1.3;
+  font-size: 30rpx;
+}
+
+.row-item .detail .job-title {
+  font-size: 30rpx;
+  color: #4b4b4b;
+}
+
+.row-item .detail .s-title {
+  color: #9e9e9e;
+  margin-top: 20rpx;
+  display:inline-block;
+}
+
+.row-item .detail .team-item {
+  display: flex;
+  padding: 30rpx 0;
+}
+
+.row-item .team-item .team-avatar {
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 10rpx;
+}
+
+.row-item .team-item .team-main {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 40rpx;
+  justify-content: center;
 }
-.log-item {
-  margin: 10rpx;
+
+.row-item .team-item .team-name {
+  font-size: 32rpx;
+  color: #4b4b4b;
+}
+
+.row-item .team-item .peole-icon {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+  vertical-align: bottom;
+}
+
+.row-item .team-item .team-content {
+  display: block;
+  margin-top: 10rpx;
+  color: #777;
+  font-size: 26rpx;
 }

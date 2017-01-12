@@ -4,17 +4,8 @@ var ywk = require('../../utils/ywk')
 Page({
   data: {
     projects: [],
-    searchData: {
-      pagenum: 1
-    }
-  },
-  lower () {
-    this.setData({
-      searchData: {
-        pagenum: this.data.searchData.pagenum++
-      }
-    })
-    this.getData()
+    pagenum: 1,
+    count: 0
   },
   filterTime (time) {
     let date = new Date(time)
@@ -26,14 +17,19 @@ Page({
     return year + '/' + month + '/' + day
   },
   getData () {
-    ywk.ajaxJson('/api/jobs/search', this.searchData, 'POST').then((res) => {
+    if (this.data.count !== 0 && this.data.count <= (this.data.pagenum - 1) * 10) {
+      return
+    }
+    ywk.ajaxJson('/api/jobs/search', {pagenum: this.data.pagenum}, 'POST').then((res) => {
       wx.hideToast()
       if (res.error_code === 0) {
         this.setData({
           projects: this.data.projects.concat(res.jobs.map((item) => {
             item.publish_at = this.filterTime(item.publish_at)
             return item
-          }))
+          })),
+          pagenum: res.pagenum + 1,
+          count: res.count
         })
       } else {
         console.log(res)
@@ -43,13 +39,13 @@ Page({
     })
   },
   onShow () {
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          windowHeight: res.windowHeight
-        })
-      }
-    })
+    // 获取页面高度
+    if (wx.getStorageSync('systemInfo')) {
+      let sys = wx.getStorageSync('systemInfo')
+      this.setData({
+        windowHeight: sys.windowHeight
+      });
+    }
   },
   onShareAppMessage () {
     return {

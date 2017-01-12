@@ -1,10 +1,10 @@
 {
   "pages":[
-    "pages/project/index",
     "pages/freelancer/index",
+    "pages/project/index",
     "pages/freelancer-detail/index",
-    "pages/profile/index",
-    "pages/project-detail/index"
+    "pages/project-detail/index",
+    "pages/comment/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

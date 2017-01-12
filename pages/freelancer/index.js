@@ -20,20 +20,19 @@ Page({
   },
   onLoad: function () {
     wx.showToast({
-      title: '',
+      title: '加载中...',
       icon: 'loading'
     })
     this.getData();
   },
   onShow () {
     // 获取页面高度
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          windowHeight: res.windowHeight
-        });
-      }
-    });
+    if (wx.getStorageSync('systemInfo')) {
+      let sys = wx.getStorageSync('systemInfo')
+      this.setData({
+        windowHeight: sys.windowHeight
+      });
+    }
   },
   lower (e) {
     if (this.data.search.pagenum * 10 < this.data.count) {
