@@ -127,9 +127,9 @@ page {
 }
 
 .row-item {
-  padding: 35rpx 0;
+  padding: 25rpx 0;
   background-color: #fff;
-  margin-top: 30rpx;
+  margin-top: 20rpx;
   color: #777;
 }
 
@@ -144,13 +144,14 @@ page {
 .row-item .title {
   margin-left: 20rpx;
   font-size: 32rpx;
+  vertical-align: bottom;
 }
 
 .row-item .detail {
   border-top: solid 2px #fbfbfb;
   display: block;
   margin-top: 35rpx;
-  padding: 10rpx 43rpx 0
+  padding: 0 43rpx
 }
 
 .row-item .detail .skill {
@@ -164,7 +165,7 @@ page {
 }
 
 .row-item .detail .detail-item {
-  padding: 30rpx 0;
+  padding: 20rpx 0;
   border-bottom: solid 2px #fbfbfb;
   color: #6e6e70;
   font-size: 30rpx;

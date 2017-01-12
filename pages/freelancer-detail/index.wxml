@@ -3,7 +3,7 @@
   <scroll-view style="height: {{windowHeight}}px;" scroll-y="true">
     <view class="profile">
       <view class="workload"></view>
-      <text wx:if="{{profile.workload > 0}}" class="workload-txt">{{profile.workloadStr}}</text>
+      <text wx:if="{{profile.workload > 0}}" class="workload-txt">{{profile.canWork}}</text>
       <image class="avatar" src="{{profile.avatar}}" />
       <image wx:if="{{profile.vip_expire > 0}}" class="vip" src="./images/icon-vip.png" />
       <text class="nickname">{{profile.nickname}}</text>
