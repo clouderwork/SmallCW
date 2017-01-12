@@ -6,13 +6,13 @@ Page({
     this.getComment(e.id)
   },
   onShow () {
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          windowHeight: res.windowHeight
-        })
-      }
-    })
+    // 获取页面高度
+    if (wx.getStorageSync('systemInfo')) {
+      let sys = wx.getStorageSync('systemInfo')
+      this.setData({
+        windowHeight: sys.windowHeight
+      });
+    }
   },
   getComment (id) {
     ywk.ajaxJson('/api/freelancers/evaluate', { user_id: id }, 'GET').then((res) => {

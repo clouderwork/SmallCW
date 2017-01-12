@@ -15,10 +15,12 @@ Page({
       this.setData({
         id: opt.id
       })
-      this.getBasicInfo()
-      this.getProject()
+      this.getBasicInfo();
+      this.getProject();
+      this.getjobs();
+      this.getEdus();
+      this.getTeam();
     }
-
   },
   // 获取用户基本信息
   getBasicInfo () {
@@ -88,5 +90,14 @@ Page({
     wx.navigateTo({
       url: `../comment/index?id=${id}`
     })
+  },
+  onShow () {
+    // 获取页面高度
+    if (wx.getStorageSync('systemInfo')) {
+      let sys = wx.getStorageSync('systemInfo')
+      this.setData({
+        windowHeight: sys.windowHeight
+      });
+    }
   }
 })

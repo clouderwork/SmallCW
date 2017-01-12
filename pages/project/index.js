@@ -36,13 +36,13 @@ Page({
     })
   },
   onShow () {
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          windowHeight: res.windowHeight
-        })
-      }
-    })
+    // 获取页面高度
+    if (wx.getStorageSync('systemInfo')) {
+      let sys = wx.getStorageSync('systemInfo')
+      this.setData({
+        windowHeight: sys.windowHeight
+      });
+    }
   },
   onShareAppMessage () {
     return {

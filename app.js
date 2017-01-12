@@ -16,6 +16,21 @@ App({
         }
       })
     }
+
+    //  获取系统信息
+    this.getSystemInfo();
+  },
+  getSystemInfo: function() {
+    wx.getNetworkType({
+      success: function(res) {
+        wx.setStorageSync('networkType', res.networkType);
+      }
+    })
+
+    let systemInfo = wx.getSystemInfoSync();
+    if (systemInfo.model) {
+      wx.setStorageSync('systemInfo', systemInfo)
+    };
   },
   getUserInfo:function(cb){
     var that = this
@@ -36,6 +51,6 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo: null
   }
 })
