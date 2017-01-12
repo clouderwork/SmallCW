@@ -1,6 +1,6 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<!--index.wxml-->
+<view class="user-container">
+  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" lower-threshold="50" bindscrolltolower="lower">
+    
+  </scroll-view>
 </view>

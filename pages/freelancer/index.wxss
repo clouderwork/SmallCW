@@ -40,6 +40,8 @@ page {
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 
 .list-box .top .desc .main {
@@ -47,6 +49,7 @@ page {
   font-size: 30rpx;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .list-box .top .desc .main .name {
@@ -57,12 +60,14 @@ page {
   word-wrap: break-word;
   word-break: break-all;
   flex: 1;
+  line-height: 40rpx;
 }
 
 .list-box .top .desc .main .price {
   font-family: PingFangSC-Medium;
   color: #FF6700;
   letter-spacing: 0;
+  line-height: 40rpx;
 }
 
 .list-box .top .desc .title {

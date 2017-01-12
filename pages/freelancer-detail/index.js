@@ -15,14 +15,16 @@ Page({
       this.setData({
         id: opt.id
       })
-      this.getBasicInfo()
-      this.getProject()
+      this.getBasicInfo();
+      this.getProject();
+      this.getjobs();
+      this.getEdus();
+      this.getTeam();
     }
-
   },
   // 获取用户基本信息
   getBasicInfo () {
-    ywk.ajaxJson('/api/user/profile', {uuid: this.data.id}).then((res) => {
+    ywk.ajaxJson('/api/freelancers/profile', {uuid: this.data.id}).then((res) => {
       console.log(res)
       if (res.error_code === 0) {
         this.setData({
@@ -82,5 +84,14 @@ Page({
     }, (err) => {
       console.log(err);
     })
-  }
+  },
+  onShow () {
+    // 获取页面高度
+    if (wx.getStorageSync('systemInfo')) {
+      let sys = wx.getStorageSync('systemInfo')
+      this.setData({
+        windowHeight: sys.windowHeight
+      });
+    }
+  },
 })
