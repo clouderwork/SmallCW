@@ -16,7 +16,6 @@ Page({
   },
   onLoad: function (opt) {
     if (opt && opt.id) {
-      console.log(opt)
       this.setData({
         id: opt.id
       })
@@ -90,7 +89,6 @@ Page({
   // 获取服务方所在团队
   getTeam () {
     ywk.ajaxJson('/api/user/team', {user_id: this.data.id}).then((res) => {
-      console.log(JSON.stringify(res))
       if (res.error_code === 0) {
         this.setData({
           'teams': res.teams
