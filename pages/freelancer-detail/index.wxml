@@ -1,7 +1,5 @@
 <!--index.wxml-->
 <view class="user-container">
   <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" lower-threshold="50" bindscrolltolower="lower">
-
   </scroll-view>
-  <view bindtap="bindViewTap" data-fid="{{profile.id}}">去评价列表</view>
 </view>

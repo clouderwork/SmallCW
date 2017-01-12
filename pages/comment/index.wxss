@@ -6,3 +6,57 @@
   font-size: 30rpx;
   background-color: #F1F4F9;
 }
+.comment-item {
+  margin: 20rpx 0 0 23rpx
+}
+.user-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin: 0 20rpx 0 0;
+  float: left;
+}
+.user-info {
+  border-bottom: 2rpx solid #eee;
+  overflow: hidden;
+  line-height: 60rpx;
+  padding-right: 23rpx;
+}
+.user-name {
+  color: #777;
+  font-size: 26rpx;
+}
+.comment-time {
+  color: #cacaca;
+  font-size: 24rpx;
+  float: right;
+  line-height: 24rpx;
+  padding-top: 23rpx;
+}
+.project-name {
+  color: #cacaca;
+  font-size: 24rpx;
+  line-height: 30rpx;
+}
+.comment-score {
+  position: relative;
+  margin: 17rpx 0 0 0;
+  overflow: hidden;
+}
+.comment-num {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 180rp;
+}
+.comment-bg {
+  height: 25rpx;
+}
+.comment-content {
+  margin: 13rpx 0 12rpx;
+  color: #4b4b4b;
+  font-size: 26rpx;
+  line-height: 41rpx;
+  word-break: break-all;
+}

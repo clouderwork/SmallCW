@@ -1,7 +1,9 @@
 var ywk = require('../../utils/ywk')
 
 Page({
-  data: {},
+  data: {
+    pagenum: 1
+  },
   onLoad (e) {
     this.getComment(e.id)
   },
@@ -14,13 +16,27 @@ Page({
       });
     }
   },
+  filterTime (time) {
+    let date = new Date(time)
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    month = month > 9 ? month : '0' + month
+    let day = date.getDay()
+    day = day > 9 ? day : '0' + day
+    return year + '-' + month + '-' + day
+  },
   getComment (id) {
-    ywk.ajaxJson('/api/freelancers/evaluate', { user_id: id }, 'GET').then((res) => {
+    ywk.ajaxJson('/api/freelancers/evaluate', { user_id: id, pagenum: this.data.pagenum }, 'GET').then((res) => {
       console.log(res)
       if (res.error_code === 0) {
         this.setData({
-          comments: res.evaluates,
-          count: res.count
+          comments: res.evaluates.map((item) => {
+            item.create_at = this.filterTime(item.create_at)
+            item.num = ((item.cooper + item.exchange + item.punctual + item.quality + item.skill)/25) * 180 + 6
+            return item
+          }),
+          count: res.count,
+          pagenum: res.pagenum + 1
         })
       }
     }, (err) => {
