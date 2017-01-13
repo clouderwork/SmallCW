@@ -40,7 +40,7 @@ page {
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: center;
+  justify-content: space-around;
   vertical-align: middle;
 }
 

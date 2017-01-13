@@ -10,7 +10,10 @@
           <view class="main">
             <view class="main-top">
               <text class="name">{{team.name}}</text>
-              <view class="role">{{team.title}}</view>
+              <view>
+                <text class="role">{{team.title}}</text>
+                <view class="role-line"></view>
+              </view>
             </view>
             <text class="hour">￥{{team.hourly}}/小时</text>
           </view>
