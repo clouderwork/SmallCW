@@ -19,7 +19,7 @@
     <block wx:for="{{contracts}}" wx:key="id" wx:for-item="item">
       <view class="project-list">
         <text class="name">{{item.name}}</text>
-        <p class="score-star">
+        <p class="score-star" wx:if="{{item.aver_score}}">
           <span class="star-bg">
             <span class="star-width" style="width: {{item.allAva}}%"><image class="star" src="./images/icon-xing.png" /></span>
           </span>
