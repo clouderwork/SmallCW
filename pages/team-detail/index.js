@@ -9,6 +9,10 @@ Page({
     team_id: ''
   },
   onLoad (e) {
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading'
+    })
     this.getData(e.team_id)
     this.getPortfolio(e.team_id)
     this.getContract(e.team_id)
@@ -31,7 +35,9 @@ Page({
           'profile': profile
         })
       }
+      wx.hideToast()
     }, (err) => {
+      wx.hideToast()
       console.log(err)
     })
   },

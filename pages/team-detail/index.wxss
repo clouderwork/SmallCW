@@ -46,6 +46,7 @@
   font-size: 30rpx;
   border-top: 1px solid #f4f4f4;
   padding: 30rpx;
+  background-color: #fff;
 }
 .team-info-desp p {
   display: block;
@@ -90,6 +91,7 @@
 
 .team-card {
   border-top: 20rpx solid #f4f4f4;
+  background: #fff;
 }
 .team-card .team-icon {
   width: 32rpx;

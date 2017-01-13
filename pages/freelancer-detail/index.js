@@ -15,6 +15,10 @@ Page({
     descImg: './images/icon-down.png'
   },
   onLoad (opt) {
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading'
+    })
     if (opt && opt.id) {
       this.setData({
         id: opt.id
@@ -42,7 +46,9 @@ Page({
           'profile': res.profile
         })
       }
+      wx.hideToast()
     }, (err) => {
+      wx.hideToast()
       console.log(err);
     })
   },

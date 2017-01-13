@@ -62,7 +62,7 @@ page {
 
 .member-container .item .header {
   display: flex;
-  padding: 20rpx 30rpx 20rpx 40rpx;
+  padding: 20rpx 0 20rpx 40rpx;
   border-bottom: solid 1px #eef1f8;
 }
 
@@ -108,18 +108,17 @@ page {
   padding:6rpx 14rpx;
   border: 1px solid #c46c85;
   border-radius: 26rpx;
+  display: inline-block;
 }
 
-.member-container .role::after {
+.member-container .role-line {
   display:inline-block;
   content:'';
-  height:0;
+  height:1px;
   width:30rpx;
   border-bottom:1px solid #c46c85;
   vertical-align:middle;
-  position:absolute;
-  right:0;
-  top: 50rpx;
+  margin-top: 6rpx;
 }
 
 .member-container .detail {
