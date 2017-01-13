@@ -19,19 +19,16 @@ page {
   height: 80rpx;
   line-height: 80rpx;
   border-bottom: 1px solid #EFEFF4;
-  padding: 0 27rpx 0 36rpx;
+  padding: 0 27rpx 0 0;
   overflow: hidden;
 }
-.post-title:before {
+.post-title-before {
   width: 36rpx;
   height: 2rpx;
   overflow: hidden;
-  content: '';
   background-color: #D38297;
-  position: absolute;
-  left: -38rpx;
-  top: 50%;
-  margin: -1rpx 0 0 0;
+  float:left;
+  margin-top: 39rpx;
 }
 .post-title {
   color: #D38297;
@@ -40,10 +37,10 @@ page {
   padding: 0 25rpx;
   font-size: 26rpx;
   border: 1px solid #D38297;
-  position: relative;
   border-radius: 50rpx;
   display: inline-block;
-  box-sizing: border-box
+  box-sizing: border-box;
+  vertical-align: middle;
 }
 .project-price {
   color: #FF6700;
