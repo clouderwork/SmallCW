@@ -3,7 +3,7 @@ var util = require('../../utils/util')
 
 Page({
   data: {
-    team: {},
+    profile: {},
     portfolios: [],
     contracts: []
   },
@@ -23,7 +23,7 @@ Page({
           return item;
         })
         this.setData({
-          'team': profile
+          'profile': profile
         })
       }
     }, (err) => {
