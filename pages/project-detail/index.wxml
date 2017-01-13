@@ -1,0 +1,90 @@
+<!--index.wxml-->
+<view class="project-details">
+  <p class="job-name">{{job.name}}</p>
+  <block wx:if="{{job.paymethod=='hour'}}">
+    <p class="job-price">{{job.hourPrice}}<i>(按工时付费)</i></p>
+    <p class="work-time">工作时长:<span>{{job.duration}}，{{job.workload}}</span></p>
+  </block>
+  <block wx:if="{{job.paymethod=='fixed'}}">
+    <p class="job-price">预算{{job.budget}}元<i>(按固定价格付费)</i></p>
+  </block>
+</view>
+
+<view class="job-company">
+  <image src="{{job.team.avatar}}" class="avatar"/>
+  <div class="company-score">
+    <p>{{job.team.name}}<i>(需求方)</i></p>
+  </div>
+</view>
+
+
+<view class="job-info">
+  <ul>
+    <li wx:if="job.category">
+      <image class="icon" src="http://static.clouderwork.com/m-test/dist/img/type_icon.png"/>
+      <label>类型：</label>
+      {{job.category.name}}
+    </li>
+    <li>
+      <image class="icon" src="http://static.clouderwork.com/m-test/dist/img/people_icon.png"/>
+      <label>招聘：</label>
+      {{job.hires}}人
+    </li>
+    <li>
+      <image class="icon" src="http://static.clouderwork.com/m-test/dist/img/level_icon.png"/>
+      <label>级别：</label>
+      {{job.level}}
+    </li>
+    <li>
+      <image class="icon" src="http://static.clouderwork.com/m-test/dist/img/person_icon.png"/>
+      <label>报名人数：</label>{{job.proposal.proposal}}人
+    </li>
+    <li>
+      <image class="icon" src="http://static.clouderwork.com/m-test/dist/img/person_num_icon.png"/>
+      <label>面试人数：</label>{{job.proposal.interview}}人
+    </li>
+    <li>
+      <image class="icon" src="images/time@2x.png"/>
+      <label>发布时间：</label><time>{{job.publish_at}}</time>
+    </li>
+  </ul>
+</view>
+
+<view class="job-description">
+  <ul class="nav">
+    <li bindtap="changePanel" data-panel="base" class="{{panel==='base'?'active':''}}">项目描述</li>
+    <li bindtap="changePanel" data-panel="more" class="{{panel==='more'?'active':''}}">更多信息</li>
+  </ul>
+  <view wx:if="{{panel==='base'}}" class="description">
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <block wx:if="{{panel==='more'}}">
+    <ul class="panel-more">
+      <li wx:if="{{job.skills.length}}">
+        <p class="list-name">技能要求：</p>
+        <p class="skills"><span wx:for="{{job.skills}}" wx:key="*this" wx:for-item="skill">{{skill}}</span></p>
+      </li>
+      <li wx:if="{{job.stage}}">
+        <p class="list-name">项目所处阶段：</p>
+        <p class="text">{{job.stage}}</p>
+      </li>
+      <li wx:if="{{job.platforms.length}}">
+        <p class="list-name">应用平台：</p>
+        <p class="text"><span wx:for="{{job.platforms}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+      </li>
+      <li wx:if="{{job.api.length}}">
+        <p class="list-name">集成API：</p>
+        <p class="text"><span wx:for="{{job.api}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+      </li>
+      <li wx:if="{{job.frameworks.length}}">
+        <p class="list-name">开发框架：</p>
+        <p class="text"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+      </li>
+      <li wx:if="{{job.languages.length}}">
+        <p class="list-name">服务方需掌握的语言：</p>
+        <p class="text"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+      </li>
+    </ul>
+  </block>
+</view>

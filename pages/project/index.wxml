@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<import src="../../components/project-item.wxml"/>
+<view class="project-container">
+  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" bindscrolltolower="getData">
+    <block wx:for="{{projects}}" wx:key="project.id" wx:for-item="project">
+      <view class="project-item" bindtap="bindViewTap" data-jid="{{project.id}}">
+        <template is="projectItem" data="{{project}}" />
+      </view>
+    </block>
+  </scroll-view>
+</view>

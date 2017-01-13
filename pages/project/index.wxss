@@ -1,0 +1,98 @@
+/**index.wxss**/
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #EFEFF4;
+}
+.project-container {
+  margin: 0
+}
+.project-item {
+  margin-top: 30rpx;
+  background-color: #ffffff;
+  font-size: 30rpx;
+}
+.project-item:last-child {
+  margin-bottom: 48rpx;
+}
+.item-head {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #EFEFF4;
+  padding: 0 27rpx 0 0;
+  overflow: hidden;
+}
+.post-title-before {
+  width: 36rpx;
+  height: 2rpx;
+  overflow: hidden;
+  background-color: #D38297;
+  float:left;
+  margin-top: 39rpx;
+  overflow: hidden;
+}
+.post-title {
+  color: #D38297;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 25rpx;
+  font-size: 26rpx;
+  border: 1px solid #D38297;
+  border-radius: 50rpx;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.project-price {
+  color: #FF6700;
+  float: right;
+  height: 42rpx;
+  line-height: 42rpx;
+  overflow: hidden;
+  position: relative;
+  top: 24rpx;
+}
+.item-body {
+  color: #6E6E70;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  padding: 0 16rpx;
+}
+.project-title {
+  line-height: 72rpx;
+  color: #4B4B4B;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.project-desc {
+  line-height: 39rpx;
+  padding: 0 24rpx 0 6rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 84rpx;
+  word-break: break-all;
+}
+.project-foot {
+  padding: 15rpx 0;
+  line-height: 33rpx;
+  font-size: 24rpx;
+  color: #9E9E9E;
+  overflow: hidden;
+}
+.bid-num {
+  float: left;
+  line-height: 28rpx;
+  vertical-align: middle;
+}
+.public-time {
+   float: right;
+   margin-right: 10rpx;
+   line-height: 28rpx;
+   vertical-align: middle;
+}

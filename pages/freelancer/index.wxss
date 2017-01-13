@@ -1,0 +1,105 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #EFEFF4;
+}
+.user-container {
+  margin: 0
+}
+
+.list-box {
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx 16rpx;
+  position: relative;
+}
+
+.list-box .icon-tuan {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 68rpx;
+  height: 61rpx;
+}
+
+.list-box .top {
+  display: flex;
+}
+
+.list-box .top .avatar {
+  display: inline-block;
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+}
+
+.list-box .top .desc {
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  vertical-align: middle;
+}
+
+.list-box .top .desc .main {
+  flex: 1;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-box .top .desc .main .name {
+  font-family: PingFangSC-Medium;
+  color: #4B4B4B;
+  letter-spacing: 0;
+  display: block;
+  word-wrap: break-word;
+  word-break: break-all;
+  flex: 1;
+  line-height: 40rpx;
+}
+
+.list-box .top .desc .main .price {
+  font-family: PingFangSC-Medium;
+  color: #FF6700;
+  letter-spacing: 0;
+  line-height: 40rpx;
+}
+
+.list-box .top .desc .title {
+  flex: 1;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #6E6E70;
+  letter-spacing: 0;
+}
+
+.list-box .overview {
+  margin-top: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #6E6E70;
+  letter-spacing: 0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  max-height:84rpx;
+  word-break:break-all;
+}
+
+.list-box .skills .skill {
+  display: inline-block;
+  color: #6e6e70;
+  font-size: 24rpx;
+  line-height: 33rpx;
+  background: #eef1f8;
+  padding: 11rpx 15rpx 8rpx 18rpx;
+  border-radius: 60rpx;
+  margin: 20rpx 20rpx 0 0;
+}

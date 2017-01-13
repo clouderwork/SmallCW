@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/project/index",
+    "pages/freelancer/index",
+    "pages/freelancer-detail/index",
+    "pages/project-detail/index",
+    "pages/team-detail/index",
+    "pages/team-member/index",
+    "pages/comment/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ff6700",
+    "navigationBarTitleText": "云沃客",
+    "navigationBarTextStyle": "#ffffff",
+    "backgroundColor": "#EFEFF4"
+  },
+  "tabBar": {
+    "color": "#6E6E70",
+    "selectedColor": "#FF6700",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "list": [{
+      "pagePath": "pages/project/index",
+      "iconPath": "images/icon_project.png",
+      "selectedIconPath": "images/icon_project_selected.png",
+      "text": "找项目"
+    }, {
+      "pagePath": "pages/freelancer/index",
+      "iconPath": "images/icon_people.png",
+      "selectedIconPath": "images/icon_people_selected.png",
+      "text": "找人才"
+    }]
+  }
+}

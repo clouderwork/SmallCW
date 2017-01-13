@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="member-container">
+    <block wx:for="{{teams}}" wx:key="user_id" wx:for-item="team">
+      <view class="title-line">
+        {{team.titleStr}}
+      </view>
+      <view class="item">
+        <view class="header">
+          <image class="avatar" src="{{team.avatar}}"/>
+          <view class="main">
+            <view class="main-top">
+              <text class="name">{{team.name}}</text>
+              <view>
+                <text class="role">{{team.title}}</text>
+                <view class="role-line"></view>
+              </view>
+            </view>
+            <text class="hour">￥{{team.hourly}}/小时</text>
+          </view>
+        </view>
+        <view class="detail">
+          <text class="desc">{{team.overview}}</text>
+          <block wx:for="{{team.skills}}" wx:key="*this" wx:for-item="skill">
+            <view class="skill">{{skill}}</view>
+          </block>
+        </view>
+      </view>
+    </block>
+</view>

@@ -1,0 +1,16 @@
+<template name="projectItem">
+  <view class="item-head">
+    <view class="post-title-before"></view>
+    <p class="post-title">{{project.category}}</p>
+    <view class="project-price" wx:if="{{project.paymethod === 'fixed'}}">{{project.budget}}元</view>
+    <view class="project-price" wx:else>按小时付费</view>
+  </view>
+  <view class="item-body">
+    <view class="project-title">{{project.name}}</view>
+    <view class="project-desc">{{project.description}}</view>
+    <view class="project-foot">
+      <view class="bid-num"><image style="width: 9px; height: 12px; vertical-align: middle; margin: 0 8px 0 2px;" src="image/icon_bid.png"></image><text>已有{{project.applicants}}人投标</text></view>
+      <view class="public-time"><image style="width: 10px; height: 10px; vertical-align: middle; margin: 0 4.5px 0 0;" src="image/icon_time.png"></image><text>发布于{{project.publish_at}}</text></view>
+    </view>
+  </view>
+</template>

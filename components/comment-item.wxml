@@ -1,0 +1,15 @@
+<template name="commentItem">
+  <view class="user-avatar"><image style="width: 60rpx; height: 60rpx; border-radius: 50%;" src="{{comment.client.avatar}}"></image></view>
+  <view class="user-info">
+    <view class="user-name">
+      <text>{{comment.client.name}}</text>
+      <view class="comment-time">{{comment.create_at}}</view>
+    </view>
+    <view class="project-name">项目：{{comment.job.name}}</view>
+    <view class="comment-score">
+      <view class="comment-bg"><image wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="*this" style="width: 26rpx; height: 25rpx; margin: 0 10px 0 0;float: left" src="./images/icon_star.png"></image></view>
+      <view class="comment-num"><image wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="*this" style="width: 26rpx; height: 25rpx; margin: 0 10px 0 0; float: left" src="./images/icon_light_star.png"></image></view>
+    </view>
+    <view class="comment-content">{{comment.content}}</view>
+  </view>
+</template>
