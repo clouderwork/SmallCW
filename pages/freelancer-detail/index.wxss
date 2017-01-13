@@ -149,14 +149,14 @@ page {
   display: inline-block;
   width: 35rpx;
   height: 38rpx;
-  vertical-align: bottom;
+  vertical-align: middle;
   margin-left: 43rpx;
 }
 
 .row-item .title {
   margin-left: 20rpx;
   font-size: 32rpx;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
 .row-item .detail {

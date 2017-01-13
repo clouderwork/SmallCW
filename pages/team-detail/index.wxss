@@ -3,10 +3,10 @@
 }
 .team-info .avatar {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 160rpx;
+  height: 160rpx;
   margin: 0 auto;
-  border-radius: 80px;
+  border-radius: 160rpx;
 }
 
 .team-info .nickname {
@@ -29,8 +29,8 @@
   color: #9e9e9e;
 }
 .team-info .icon {
-  width: 18px;
-  height: 16px;
+  width: 36rpx;
+  height: 36rpx;
 }
 
 .team-slogan {
@@ -67,15 +67,15 @@
 }
 .team-info-list {
   border-top: 1px solid #f4f4f4;
-  padding: 15px;
-  font-size: 15px;
+  padding: 30rpx;
+  font-size: 30rpx;
   display: flex;
-  line-height: 20px;
+  line-height: 40rpx;
 }
 
 .team-info-list label {
-  width: 63px;
-  margin-right: 12px;
+  width: 126rpx;
+  margin-right: 24rpx;
   color: #aaaaaa;
   white-space: nowrap;
   display: block;
@@ -83,7 +83,7 @@
 
 .team-info-list span {
   display: block;
-  font-size: 15px;
+  font-size: 30rpx;
   flex: 1;
   word-break: break-all;
   word-wrap: break-word;
@@ -112,10 +112,10 @@
   top:4rpx;
 }
 .team-card .body {
-  height: 50px;
-  line-height: 50px;
-  padding-left: 16px;
-  font-size: 15px;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 32rpx;
+  font-size: 30rpx;
 }
 .team-member {
   padding: 32rpx 30rpx;
@@ -144,7 +144,7 @@
 }
 .team-card label {
   color: #aaaaaa;
-  padding-right: 5px;
+  padding-right: 10rpx;
 }
 .team-card .skill {
   height: auto;
@@ -153,7 +153,7 @@
 }
 .skill span {
   display: inline-block;
-  padding: 0 10px;
+  padding: 0 20rpx;
   height: 36rpx;
   margin-right: 19rpx;
   margin-bottom: 19rpx;
@@ -233,36 +233,37 @@
 }
 
 .icon-address {
-  width: 13px;
-  height: 16px;
-  margin-right: 10px;
-  vertical-align: -1px;
+  width: 26rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+  vertical-align: -2rpx;
 }
 
 .icon-time {
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
-  vertical-align: -1px;
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+  vertical-align: -2rpx;
 }
 
 .team-owner {
   color: #4b4b4b;
-  font-size: 15px;
-  padding: 13px 15px;
+  font-size: 30rpx;
+  padding: 26rpx 30rpx;
 }
 
 .address {
-  margin-right: 20px;
+  margin-right: 40rpx;
 }
 .team-owner p {
   display: block;
-  line-height: 28px;
+  line-height: 56rpx;
 }
 .project-list {
   color: #4b4b4b;
-  font-size: 15px;
-  padding: 13px 15px;
+  font-size: 30rpx;
+  padding: 26rpx 30rpx;
+  border-bottom: 1px solid #f4f4f4;
 }
 
 .project-list .name {
@@ -274,8 +275,8 @@
 
 .project-list .info {
   display: flex;
-  padding: 8px 0;
-  font-size: 13px;
+  padding: 16rpx 0;
+  font-size: 26rpx;
   color: #777;
 }
 
@@ -287,18 +288,18 @@
 }
 
 .icon-time-sm {
-  width: 13px;
-  height: 12px;
-  margin-right: 10px;
-  vertical-align: -2px;
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+  vertical-align: -4rpx;
 }
 
 .project-list .description {
   word-break: break-all;
-  font-size: 13px;
+  font-size: 26rpx;
   color: #6e6e70;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 16rpx;
 }
 
 .project-list .description .item-skill {

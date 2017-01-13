@@ -60,7 +60,7 @@ Page({
   },
   onShareAppMessage () {
     return {
-      title: '云沃克',
+      title: '云沃客',
       desc: '人才列表',
       path: 'pages/freelancer/index'
     }

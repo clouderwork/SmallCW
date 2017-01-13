@@ -20,7 +20,11 @@ Page({
     if (this.data.count !== 0 && this.data.count <= (this.data.pagenum - 1) * 10) {
       return
     }
-    ywk.ajaxJson('/api/jobs/search', {pagenum: this.data.pagenum}, 'POST').then((res) => {
+    let data = {
+      pagenum: this.data.pagenum,
+      sortord: '{"create_at":"desc"}'
+    }
+    ywk.ajaxJson('/api/jobs/search', data, 'POST').then((res) => {
       wx.hideToast()
       if (res.error_code === 0) {
         this.setData({
@@ -70,7 +74,7 @@ Page({
   },
   onShareAppMessage () {
     return {
-      title: '云沃克',
+      title: '云沃客',
       desc: '项目列表',
       path: 'pages/project/index'
     }

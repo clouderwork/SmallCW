@@ -51,20 +51,25 @@ let format = {
     }
   },
   getStage (val) {
-    let str = '有设计'
-    switch (val) {
-    case 'design':
+    let str = ''
+    if (val) {
       str = '有设计'
-      break
-    case 'introduction':
-      str = '有详细的需求说明'
-      break
-    case 'idea':
-      str = '只有一个想法'
-      break
-    default:
-      str = '啥也没有'
-      break
+      switch (val) {
+      case 'design':
+        str = '有设计'
+        break
+      case 'introduction':
+        str = '有详细的需求说明'
+        break
+      case 'idea':
+        str = '只有一个想法'
+        break
+      default:
+        str = '啥也没有'
+        break
+      }
+    } else {
+      str = ''
     }
     return str
   }
@@ -88,6 +93,24 @@ Page({
       job.workload = format.getHour(job.workload)
       job.level = format.getLevel(job.level)
       job.stage = format.getStage(job.stage)
+      job.api = job.api.map(val => {
+        let str = '社交API'
+        switch (val) {
+        case 'social':
+          str = '社交API'
+          break
+        case 'pay':
+          str = '支付API'
+          break
+        case 'storage':
+          str = '存储API'
+          break
+        default:
+          str = '其他'
+          break
+        }
+        return str
+      })
       this.setData({
         job: job
       })
@@ -106,7 +129,7 @@ Page({
   },
   onShareAppMessage () {
     return {
-      title: '云沃克',
+      title: '云沃客',
       desc: this.data.job.name,
       path: 'pages/project-detail/index?id=' + this.data.id
     }

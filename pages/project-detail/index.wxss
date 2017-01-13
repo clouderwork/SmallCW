@@ -142,7 +142,6 @@
   font-size: 30rpx;
   color: #4b4b4b;
 }
-
 .list-name {
   display: block;
   color: #aaaaaa;
@@ -170,4 +169,11 @@
   line-height: 50rpx;
   font-size: 30rpx;
   color: #4b4b4b;
+}
+
+.panel-more .text span:after {
+  content: '，'
+}
+.panel-more .text span:last-child:after {
+  content: ''
 }
