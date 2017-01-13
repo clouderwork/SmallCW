@@ -71,19 +71,19 @@
       </li>
       <li wx:if="{{job.platforms.length}}">
         <p class="list-name">应用平台：</p>
-        <p class="text"><span wx:for="{{job.platforms}}" wx:key="*this" wx:for-item="item">{{item}}，</span></p>
+        <p class="text"><span wx:for="{{job.platforms}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
       <li wx:if="{{job.api.length}}">
         <p class="list-name">集成API：</p>
-        <p class="text"><span wx:for="{{job.api}}" wx:key="*this" wx:for-item="item">{{item}}，</span></p>
+        <p class="text"><span wx:for="{{job.api}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
       <li wx:if="{{job.frameworks.length}}">
         <p class="list-name">开发框架：</p>
-        <p class="text"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}，</span></p>
+        <p class="text"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
       <li wx:if="{{job.languages.length}}">
         <p class="list-name">服务方需掌握的语言：</p>
-        <p class="text"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}，</span></p>
+        <p class="text"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
     </ul>
   </block>

@@ -170,3 +170,10 @@
   font-size: 30rpx;
   color: #4b4b4b;
 }
+
+.panel-more .text span:after {
+  content: '，'
+}
+.panel-more .text span:last-child:after {
+  content: ''
+}
