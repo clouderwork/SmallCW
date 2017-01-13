@@ -75,7 +75,7 @@ Page({
   },
   onShareAppMessage () {
     return {
-      title: '云沃克',
+      title: '云沃客',
       desc: '项目列表',
       path: 'pages/project/index'
     }

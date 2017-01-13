@@ -92,7 +92,7 @@ Page({
   },
   onShareAppMessage () {
     return {
-      title: '云沃克',
+      title: '云沃客',
       desc: this.data.profile.name,
       path: 'pages/project-detail/index?team_id=' + this.data.id
     }

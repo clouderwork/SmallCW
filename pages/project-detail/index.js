@@ -129,7 +129,7 @@ Page({
   },
   onShareAppMessage () {
     return {
-      title: '云沃克',
+      title: '云沃客',
       desc: this.data.job.name,
       path: 'pages/project-detail/index?id=' + this.data.id
     }
