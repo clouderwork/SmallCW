@@ -15,8 +15,8 @@ Page({
   getData (id) {
     ywk.ajaxJson('api/team/profile', {team_id: id}).then((res) => {
       if (res.error_code === 0) {
-        let profile = res.profile;
-        profile.levelStr = util.getLevel(profile.level);
+        let profile = res.profile
+        profile.levelStr = util.getLevel(profile.level)
         profile.englishStr = util.getLanguagesLevel(profile.english)
         profile.languages = profile.languages.map((item) => {
           item.langStr = util.getLanguagesLevel(item.level)
@@ -27,7 +27,7 @@ Page({
         })
       }
     }, (err) => {
-      console.log(err);
+      console.log(err)
     })
   },
   // 获取成功案例
@@ -40,7 +40,7 @@ Page({
         })
       }
     }, (err) => {
-      console.log(err);
+      console.log(err)
     })
   },
   // 获取工作历史及反馈
@@ -48,15 +48,15 @@ Page({
     ywk.ajaxJson('api/freelancers/contract', {team_id: id, identify: 't'}).then((res) => {
       if (res.error_code === 0) {
         let contracts = res.contracts.map((item) => {
-          item.paymethodStr = item.paymethod === 'fixed' ? '固定价格工作' : '小时制工作'；
-          item.time = item.start_at.subStr(0,7).repalce('-','/') + '-' + item.end_at.subStr(0,7).repalce('-','/') 
-        });
+          item.paymethodStr = item.paymethod === 'fixed' ? '固定价格工作' : '小时制工作'
+          item.time = item.start_at.subStr(0,7).repalce('-','/') + '-' + item.end_at.subStr(0,7).repalce('-','/')
+        })
         this.setData({
           'contracts': res.contracts
         })
       }
     }, (err) => {
-      console.log(err);
+      console.log(err)
     })
   }
 })

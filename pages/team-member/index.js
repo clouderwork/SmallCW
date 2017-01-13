@@ -6,8 +6,8 @@ Page({
     teams: [],
     windowHeight: 100,
     team_id: ''
-  }
-  onLoad: function (opt) {
+  },
+  onLoad (opt) {
     wx.showToast({
       title: '加载中...',
       icon: 'loading'
@@ -16,7 +16,7 @@ Page({
       this.setData({
         team_id: opt.team_id
       })
-      this.getData();
+      this.getData()
     }
   },
   onShow () {

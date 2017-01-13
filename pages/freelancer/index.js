@@ -15,7 +15,7 @@ Page({
   goDetail: function(event) {
     let id = event.currentTarget.dataset.id
     let ftype = event.currentTarget.dataset.ftype
-    let url = ftype === 't' ? `../pages/team-detail/index?team_id=${id}` : `../freelancer-detail/index?id=${id}`
+    let url = ftype === 't' ? `../team-detail/index?team_id=${id}` : `../freelancer-detail/index?id=${id}`
     wx.navigateTo({
       url: url
     })
