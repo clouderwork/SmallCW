@@ -1,4 +1,4 @@
-var Promise = require('./bluebird')
+var Promise = require('./es6-promise').Promise;
 
 /** ajax请求数据接口
  * [ajax请求数据接口]
