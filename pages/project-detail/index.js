@@ -80,7 +80,6 @@ Page({
   },
   getDetail (id) {
     ywk.ajaxJson('/api/jobs', { job_id: id }, 'GET').then((res) => {
-      console.log(res)
       let job = res.job
       job.hourPrice = '< 100元/时'
       if (job.level === 'middle') { job.hourPrice = '100 - 300元/时' }
@@ -101,7 +100,6 @@ Page({
     })
   },
   changePanel (e) {
-    console.log(e.currentTarget.dataset.panel)
     this.setData({
       panel: e.currentTarget.dataset.panel
     })
