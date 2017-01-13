@@ -263,6 +263,7 @@
   color: #4b4b4b;
   font-size: 15px;
   padding: 13px 15px;
+  border-bottom: 1px solid #f4f4f4;
 }
 
 .project-list .name {
