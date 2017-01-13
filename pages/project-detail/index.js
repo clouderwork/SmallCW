@@ -93,6 +93,24 @@ Page({
       job.workload = format.getHour(job.workload)
       job.level = format.getLevel(job.level)
       job.stage = format.getStage(job.stage)
+      job.api = job.api.map(val => {
+        let str = '社交API'
+        switch (val) {
+        case 'social':
+          str = '社交API'
+          break
+        case 'pay':
+          str = '支付API'
+          break
+        case 'storage':
+          str = '存储API'
+          break
+        default:
+          str = '其他'
+          break
+        }
+        return str
+      })
       this.setData({
         job: job
       })

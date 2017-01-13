@@ -68,7 +68,7 @@ page {
   text-overflow: ellipsis;
 }
 .project-desc {
-  line-height: 42rpx;
+  line-height: 39rpx;
   padding: 0 24rpx 0 6rpx;
   overflow: hidden;
   text-overflow: ellipsis;
