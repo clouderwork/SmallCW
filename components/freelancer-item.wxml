@@ -1,5 +1,5 @@
 <template name="freelancerItem">
-  <view class="list-box" data-id="{{id}}" bindtap="goDetail">
+  <view class="list-box" data-id="{{id}}" data-ftype="{{ftype}}" bindtap="goDetail">
     <view class="top">
       <image wx:if="{{ftype === 'f'}}" class="avatar" src="{{avatar}}" />
       <image wx:if="{{ftype === 't'}}" class="avatar" src="{{logo}}" />

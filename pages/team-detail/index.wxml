@@ -1,59 +1,81 @@
 <view class="team-info">
-  <image class="avatar" src="http://static.clouderwork.com/static/images/default-logo05.png" />
-  <text class="nickname">响亮亮团队</text>
+  <image class="avatar" src="{{profile.avatar}}" />
+  <text class="nickname">{{profile.name}}</text>
   <p class="team-hourly-money">
     <image class="icon" src="http://static.clouderwork.com/m-test/dist/img/hourly_icon.png" />
-    100元~222元/小时
+    {{profile.hourly_min}}元~{{profile.hourly_max}}元/小时
   </p>
-  <text class="team-slogan">啊啊啊</text>
+  <text class="team-slogan">{{profile.slogan}}</text>
 </view>
 <view class="team-info-list">
   <label>团队简介</label>
-  <span>饿饿饿啊啊啊阿斯顿发阿斯顿发阿斯顿发阿斯顿发</span>
+  <span>{{profile.overview}}</span>
 </view>
 
 <view class="team-info-list">
   <label>经验水平</label>
-  <span>入门级</span>
+  <span>{{profile.levelStr}}</span>
 </view>
 
 <view class="team-card">
   <text class="title">语言水平</text>
   <view class="body">
     <label>英语:</label>
-    <span>可以对话</span>
+    <span>{{profile.englishStr}}</span>
   </view>
+  <block wx:for="{{profile.languages}}" wx:key="id" wx:for-item="language">
+    <view class="body">
+      <label>{{language.name}}:</label>
+      <span>{{language.langStr}}</span>
+    </view>
+  </block>
 </view>
 
 <view class="team-card">
   <text class="title">擅长技能</text>
   <view class="body skill">
-    <span>Eclipse PDE/RCP</span>
-    <span>dojo</span>
-    <span>CSS/CSS3</span>
+    <block wx:for="{{profile.skills}}" wx:key="id" wx:for-item="skill">
+      <span>{{skill}}</span>
+    </block>
   </view>
 </view>
 
 <view class="team-card">
-  <p class="title">团队成员<span>3人<image class="icon-arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAABhklEQVQ4y53TL2iVYRTH8c97BYPBIqhT6/y3ahNk1yKDY5tFBK/FMtYFq2lNQTSIhjGwaTggCCpOs83m/hstFoMwNewMrrLrfd897YHz/Z7f85znaTJzEs8wiIgvOq4eHuIiljNzaj+C6/iECbzPzAudBBHxDZfxEUfwJjMvdUkgIr7jCl7jMF5l5kxrQUl+4Cpe4BBeZuZsa0FJfuIaFnEQzzNz0FpQkm3cxCMcwNPMnG8tKMlvzGEBDR5k5t29aptxZyzwXm0XcKcatBOUZB73q/4x5iLiV2tBSQZ4UveyiFsRsd1aUJJZLNmZ0GfMdBKU5EYlgOWuCY7iLabwFdO9fcJbmI6IlbZTOFbweWyiHxGrtHsHI+Gxgsw8XvA5bBS8NlzTjIHf4ewomBF/ITMnhuD1urC1vWqb/8BnCu5HxPqopL1/4BND8Fp1Hgn/lWAIPl1wPyI2xk2pV/DJIXi1Oo+FocnMU3ZGNVlwPyI228C7CZYKXqnOreFdwW18KHirCwx/AGsomIc+KotJAAAAAElFTkSuQmCC" /></span></p>
-  <view class="team-owner">
-    <p><label>团队创建人：</label>头痛</p>
-    <p><span class="address"><image class="icon-address" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAgCAYAAAAMq2gFAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAACiElEQVRIx63WT6hVVRTH8c89CIVkAw0DIwi2y4FQmCSCRNAgCoTkhaAUlSSNatA/wSJCg4YNosIgbRTUoJJyYEkOCokySB0kwX6HQBOK1+BJmIGIDc65cH3es++5Pn+zs3/r7O9e++yz1h4oqM55gE3Ygo1YhTtwCefwB47h8xTxa2muQQEyg724Wz99hzdSxPe9QHXOK3CgzWJaXcGHeDFF/NsJqnO+C99gzXVARnUcm1PE39eA2kx+xOpFQob6GQ+miAtQjRgf9YT8g4s94jZg3/CharN5GI8WXjqL57AyRdyaIpYiYU8L7tKTdc6PwKA9wr9gXUfwUWxNEfPjzDrn1fi6BY/TiRSxflDnvEHz8cZpFveliPOlPWphJ3BLR8imasKWvT4JAiliFu8WQmYqPNRh/oevJkFG9FnBu7/SvbdnUkSf0zXU6YIXFZZ3mDdNAYGbC97yCvMd5p11ziunAK0veBcqnOowK+ycAvRswTtV4ctCwKt1zhOrd53zFmwrhHxR4WPdJWUZjtQ5P1CAPI1Pdbeci/hk0Aa/jZcKK7qCQ5ojPIslmj71lKYhlvR+inh+CLoNv2HFpG2aUvNYkyLmKmj7xu4bDIHXUsQcV7eJA5rieKN0GB8MHxZ22Ns1lXzVIiFzuCdF/DkcGM1IivgLj+nX2Lp0GY+PQq4BtbCfNEf+evVyivh24WDVEfyC7opR0v4U8c44YyyovSrN6K6D45TbBY5VV0ZSxO94RvOzTtJl7BjeeKYCtbCDeK8H6M0U8UMpoOoxyS6cLPhH8NakSQaTAqDOea3mQrh0gXUO9w7//sVmJEWcxisLhi9hex9Ib1AL26e5MJ7XXCifSBHH+r7/PyiwrnygSnL1AAAAAElFTkSuQmCC" />河北</span>
-    <time><image class="icon-time" src="http://static.clouderwork.com/m-test/dist/img/time_icon.png" />2015-09</time>
-    </p>
-  </view>
+  <p class="title">团队成员<span>{{profile.total_num}}人<image class="icon-arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAABhklEQVQ4y53TL2iVYRTH8c97BYPBIqhT6/y3ahNk1yKDY5tFBK/FMtYFq2lNQTSIhjGwaTggCCpOs83m/hstFoMwNewMrrLrfd897YHz/Z7f85znaTJzEs8wiIgvOq4eHuIiljNzaj+C6/iECbzPzAudBBHxDZfxEUfwJjMvdUkgIr7jCl7jMF5l5kxrQUl+4Cpe4BBeZuZsa0FJfuIaFnEQzzNz0FpQkm3cxCMcwNPMnG8tKMlvzGEBDR5k5t29aptxZyzwXm0XcKcatBOUZB73q/4x5iLiV2tBSQZ4UveyiFsRsd1aUJJZLNmZ0GfMdBKU5EYlgOWuCY7iLabwFdO9fcJbmI6IlbZTOFbweWyiHxGrtHsHI+Gxgsw8XvA5bBS8NlzTjIHf4ewomBF/ITMnhuD1urC1vWqb/8BnCu5HxPqopL1/4BND8Fp1Hgn/lWAIPl1wPyI2xk2pV/DJIXi1Oo+FocnMU3ZGNVlwPyI228C7CZYKXqnOreFdwW18KHirCwx/AGsomIc+KotJAAAAAElFTkSuQmCC" /></span></p>
 </view>
 
-<view class="team-card">
+<view class="team-card" >
+  <text class="title">工作历时及反馈</text>
+  <block wx:for="{{contracts}}" wx:key="id" wx:for-item="item">
+    <view class="project-list">
+      <text class="name">{{item.name}}</text>
+      <p class="score-star">
+        <span class="star-bg">
+          <image class="star" src="./images/icon-xing.png" />
+        </span>
+      </p>
+      <p class="price-info">
+        <span class="price">¥ {{item.total_amount}}</span> ({{item.paymethodStr}})
+        <span class="time">
+          合同期间<time>{{item.time}}</time>
+        </span>
+      </p>
+    </view>
+  </block>
+</view>
+
+<view class="team-card" wx:if="{{portfolios.length > 0}}">
   <text class="title">成功案例</text>
-  <view class="project-list">
-    <text class="name">啊啊啊啊啊啊啊</text>
-    <p class="info">
-      <span>类型：产品设计</span>
-      <time><image class="icon-time-sm" src="http://static.clouderwork.com/m-test/dist/img/time_icon.png" />2014-06</time>
-    </p>
-    <p class="description">
-      <span>项目简介：</span> 阿斯顿发阿斯顿发阿斯顿发阿斯顿发阿斯顿发
-    </p>
-  </view>
+  <block wx:for="{{portfolios}}" wx:key="id" wx:for-item="item">
+    <view class="project-list">
+      <text class="name">{{item.name}}</text>
+      <p class="info">
+        <span>类型：{{item.category.name}}</span>
+        <time><image class="icon-time-sm" src="http://static.clouderwork.com/m-test/dist/img/time_icon.png" />{{item.end_at}}</time>
+      </p>
+      <p class="description">
+        <span>项目简介：</span> {{item.description}}
+      </p>
+    </view>
+  </block>
 </view>

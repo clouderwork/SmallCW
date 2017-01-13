@@ -80,6 +80,7 @@ page {
   overflow:hidden;
   display:inline-block;
   position:relative;
+  padding:0 10rpx;
   top:3rpx;
 }
 

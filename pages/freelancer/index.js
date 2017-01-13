@@ -14,8 +14,10 @@ Page({
   //事件处理函数
   goDetail: function(event) {
     let id = event.currentTarget.dataset.id
+    let ftype = event.currentTarget.dataset.ftype
+    let url = ftype === 't' ? `../pages/team-detail/index?team_id=${id}` : `../freelancer-detail/index?id=${id}`
     wx.navigateTo({
-      url: '../freelancer-detail/index?id=' + id
+      url: url
     })
   },
   onLoad: function () {
