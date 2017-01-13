@@ -38,9 +38,11 @@ Page({
   },
   lower (e) {
     if (this.data.search.pagenum * 10 < this.data.count) {
-      let search = Object.assign({}, this.data.search, {pagenum: ++this.data.search.pagenum})
       this.setData({
-        'search': search
+        'search': {
+          pagenum: ++this.data.search.pagenum,
+          ftype: this.data.search.ftype
+        }
       })
       this.getData()
     }
