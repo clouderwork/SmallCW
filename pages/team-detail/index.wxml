@@ -28,6 +28,7 @@
           <span class="price">¥ {{item.total_amount}}</span> ({{item.paymethodStr}})
         </p>
         <view class="price-info">
+          <text class="use-time" wx:if="{{item.all_time > 0}}">工作用时 {{item.all_time}}小时</text>
           <span class="time">
             合同周期<time>{{item.time}}</time>
           </span>
