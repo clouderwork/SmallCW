@@ -123,7 +123,7 @@ page {
   display: block;
   font-size: 26rpx;
   color: #4b4b4b;
-  margin-top: 30rpx;
+  margin-top: 25rpx;
   text-align: left;
   line-height: 1.4;
   cursor: pointer;
