@@ -2,42 +2,15 @@
   <image class="avatar" src="{{profile.avatar}}" />
   <text class="nickname">{{profile.name}}</text>
   <p class="team-hourly-money">
-    <image class="icon" src="http://static.clouderwork.com/m-test/dist/img/hourly_icon.png" />
-    {{profile.hourly_min}}元~{{profile.hourly_max}}元/小时
+    <span class="hourly">时薪</span>￥{{profile.hourly_min}}~{{profile.hourly_max}}/小时
   </p>
   <text class="team-slogan">{{profile.slogan}}</text>
 </view>
-<view class="team-info-list">
-  <label>团队简介</label>
-  <span>{{profile.overview}}</span>
-</view>
 
-<view class="team-info-list">
-  <label>经验水平</label>
-  <span>{{profile.levelStr}}</span>
-</view>
-
-<view class="team-card">
-  <text class="title">语言水平</text>
-  <view class="body">
-    <label>英语:</label>
-    <span>{{profile.englishStr}}</span>
-  </view>
-  <block wx:for="{{profile.languages}}" wx:key="id" wx:for-item="language">
-    <view class="body">
-      <label>{{language.name}}:</label>
-      <span>{{language.langStr}}</span>
-    </view>
-  </block>
-</view>
-
-<view class="team-card">
-  <text class="title">擅长技能</text>
-  <view class="body skill">
-    <block wx:for="{{profile.skills}}" wx:key="id" wx:for-item="skill">
-      <span>{{skill}}</span>
-    </block>
-  </view>
+<view class="team-info-desp">
+  <p><image class="team-icon" src="./images/icon_desc.png" />团队简介</p>
+  <view class="desp-time">成立于{{profile.create_at}}</view>
+  <view class="desp-content">{{profile.overview}}</view>
 </view>
 
 <view class="team-card" bindtap="goMember">
@@ -45,7 +18,7 @@
 </view>
 
 <view class="team-card">
-  <text class="title">工作历史及反馈</text>
+  <p class="title"><image class="team-icon" src="./images/icon_fankui.png" /><text class="word">工作历史及反馈</text></p>
   <view wx:if="{{contracts.length>0}}">
     <block wx:for="{{contracts}}" wx:key="id" wx:for-item="item">
       <view class="project-list">
@@ -67,8 +40,23 @@
   <view class="no-works" wx:else>暂时还没有工作历史及反馈</view>
 </view>
 
+<view class="team-member">
+  <image class="team-icon" src="./images/icon_team.png" />
+  <text class="word">团队成员</text>
+  <span>{{profile.total_num}}人<image class="icon-arrow" src="./images/icon_arrow.png" /></span>
+</view>
+
+<view class="team-card">
+  <p class="title"><image class="team-icon" src="./images/icon_skill.png" /><text class="word">擅长技能</text></p>
+  <view class="body skill">
+    <block wx:for="{{profile.skills}}" wx:key="id" wx:for-item="skill">
+      <span>{{skill}}</span>
+    </block>
+  </view>
+</view>
+
 <view class="team-card" wx:if="{{portfolios.length > 0}}">
-  <text class="title">成功案例</text>
+  <p class="title"><image class="team-icon cases-icon" src="./images/icon_cases.png" /><text class="word">成功案例</text></p>
   <block wx:for="{{portfolios}}" wx:key="id" wx:for-item="item">
     <view class="project-list">
       <text class="name">{{item.name}}</text>
@@ -79,6 +67,21 @@
       <p class="description">
         <span>项目简介：</span> {{item.description}}
       </p>
+    </view>
+  </block>
+</view>
+
+
+<view class="team-card">
+  <p class="title"><image class="team-icon" src="./images/icon_yuyan.png" /><text class="word">语言水平</text></p>
+  <view class="body">
+    <label>英语:</label>
+    <span>{{profile.englishStr}}</span>
+  </view>
+  <block wx:for="{{profile.languages}}" wx:key="id" wx:for-item="language">
+    <view class="body">
+      <label>{{language.name}}:</label>
+      <span>{{language.langStr}}</span>
     </view>
   </block>
 </view>
