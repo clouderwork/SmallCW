@@ -53,6 +53,7 @@
   box-sizing: border-box;
   align-items: center;
   -webkit-box-align: center;
+  background-color: #fff;
 }
 
 .job-company .avatar {
@@ -71,6 +72,7 @@
   color: #4b4b4b;
   font-size: 30rpx;
   line-height: 1.7;
+  background-color: #fff;
 }
 .job-info ul{
   display: block;
@@ -91,6 +93,7 @@
 
 .job-description {
   border-top: 20rpx solid #f4f4f4;
+  background-color: #fff;
 }
 
 .job-info .icon {
@@ -129,6 +132,7 @@
   font-size: 28rpx;
   color: #4b4b4b;
   line-height: 1.5;
+  background-color: #fff;
 }
 .panel-more {
   display: block;
