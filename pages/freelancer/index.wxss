@@ -97,8 +97,9 @@ page {
   display: inline-block;
   color: #6e6e70;
   font-size: 24rpx;
+  line-height: 33rpx;
   background: #eef1f8;
-  padding: 15rpx 25rpx;
-  border-radius: 20rpx;
+  padding: 11rpx 15rpx 8rpx 18rpx;
+  border-radius: 60rpx;
   margin: 20rpx 20rpx 0 0;
 }

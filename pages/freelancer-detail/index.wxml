@@ -4,7 +4,6 @@
     <view class="workload"></view>
     <text wx:if="{{profile.workload > 0}}" class="workload-txt">{{profile.canWork}}</text>
     <image class="avatar" src="{{profile.avatar}}" />
-    <image wx:if="{{profile.vip_expire > 0}}" class="vip" src="./images/icon-vip.png" />
     <text class="nickname">{{profile.nickname}}</text>
     <view class="info">
       <text class="hour">时薪：¥{{profile.hourly}}/小时</text>
@@ -25,7 +24,7 @@
       </block>
     </view>
   </view>
-  <view class="row-item">
+  <view class="row-item row-item-time">
     <image class="icon" src="./images/icon-shichang.png" />
     <text class="title">可工作时长：{{profile.workloadStr}}</text>
   </view>
