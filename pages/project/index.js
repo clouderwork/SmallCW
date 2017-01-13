@@ -8,7 +8,7 @@ Page({
     count: 0
   },
   filterTime (time) {
-    let date = new Date(time)
+    let date = new Date(time.replace(/-/g, '/'))
     let year = date.getFullYear()
     let month = date.getMonth() + 1
     month = month > 9 ? month : '0' + month
