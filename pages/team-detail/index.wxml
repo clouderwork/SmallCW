@@ -77,7 +77,7 @@
       </p>
       <p class="description">
         <span>客户名称：</span>
-         {{item.description}}
+         {{item.customer}}
       </p>
       <p class="description">
         <span>项目金额：</span> {{item.amoutStr}}
