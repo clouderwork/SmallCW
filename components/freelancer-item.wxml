@@ -4,11 +4,11 @@
       <image wx:if="{{ftype === 'f'}}" class="avatar" src="{{avatar}}" />
       <image wx:if="{{ftype === 't'}}" class="avatar" src="{{logo}}" />
       <view class="desc">
-        <view class="main">
+        <p class="main">
           <text class="name">{{name}}</text>
           <text wx:if="{{ftype === 'f'}}" class="price">{{hourly}}/h</text>
           <text wx:if="{{ftype === 't'}}" class="price">{{hourly_min}}-{{hourly_max}}/h</text>
-        </view>
+        </p>
         <text wx:if="{{ftype === 'f'}}" class="title">{{title}}</text>
       </view>
     </view>
