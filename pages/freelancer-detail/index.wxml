@@ -7,7 +7,7 @@
     <text class="nickname">{{profile.nickname}}</text>
     <view class="info">
       <text class="hour">时薪：¥{{profile.hourly}}/小时</text>
-      <text class="su-line"> | </text>
+      <text class="su-line">|</text>
       <image class="biaoqian" src="./images/icon-biaoqian.png" />
       <text class="title">{{profile.title}}</text>
     </view>
