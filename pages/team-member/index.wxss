@@ -118,7 +118,7 @@ page {
   width:30rpx;
   border-bottom:1px solid #c46c85;
   vertical-align:middle;
-  margin-top: 10rpx;
+  margin-top: 6rpx;
 }
 
 .member-container .detail {
