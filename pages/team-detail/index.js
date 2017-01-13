@@ -3,7 +3,7 @@ var util = require('../../utils/util')
 
 Page({
   data: {
-    team: {},
+    profile: {},
     portfolios: [],
     contracts: []
   },
@@ -14,7 +14,7 @@ Page({
     this.setData({ id: e.team_id })
   },
   getData (id) {
-    ywk.ajaxJson('api/team/profile', {team_id: id}).then((res) => {
+    ywk.ajaxJson('/api/team/profile', {team_id: id}).then((res) => {
       if (res.error_code === 0) {
         let profile = res.profile
         profile.levelStr = util.getLevel(profile.level)
@@ -24,7 +24,7 @@ Page({
           return item;
         })
         this.setData({
-          'team': profile
+          'profile': profile
         })
       }
     }, (err) => {
@@ -33,7 +33,7 @@ Page({
   },
   // 获取成功案例
   getPortfolio (id) {
-    ywk.ajaxJson('api/team/portfolio', {team_id: id}).then((res) => {
+    ywk.ajaxJson('/api/team/portfolio', {team_id: id}).then((res) => {
       if (res.error_code === 0) {
         console.log(res)
         this.setData({
@@ -46,7 +46,7 @@ Page({
   },
   // 获取工作历史及反馈
   getContract (id) {
-    ywk.ajaxJson('api/freelancers/contract', {team_id: id, identify: 't'}).then((res) => {
+    ywk.ajaxJson('/api/freelancers/contract', {team_id: id, identify: 't'}).then((res) => {
       if (res.error_code === 0) {
         let contracts = res.contracts.map((item) => {
           item.paymethodStr = item.paymethod === 'fixed' ? '固定价格工作' : '小时制工作'

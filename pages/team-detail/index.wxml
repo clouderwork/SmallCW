@@ -45,23 +45,26 @@
 </view>
 
 <view class="team-card" >
-  <text class="title">工作历时及反馈</text>
-  <block wx:for="{{contracts}}" wx:key="id" wx:for-item="item">
-    <view class="project-list">
-      <text class="name">{{item.name}}</text>
-      <p class="score-star">
-        <span class="star-bg">
-          <image class="star" src="./images/icon-xing.png" />
-        </span>
-      </p>
-      <p class="price-info">
-        <span class="price">¥ {{item.total_amount}}</span> ({{item.paymethodStr}})
-        <span class="time">
-          合同期间<time>{{item.time}}</time>
-        </span>
-      </p>
-    </view>
-  </block>
+  <text class="title">工作历史及反馈</text>
+  <view wx:if="{{contracts.length>0}}">
+    <block wx:for="{{contracts}}" wx:key="id" wx:for-item="item">
+      <view class="project-list">
+        <text class="name">{{item.name}}</text>
+        <p class="score-star">
+          <span class="star-bg">
+            <image class="star" src="./images/icon-xing.png" />
+          </span>
+        </p>
+        <p class="price-info">
+          <span class="price">¥ {{item.total_amount}}</span> ({{item.paymethodStr}})
+          <span class="time">
+            合同期间<time>{{item.time}}</time>
+          </span>
+        </p>
+      </view>
+    </block>
+  </view>
+  <view class="no-works" wx:else>暂时还没有工作历史及反馈</view>
 </view>
 
 <view class="team-card" wx:if="{{portfolios.length > 0}}">
