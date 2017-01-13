@@ -67,8 +67,12 @@ Page({
         let contracts = res.contracts.map((item) => {
           item.paymethodStr = item.paymethod === 'fixed' ? '固定价格工作' : '小时制工作'
           item.time = this.filterTime(item.start_at) + '-' + this.filterTime(item.end_at)
-          let allAva = item.evaluate.team.exchange + item.evaluate.team.punctual + item.evaluate.team.cooper + item.evaluate.team.quality + item.evaluate.team.skill
-          item.allAva = ((((allAva / 5).toFixed(1)) / 1) / 5) * 100
+          if (item.evaluate.team.exchange) {
+            let allAva = item.evaluate.team.exchange + item.evaluate.team.punctual + item.evaluate.team.cooper + item.evaluate.team.quality + item.evaluate.team.skill
+            item.allAva = ((((allAva / 5).toFixed(1)) / 1) / 5).toFixed(2) * 100
+          } else {
+            item.allAva = 100
+          }
           return item
         })
         this.setData({
