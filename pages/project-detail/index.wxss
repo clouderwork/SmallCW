@@ -142,7 +142,6 @@
   font-size: 30rpx;
   color: #4b4b4b;
 }
-
 .list-name {
   display: block;
   color: #aaaaaa;

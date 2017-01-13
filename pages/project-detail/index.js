@@ -51,20 +51,25 @@ let format = {
     }
   },
   getStage (val) {
-    let str = '有设计'
-    switch (val) {
-    case 'design':
+    let str = ''
+    if (val) {
       str = '有设计'
-      break
-    case 'introduction':
-      str = '有详细的需求说明'
-      break
-    case 'idea':
-      str = '只有一个想法'
-      break
-    default:
-      str = '啥也没有'
-      break
+      switch (val) {
+      case 'design':
+        str = '有设计'
+        break
+      case 'introduction':
+        str = '有详细的需求说明'
+        break
+      case 'idea':
+        str = '只有一个想法'
+        break
+      default:
+        str = '啥也没有'
+        break
+      }
+    } else {
+      str = ''
     }
     return str
   }
