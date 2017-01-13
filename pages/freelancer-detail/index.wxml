@@ -11,8 +11,8 @@
       <image class="biaoqian" src="./images/icon-biaoqian.png" />
       <text class="title">{{profile.title}}</text>
     </p>
-    <text class="{{descClass}}">{{profile.overview}}</text>
-    <image class="icon-down" src="{{descImg}}" bindtap="changeShow" />
+    <text class="desc-up">{{profile.overview}}</text>
+    <!-- <image class="icon-down" src="{{descImg}}" bindtap="changeShow" /> -->
   </view>
 
   <view class="row-item">
