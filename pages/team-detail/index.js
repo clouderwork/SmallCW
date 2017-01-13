@@ -5,13 +5,17 @@ Page({
   data: {
     profile: {},
     portfolios: [],
-    contracts: []
+    contracts: [],
+    team_id: ''
   },
   onLoad (e) {
     this.getData(e.team_id)
     this.getPortfolio(e.team_id)
     this.getContract(e.team_id)
     this.setData({ id: e.team_id })
+    this.setData({
+      team_id: e.team_id
+    })
   },
   getData (id) {
     ywk.ajaxJson('/api/team/profile', {team_id: id}).then((res) => {
@@ -51,6 +55,9 @@ Page({
         let contracts = res.contracts.map((item) => {
           item.paymethodStr = item.paymethod === 'fixed' ? '固定价格工作' : '小时制工作'
           item.time = item.start_at.subStr(0,7).repalce('-','/') + '-' + item.end_at.subStr(0,7).repalce('-','/')
+          let allAva = item.evaluate.team.exchange + item.evaluate.team.punctual + item.evaluate.team.cooper + item.evaluate.team.quality + item.evaluate.team.skill
+          item.allAva = ((allAva / 5).toFixed(1)) / 1
+          return item;
         })
         this.setData({
           'contracts': res.contracts
@@ -66,5 +73,10 @@ Page({
       desc: this.data.profile.name,
       path: 'pages/project-detail/index?team_id=' + this.data.id
     }
+  },
+  goMember () {
+    wx.navigateTo({
+      url: `../team-member/index?team_id=${this.data.team_id}`
+    })
   }
 })

@@ -1,9 +1,8 @@
 <!--index.wxml-->
 <view class="member-container">
-  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true">
-    <block wx:for="{{teams}}" wx:key="id" wx:for-item="team">
+    <block wx:for="{{teams}}" wx:key="user_id" wx:for-item="team">
       <view class="title-line">
-        <text class="title">{{team.titleStr}}</text>
+        {{team.titleStr}}
       </view>
       <view class="item">
         <view class="header">
@@ -24,5 +23,4 @@
         </view>
       </view>
     </block>
-  </scroll-view>
 </view>
