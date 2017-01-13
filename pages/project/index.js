@@ -23,7 +23,6 @@ Page({
     ywk.ajaxJson('/api/jobs/search', {pagenum: this.data.pagenum}, 'POST').then((res) => {
       wx.hideToast()
       if (res.error_code === 0) {
-        console.log(res)
         this.setData({
           projects: this.data.projects.concat(res.jobs.map((item) => {
             item.publish_at = this.filterTime(item.publish_at)
