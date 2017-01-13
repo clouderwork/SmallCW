@@ -97,9 +97,26 @@ function getHour(val) {
   return str
 }
 
+/** 根据level获取经验水平
+ * @param  {[String]} val [经验]
+ * @return {[String]}     [经验水平]
+ */
+function getLevel (val) {
+  if (val) {
+    let str = '专业级'
+    if (val === 'middle') {
+      str = '中间级'
+    } else if (val === 'entry') {
+      str = '入门级'
+    }
+    return str
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   getDegree: getDegree,
   getLanguagesLevel: getLanguagesLevel,
-  getHour: getHour
+  getHour: getHour,
+  getLevel: getLevel
 }
