@@ -4,7 +4,8 @@ page {
   background-color: #EFEFF4;
 }
 .member-container {
-  margin: 0
+  margin: 0;
+  text-align: center;
 }
 
 .member-list {
@@ -16,25 +17,47 @@ page {
 }
 
 .member-container .title-line {
-  height: 20rpx;
+  font-size: 26rpx;
+  margin: 20rpx 0;
+  display: inline-block;
+}
+
+.member-container .title-line::before {
+  display: inline-block;
+  content: '';
+  height: 0;
+  width: 70px;
   border-bottom: 1px solid #c46c85;
+  vertical-align: middle;
   position: relative;
-  text-align: center;
-  width: 50%;
-  margin: 20rpx 0 20px 25%;
+  left: -10px;
+}
+
+.member-container .title-line::after {
+  display: inline-block;
+  content: '';
+  height: 0;
+  width: 70px;
+  border-bottom: 1px solid #c46c85;
+  vertical-align: middle;
+  position: relative;
+  right: -10px;
 }
 
 .member-container .title-line .title {
   display: inline-block;
   padding: 20rpx 20rpx;
   background: #EFEFF4;
-  margin-top: -30rpx;
   font-size: 26rpx;
+  position: absolute;
+  left: 50%;
+  top: -30rpx;
 }
 
 .member-container .item {
   position: relative;
   background-color: #fff;
+  text-align: left;
 }
 
 .member-container .item .header {
@@ -80,25 +103,23 @@ page {
 }
 
 .member-container .role {
-  display: block;
   color: #c46c85;
   font-size: 26rpx;
   padding:6rpx 14rpx;
   border: 1px solid #c46c85;
   border-radius: 26rpx;
-  position: relative;
 }
 
 .member-container .role::after {
-  display: block;
-  width: 30rpx;
-  height: 1rpx;
-  overflow: hidden;
-  content: '';
-  background-color: #c46c85;
-  position: absolute;
-  right: -30rpx;
-  top: 20rpx;
+  display:inline-block;
+  content:'';
+  height:0;
+  width:30rpx;
+  border-bottom:1px solid #c46c85;
+  vertical-align:middle;
+  position:absolute;
+  right:0;
+  top: 50rpx;
 }
 
 .member-container .detail {
@@ -109,6 +130,7 @@ page {
   color: #777;
   font-size: 26rpx;
   word-break:break-all;
+  display: block;
 }
 
 .member-container .skill {

@@ -29,7 +29,6 @@ Page({
     }
   },
   getData () {
-    console.log('getData')
     ywk.ajaxJson('/api/team/member', {team_id: this.data.team_id, status: 'member'}, 'GET').then((res) => {
       if (res.error_code === 0) {
         let members = res.members.map((item) => {
@@ -39,6 +38,8 @@ Page({
           } else if (item.mtype === 'owner') {
             titleStr = '团队负责人'
           }
+          item.titleStr = titleStr;
+          return item;
         });
         this.setData({
           teams: members
