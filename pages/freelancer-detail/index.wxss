@@ -241,6 +241,7 @@ page {
   width: 100rpx;
   height: 100rpx;
   margin-right: 10rpx;
+  border-radius: 50%;
 }
 
 .row-item .team-item .team-main {
