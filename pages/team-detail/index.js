@@ -51,19 +51,28 @@ Page({
       console.log(err)
     })
   },
+  filterTime (time) {
+    let date = new Date(time.replace(/-/g, '/'))
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    month = month > 9 ? month : '0' + month
+    let day = date.getDay()
+    day = day > 9 ? day : '0' + day
+    return year + '/' + month + '/' + day
+  },
   // 获取工作历史及反馈
   getContract (id) {
     ywk.ajaxJson('/api/freelancers/contract', {team_id: id, identify: 't'}).then((res) => {
       if (res.error_code === 0) {
         let contracts = res.contracts.map((item) => {
           item.paymethodStr = item.paymethod === 'fixed' ? '固定价格工作' : '小时制工作'
-          item.time = item.start_at.subStr(0,7).repalce('-','/') + '-' + item.end_at.subStr(0,7).repalce('-','/')
+          item.time = this.filterTime(item.start_at) + '-' + this.filterTime(item.end_at)
           let allAva = item.evaluate.team.exchange + item.evaluate.team.punctual + item.evaluate.team.cooper + item.evaluate.team.quality + item.evaluate.team.skill
-          item.allAva = ((allAva / 5).toFixed(1)) / 1
-          return item;
+          item.allAva = ((((allAva / 5).toFixed(1)) / 1) / 5) * 100
+          return item
         })
         this.setData({
-          'contracts': res.contracts
+          'contracts': contracts
         })
       }
     }, (err) => {

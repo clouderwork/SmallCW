@@ -174,41 +174,53 @@
 
 .team-card .price-info {
   color: #9e9e9e;
-  font-size: 1.3rem;
-  padding-top: .7rem;
+  font-size: 26rpx;
+  margin-top: 14rpx;
   overflow: hidden;
-  line-height: 1.8rem;
+  line-height: 38rpx;
+  display: block;
 }
 
 .team-card .price-info .price {
-  color: #ff6700;
-  font-size: 1.6rem;
+  color: #4b4b4b;
+  font-size: 32rpx;
   float: left;
-  padding-right: 10px;
+  padding-right: 40rpx;
   position: relative;
   top: 1px;
 }
-
+.team-card .price-info .use-time {
+  color: #777;
+}
 .team-card .price-info .time {
   color: #cfcfcf;
+  font-size: 26rpx;
   float: right;
 }
 
 .team-card .score-star {
-  padding: 8px 15px;
-  display: inline-block;
+  margin: 18rpx 0;
+  overflow: hidden;
+  height: 25rpx;
+  display: block;
+  position: relative;
 }
 
 .team-card .score-star .star-bg {
+  width: 170rpx;
+  height: 25rpx;
   background: url(./images/icon-xing-gray.png) no-repeat left center;
-  background-size: 200rpx 40rpx;
+  background-size: 170rpx 25rpx;
+  display:block;
 }
-
+.team-card .score-star .star-width {
+  overflow: hidden;
+  float:left;
+}
 .team-card .score-star .star-bg .star {
-  display: inline-block;
-  width: 200rpx;
-  height: 40rpx;
-  margin-bottom:-4rpx;
+  display: block;
+  width: 170rpx;
+  height: 25rpx;
 }
 
 .icon-arrow {
@@ -253,7 +265,7 @@
 
 .project-list .name {
   display: block;
-  font-size: 15px;
+  font-size: 30rpx;
   line-height: 1;
   color: #4b4b4b;
 }
