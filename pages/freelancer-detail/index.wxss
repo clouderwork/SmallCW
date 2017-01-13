@@ -206,7 +206,7 @@ page {
   color: #9e9e9e;
   margin-left: 15rpx;
   flex: 1;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
 .row-item .detail .name {
