@@ -6,14 +6,7 @@ Page({
     teams: [],
     windowHeight: 100,
     team_id: ''
-  },
-  //事件处理函数
-  goDetail: function(event) {
-    let id = event.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '../freelancer-detail/index?id=' + id
-    })
-  },
+  }
   onLoad: function (opt) {
     wx.showToast({
       title: '加载中...',

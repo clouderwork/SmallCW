@@ -107,6 +107,45 @@
   text-align: right;
 }
 
+.team-card .price-info {
+  color: #9e9e9e;
+  font-size: 1.3rem;
+  padding-top: .7rem;
+  overflow: hidden;
+  line-height: 1.8rem;
+}
+
+.team-card .price-info .price {
+  color: #ff6700;
+  font-size: 1.6rem;
+  float: left;
+  padding-right: 10px;
+  position: relative;
+  top: 1px;
+}
+
+.team-card .price-info .time {
+  color: #cfcfcf;
+  float: right;
+}
+
+.team-card .score-star {
+  padding: 8px 15px;
+  display: inline-block;
+}
+
+.team-card .score-star .star-bg {
+  background: url(./images/icon-xing-gray.png) no-repeat left center;
+  background-size: 200rpx 40rpx;
+}
+
+.team-card .score-star .star-bg .star {
+  display: inline-block;
+  width: 200rpx;
+  height: 40rpx;
+  margin-bottom:-4rpx;
+}
+
 .icon-arrow {
   width: 8px;
   height: 14px;
