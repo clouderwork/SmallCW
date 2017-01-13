@@ -1,7 +1,7 @@
 <template name="projectItem">
   <view class="item-head">
     <view class="post-title-before"></view>
-    <view class="post-title">{{project.category}}</view>
+    <p class="post-title">{{project.category}}</p>
     <view class="project-price" wx:if="{{project.paymethod === 'fixed'}}">{{project.budget}}元</view>
     <view class="project-price" wx:else>按小时付费</view>
   </view>
