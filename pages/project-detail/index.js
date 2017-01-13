@@ -72,7 +72,7 @@ let format = {
 
 Page({
   data: {
-    panel: 'more'
+    panel: 'base'
   },
   onLoad (e) {
     this.getDetail(e.id)
