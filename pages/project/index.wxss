@@ -62,6 +62,9 @@ page {
   color: #4B4B4B;
   font-size: 30rpx;
   font-family: PingFangSC-Medium;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .project-desc {
   line-height: 42rpx;
