@@ -57,11 +57,11 @@
           <view class="time-row">
             <image class="time-icon" src="./images/icon-shijian.png" />
             <view class="time">
-              {{job.start_at}} -- {{job.end_at}} |
+              {{job.start_at}} / {{job.end_at || '至今'}} |
               <text class="job-title">{{job.title}}</text>
             </view>
           </view>
-          <view class="detail-desc">
+          <view class="detail-desc" wx:if="{{job.detail}}">
             <text class="s-title">项目简介及职责：</text>
             <text>{{job.detail}}</text>
           </view>
