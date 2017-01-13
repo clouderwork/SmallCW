@@ -76,6 +76,7 @@ Page({
   },
   onLoad (e) {
     this.getDetail(e.id)
+    this.setData({ id: e.id })
   },
   getDetail (id) {
     ywk.ajaxJson('/api/jobs', { job_id: id }, 'GET').then((res) => {
@@ -104,5 +105,12 @@ Page({
     this.setData({
       panel: e.currentTarget.dataset.panel
     })
+  },
+  onShareAppMessage () {
+    return {
+      title: '云沃克',
+      desc: this.data.job.name,
+      path: 'pages/project-detail/index?id=' + this.data.id
+    }
   }
 })

@@ -5,12 +5,12 @@
     <text wx:if="{{profile.workload > 0}}" class="workload-txt">{{profile.canWork}}</text>
     <image class="avatar" src="{{profile.avatar}}" />
     <text class="nickname">{{profile.nickname}}</text>
-    <view class="info">
+    <p class="info">
       <text class="hour">时薪：¥{{profile.hourly}}/小时</text>
       <text class="su-line">|</text>
       <image class="biaoqian" src="./images/icon-biaoqian.png" />
       <text class="title">{{profile.title}}</text>
-    </view>
+    </p>
     <text class="{{descClass}}">{{profile.overview}}</text>
     <image class="icon-down" src="{{descImg}}" bindtap="changeShow" />
   </view>

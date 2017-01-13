@@ -14,7 +14,7 @@ Page({
     descClass: 'desc-down',
     descImg: './images/icon-down.png'
   },
-  onLoad: function (opt) {
+  onLoad (opt) {
     if (opt && opt.id) {
       this.setData({
         id: opt.id
@@ -124,5 +124,12 @@ Page({
       descClass: `desc-${state}`,
       descImg: `./images/icon-${state}.png`
     })
+  },
+  onShareAppMessage () {
+    return {
+      title: '云沃克',
+      desc: this.data.profile.nickname,
+      path: 'pages/freelancer-detail/index?id=' + this.data.id
+    }
   }
 })

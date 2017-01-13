@@ -67,5 +67,12 @@ Page({
     wx.navigateTo({
       url: `../project-detail/index?id=${id}`
     })
+  },
+  onShareAppMessage () {
+    return {
+      title: '云沃克',
+      desc: '项目列表',
+      path: 'pages/project/index'
+    }
   }
 })

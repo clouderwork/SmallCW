@@ -12,7 +12,7 @@ Page({
     count: 0
   },
   //事件处理函数
-  goDetail: function(event) {
+  goDetail (event) {
     let id = event.currentTarget.dataset.id
     let ftype = event.currentTarget.dataset.ftype
     let url = ftype === 't' ? `../team-detail/index?team_id=${id}` : `../freelancer-detail/index?id=${id}`
@@ -20,7 +20,7 @@ Page({
       url: url
     })
   },
-  onLoad: function () {
+  onLoad () {
     wx.showToast({
       title: '加载中...',
       icon: 'loading'
@@ -57,5 +57,12 @@ Page({
     }, (err) => {
       wx.hideToast()
     })
+  },
+  onShareAppMessage () {
+    return {
+      title: '云沃克',
+      desc: '人才列表',
+      path: 'pages/freelancer/index'
+    }
   }
 })

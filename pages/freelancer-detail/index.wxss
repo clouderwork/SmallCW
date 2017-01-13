@@ -65,6 +65,7 @@ page {
 }
 
 .profile .info {
+  display: block;
   margin-top: 20rpx;
   color: #777;
   vertical-align: middle;
