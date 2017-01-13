@@ -39,7 +39,10 @@ Page({
   getPortfolio (id) {
     ywk.ajaxJson('/api/team/portfolio', {team_id: id}).then((res) => {
       if (res.error_code === 0) {
-        console.log(res)
+        let portfolio = res.portfolio.map((item) => {
+          item.amoutStr = util.getRange(item.amount_range)
+          return item;
+        })
         this.setData({
           'portfolios': res.portfolio
         })

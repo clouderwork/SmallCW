@@ -67,6 +67,19 @@
       <p class="description">
         <span>项目简介：</span> {{item.description}}
       </p>
+      <p class="description">
+        <span>涉及技术：</span>
+        <block wx:for="{{item.skills}}" wx:key="id" wx:for-item="skill">
+          <span class="item-skill">{{skill}}</span>
+        </block>
+      </p>
+      <p class="description">
+        <span>客户名称：</span>
+         {{item.description}}
+      </p>
+      <p class="description">
+        <span>项目金额：</span> {{item.amoutStr}}
+      </p>
     </view>
   </block>
 </view>

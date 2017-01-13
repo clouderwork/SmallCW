@@ -113,10 +113,38 @@ function getLevel (val) {
   }
 }
 
+function getRange (val) {
+  let result = '1000元以下'
+  switch (val) {
+  case 1:
+    result = '1000元以下'
+    break
+  case 2:
+    result = '1000-5000元'
+    break
+  case 3:
+    result = '5000-2万元'
+    break
+  case 4:
+    result = '2-5万元'
+    break
+  case 5:
+    result = '5-10万元'
+    break
+  case 6:
+    result = '10万元以上'
+    break
+  default:
+    break
+  }
+  return result
+}
+
 module.exports = {
   formatTime: formatTime,
   getDegree: getDegree,
   getLanguagesLevel: getLanguagesLevel,
   getHour: getHour,
-  getLevel: getLevel
+  getLevel: getLevel,
+  getRange: getRange
 }

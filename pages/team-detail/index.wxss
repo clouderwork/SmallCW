@@ -283,6 +283,20 @@
   word-break: break-all;
   font-size: 13px;
   color: #6e6e70;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.project-list .description .item-skill {
+  font-weight: 400;
+  padding: 8rpx 18rpx;
+  display: inline-block;
+  border: 1px solid #aaa;
+  border-radius: 40rpx;
+  margin: 0 14rpx 0 0;
+  font-size: 24rpx;
+  line-height: 1;
+  color: #aaa;
 }
 
 .project-list .description span {
