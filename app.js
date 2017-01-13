@@ -18,31 +18,38 @@ App({
     }
 
     // 微信授权
-    if (!wx.getStorageSync('session_key')) {
+    // if (wx.getStorageSync('session_key')) {
       wx.login({
         success: function(res) {
           if (res.code) {
             //获取微信code
-            ywk.ajaxJson('/api/weixin/minip/code', {code: res.code}).then((res) => {
-              if (res && res.data) {
-                wx.setStorageSync('session_key', res.data.session_key || '')
+            ywk.ajaxJson('/api/weixin/minip/code', {code: res.code}).then((codeRes) => {
+              if (codeRes && codeRes.data) {
+                wx.setStorageSync('session_key', codeRes.data.session_key || '')
               }
+              // 获取用户数据保存入库
+              wx.getUserInfo({
+                success: function(user) {
+                  var userInfo = {};
+                  let obj = user.userInfo;
+                  userInfo.openid = codeRes.data.openid;
+                  userInfo.nickname = obj.nickName;
+                  userInfo.gender = obj.gender;
+                  userInfo.province = obj.province;
+                  userInfo.city = obj.city;
+                  userInfo.country = obj.country;
+                  userInfo.avatar = obj.avatarUrl;
+                  ywk.ajaxJson('/api/weixin/minip/bind', userInfo, 'POST').then((resp) => {})
+                }
+              })
             })
-            // 获取用户数据保存入库
-            wx.getUserInfo({
-              success: function(user) {
-                console.log(JSON.stringify(user))
-                var userInfo = user.userInfo
-                userInfo.openid = user.openid
-                ywk.ajaxJson('/api/weixin/minip/bind', userInfo, 'POST').then((resp) => {})
-              }
-            })
+
           } else {
             console.log('获取用户登录态失败！' + res.errMsg)
           }
         }
       });
-    }
+    // }
 
     //  获取系统信息
     this.getSystemInfo();
