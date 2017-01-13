@@ -1,27 +1,27 @@
 .project-details {
   background-color: #fff;
-  padding: 0px 15px;
+  padding: 0px 30rpx;
 }
 
 .job-name {
   display: block;
-  padding: 11px 3px 5px 0;
+  padding: 22rpx 6rpx 10rpx 0;
   color: #4b4b4b;
-  line-height: 24px;
-  font-size: 18px;
+  line-height: 48rpx;
+  font-size: 36rpx;
 }
 
 .job-price {
   display: block;
   color: #ff6700;
-  font-size: 16px;
+  font-size: 32rpx;
 }
 
 .job-price i {
   color: #aaaaaa;
-  font-size: 13px;
+  font-size: 26rpx;
   font-style: normal;
-  padding-left: 10px;
+  padding-left: 20rpx;
   display: inline-block;
 }
 
@@ -30,25 +30,25 @@
   background-color: #f4f4f4;
   border: 1px solid #f8f8f8;
   color: #777;
-  padding: 8px 12px;
-  border-radius: 3px;
-  line-height: 16px;
-  margin-top: 10px;
-  font-size: 13px;
+  padding: 16rpx 24rpx;
+  border-radius: 6rpx;
+  line-height: 32rpx;
+  margin-top: 20rpx;
+  font-size: 26rpx;
 }
 
 .work-time span {
   color: #f8bb00;
   display: inline-block;
-  padding-left: 5px;
+  padding-left: 10rpx;
 }
 
 .job-company {
   display: flex;
   width: 100%;
-  padding: 10px 15px;
+  padding: 20rpx 30rpx;
   color: #777;
-  font-size: 13px;
+  font-size: 26rpx;
   border-bottom: 1px solid #f4f4f4;
   box-sizing: border-box;
   align-items: center;
@@ -57,10 +57,10 @@
 
 .job-company .avatar {
   display: inline-block;
-  width: 38px;
-  height: 38px;
+  width: 76rpx;
+  height: 76rpx;
   border-radius: 50%;
-  margin-right:  10px;
+  margin-right:  20rpx;
 }
 .company-score {
   display: block;
@@ -69,42 +69,42 @@
 
 .job-info {
   color: #4b4b4b;
-  font-size: 15px;
-  line-height: 1.7px;
+  font-size: 30rpx;
+  line-height: 1.7;
 }
 .job-info ul{
   display: block;
-  padding: 12.5px 15px;
+  padding: 25rpx 30rpx;
   box-sizing: border-box;
 }
 .job-info li {
   display: block;
-  height: 20px;
-  margin-bottom: 10px;
+  height: 40rpx;
+  margin-bottom: 20rpx;
 }
 .job-info label {
   display: inline-block;
-  font-size: 13px;
+  font-size: 26rpx;
   color: #777777;
   vertical-align: middle;
 }
 
 .job-description {
-  border-top: 10px solid #f4f4f4;
+  border-top: 20rpx solid #f4f4f4;
 }
 
 .job-info .icon {
-  width: 15px;
-  height: 15px;
+  width: 30rpx;
+  height: 30rpx;
   vertical-align: middle;
-  margin-right: 10px;
-  font-size: 14px;
+  margin-right: 20rpx;
+  font-size: 28rpx;
 }
 .job-description .nav{
   display: block;
-  margin-top: 10px;
-  padding: 0 40px;
-  height: 50px;
+  margin-top: 20rpx;
+  padding: 0 80rpx;
+  height: 100rpx;
   border-bottom: 1px solid #f4f4f4;
   background-color: #fff;
   text-align: center;
@@ -112,11 +112,11 @@
 
 .job-description .nav li {
   display: inline-block;
-  margin: 0 20px;
-  padding: 0 10px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 16px;
+  margin: 0 40rpx;
+  padding: 0 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
   color: #777777;
 }
 .job-description .active {
@@ -125,21 +125,21 @@
 }
 
 .job-description .description {
-  padding: 15px;
-  font-size: 14px;
+  padding: 30rpx;
+  font-size: 28rpx;
   color: #4b4b4b;
   line-height: 1.5;
 }
 .panel-more {
   display: block;
-  padding: 15px 20px;
+  padding: 30rpx 40rpx;
 }
 
 .panel-more li {
   display: block;
-  padding: 10px 0;
+  padding: 20rpx 0;
   border-bottom: 1px solid #f4f4f4;
-  font-size: 15px;
+  font-size: 30rpx;
   color: #4b4b4b;
 }
 
@@ -147,27 +147,27 @@
   display: block;
   color: #aaaaaa;
   border-left: 2px solid #ff6700;
-  font-size: 15px;
-  padding-left: 15px;
+  font-size: 30rpx;
+  padding-left: 30rpx;
 }
 
 .skills span{
-  padding: 0 12px;
-  height: 25px;
-  line-height: 25px;
+  padding: 0 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   display: inline-block;
   border: 1px solid #cacaca;
-  border-radius: 12px;
-  margin: 9px 10px 0 0;
+  border-radius: 24rpx;
+  margin: 18rpx 20rpx 0 0;
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: 30rpx;
   color: #4b4b4b;
 }
 
 .panel-more .text {
   display: block;
-  margin: 5px 0 0;
-  line-height: 25px;
-  font-size: 15px;
+  margin: 10rpx 0 0;
+  line-height: 50rpx;
+  font-size: 30rpx;
   color: #4b4b4b;
 }

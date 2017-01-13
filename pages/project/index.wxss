@@ -53,7 +53,7 @@ page {
 }
 .item-body {
   color: #6E6E70;
-  font-size: 15px;
+  font-size: 30rpx;
   line-height: 42rpx;
   padding: 0 16rpx;
 }
