@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/freelancer/index",
     "pages/project/index",
+    "pages/freelancer/index",
     "pages/freelancer-detail/index",
     "pages/project-detail/index",
     "pages/team-detail/index",

@@ -5,13 +5,17 @@ Page({
   data: {
     profile: {},
     portfolios: [],
-    contracts: []
+    contracts: [],
+    team_id: ''
   },
   onLoad (e) {
     this.getData(e.team_id)
     this.getPortfolio(e.team_id)
     this.getContract(e.team_id)
     this.setData({ id: e.team_id })
+    this.setData({
+      team_id: e.team_id
+    })
   },
   getData (id) {
     ywk.ajaxJson('/api/team/profile', {team_id: id}).then((res) => {
@@ -66,5 +70,10 @@ Page({
       desc: this.data.profile.name,
       path: 'pages/project-detail/index?team_id=' + this.data.id
     }
+  },
+  goMember () {
+    wx.navigateTo({
+      url: `../team-member/index?team_id=${this.data.team_id}`
+    })
   }
 })

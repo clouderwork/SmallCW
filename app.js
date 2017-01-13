@@ -31,7 +31,7 @@ App({
             // 获取用户数据保存入库
             wx.getUserInfo({
               success: function(user) {
-                console.log(user)
+                console.log(JSON.stringify(user))
                 var userInfo = user.userInfo
                 userInfo.openid = user.openid
                 ywk.ajaxJson('/api/weixin/minip/bind', userInfo, 'POST').then((resp) => {})

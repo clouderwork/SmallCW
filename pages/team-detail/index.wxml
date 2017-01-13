@@ -40,11 +40,11 @@
   </view>
 </view>
 
-<view class="team-card">
+<view class="team-card" bindtap="goMember">
   <p class="title">团队成员<span>{{profile.total_num}}人<image class="icon-arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAABhklEQVQ4y53TL2iVYRTH8c97BYPBIqhT6/y3ahNk1yKDY5tFBK/FMtYFq2lNQTSIhjGwaTggCCpOs83m/hstFoMwNewMrrLrfd897YHz/Z7f85znaTJzEs8wiIgvOq4eHuIiljNzaj+C6/iECbzPzAudBBHxDZfxEUfwJjMvdUkgIr7jCl7jMF5l5kxrQUl+4Cpe4BBeZuZsa0FJfuIaFnEQzzNz0FpQkm3cxCMcwNPMnG8tKMlvzGEBDR5k5t29aptxZyzwXm0XcKcatBOUZB73q/4x5iLiV2tBSQZ4UveyiFsRsd1aUJJZLNmZ0GfMdBKU5EYlgOWuCY7iLabwFdO9fcJbmI6IlbZTOFbweWyiHxGrtHsHI+Gxgsw8XvA5bBS8NlzTjIHf4ewomBF/ITMnhuD1urC1vWqb/8BnCu5HxPqopL1/4BND8Fp1Hgn/lWAIPl1wPyI2xk2pV/DJIXi1Oo+FocnMU3ZGNVlwPyI228C7CZYKXqnOreFdwW18KHirCwx/AGsomIc+KotJAAAAAElFTkSuQmCC" /></span></p>
 </view>
 
-<view class="team-card" >
+<view class="team-card">
   <text class="title">工作历史及反馈</text>
   <view wx:if="{{contracts.length>0}}">
     <block wx:for="{{contracts}}" wx:key="id" wx:for-item="item">
