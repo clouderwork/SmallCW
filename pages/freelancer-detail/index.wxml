@@ -71,7 +71,7 @@
   </view>
   <view class="row-item" wx:if="{{teams.length > 0}}">
     <image class="icon" src="./images/icon-tuandui.png" />
-    <text class="title">所在团队{{teams.length}}</text>
+    <text class="title">所在团队</text>
     <view class="detail">
       <block wx:for="{{teams}}" wx:key="id" wx:for-item="team">
         <view class="team-item">
@@ -80,7 +80,9 @@
             <text class="team-name">{{team.name}}</text>
             <view class="team-content">
               <image class="peole-icon" src="./images/icon-people.png" />
-              <text>管理员</text>
+              <text wx:if="{{team.mtype === 'owner'}}">创建人</text>
+              <text wx:elif="{{team.mtype === 'staff'}}">成员</text>
+              <text wx:else>管理员</text>
             </view>
           </view>
         </view>
