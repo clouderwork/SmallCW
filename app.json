@@ -36,7 +36,7 @@
       "selectedIconPath": "images/icon_people_selected.png",
       "text": "找人才"
     }, {
-      "pagePath": "pages/profile/index",
+      "pagePath": "pages/signin/index",
       "iconPath": "images/icon_profile.png",
       "selectedIconPath": "images/icon_profile_selected.png",
       "text": "我"
