@@ -7,18 +7,20 @@ page {
   margin-top: 20rpx;
 }
 .section {
-    border-bottom: 2rpx solid #f4f4f4;
+  border-bottom: 2rpx solid #f4f4f4;
+  padding: 24rpx 30rpx;
+  background: #fff;
+  display: flex;
 }
 .section:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 input {
   font-size: 30rpx;
   color: #4b4b4b4;
   text-align: left;
-  padding: 24rpx 30rpx;
-  border-bottom: 2rpx solid #f4f4f4;
-  background: #fff;
+  margin-right: 40rpx;
+  flex: 1;
 }
 input:last-child {
   border-bottom: none;
@@ -35,4 +37,9 @@ input:last-child {
 }
 .sign-placeholder {
   color: #cfcfcf;
+}
+.icon-eye {
+  width: 40rpx;
+  height: 34rpx;
+  margin-top: 12rpx;
 }

@@ -4,8 +4,13 @@
     <view class="section">
       <input placeholder="请输入手机号/用户名/邮箱" bindblur="getUsername" placeholder-class="sign-placeholder" focus="" />
     </view>
-    <view class="section">
+    <view class="section" wx:if="hide">
       <input type="password" placeholder="请输入密码" bindblur="getPassword" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image class="icon-eye" src="images/password.png" />
+    </view>
+    <view class="section" wx:else>
+      <input type="text" placeholder="请输入密码" bindblur="getPassword" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image class="icon-eye" src="images/password-show.png" />
     </view>
     <view class="btn-signin">
       <button type="button" bindtap="signin">登录</button>
