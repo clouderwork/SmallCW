@@ -171,6 +171,11 @@
   color: #4b4b4b;
 }
 
+.proposal-btn {
+  color: #ff6600;
+  border-radius: 0rpx;
+}
+
 .panel-more .text {
   display: block;
   margin: 10rpx 0 0;

@@ -127,6 +127,12 @@ Page({
       panel: e.currentTarget.dataset.panel
     })
   },
+  // 投标
+  proposal (e) {
+    wx.navigateTo({
+      url: 'pages/proposal/index'
+    })
+  },
   onShareAppMessage () {
     return {
       title: '云沃客',
