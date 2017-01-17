@@ -88,3 +88,5 @@
     </ul>
   </block>
 </view>
+
+<button type="default" class="proposal-btn" bindtap="proposal"> 投标 </button>
