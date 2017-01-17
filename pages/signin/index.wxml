@@ -3,9 +3,11 @@
 <view class="signin-container">
     <view class="section">
         <input placeholder="请输入手机号/用户名/邮箱" focus="" />
+    </view>
+    <view class="section">
         <input type="password" placeholder="请输入密码" focus="" class="signin-password"/>
-        <view class="btn-signin">
-            <button type="default">登录</button>
-        </view>
+    </view>
+    <view class="btn-signin">
+        <button type="default">登录</button>
     </view>
 </view>
