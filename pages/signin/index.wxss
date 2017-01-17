@@ -4,28 +4,26 @@ page {
   background-color: #EFEFF4;
 }
 .signin-container {
-    margin-top: 20rpx;
+  margin-top: 20rpx;
 }
 input {
-    font-size: 30rpx;
-    color: #cfcfcf;
-    text-align: left;
-    padding: 30rpx;
-    border-bottom: 2rpx solid #f4f4f4;
-    background: #fff;
+  font-size: 30rpx;
+  color: #4b4b4b4;
+  text-align: left;
+  padding: 24rpx 30rpx;
+  border-bottom: 2rpx solid #f4f4f4;
+  background: #fff;
 }
 input:last-child {
-    border-bottom: none;
-}
-.signin-password {
-    backgound: url() no-repeat right center;
+  border-bottom: none;
 }
 .btn-signin button {
-    font-size: 38rpx;
-    color: #ff6700;
-    margin: 20rpx 30rpx 0;
-    background: #ffffff;
-    border: 2rpx solid #ff6700;
-    height: 100rpx;
-    line-height: 100rpx;
+  font-size: 38rpx;
+  color: #ff6700;
+  margin: 20rpx 30rpx 0;
+  background: #ffffff;
+  border: 2rpx solid #ff6700;
+  height: 100rpx;
+  line-height: 100rpx;
+  box-sizing:border-box;
 }

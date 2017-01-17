@@ -26,6 +26,9 @@ Page({
       } else if (res.error_code === 80001) {
         wx.hideToast()
         // 去登录页面
+        wx.navigateTo({
+          url: '../signin/index'
+        })
       } else {
         wx.hideToast()
         console.log(res)
@@ -42,8 +45,6 @@ Page({
           role: res.role
         })
         this.getInfo()
-      } else {
-        console.log(res)
       }
     }, (err) => {
       wx.hideToast()
@@ -80,7 +81,7 @@ Page({
       duration: 10000
     })
     this.getData()
-    this.getRole()
+    // this.getRole()
   },
   bindViewTap (e) {
     let id = e.currentTarget.dataset.jid
