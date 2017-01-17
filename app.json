@@ -5,7 +5,8 @@
     "pages/freelancer-detail/index",
     "pages/project-detail/index",
     "pages/team-detail/index",
-    "pages/team-member/index"
+    "pages/team-member/index",
+    "pages/signin/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -30,6 +31,11 @@
       "iconPath": "images/icon_people.png",
       "selectedIconPath": "images/icon_people_selected.png",
       "text": "找人才"
+    }, {
+      "pagePath": "pages/signin/index",
+      "iconPath": "images/icon_people.png",
+      "selectedIconPath": "images/icon_people_selected.png",
+      "text": "我"
     }]
   }
 }
