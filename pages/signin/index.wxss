@@ -6,6 +6,12 @@ page {
 .signin-container {
   margin-top: 20rpx;
 }
+.section {
+    border-bottom: 2rpx solid #f4f4f4;
+}
+.section:last-child {
+    border-bottom: none;
+}
 input {
   font-size: 30rpx;
   color: #4b4b4b4;
