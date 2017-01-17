@@ -1,0 +1,28 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #EFEFF4;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.pro-money {
+    margin-top: 20px;
+    font-size: 42rpx;
+}
+
+.pro-money view {
+    height: 100rpx;
+    background: #fff;
+    padding: 29rpx 19rpx;
+    color: #777;
+}
+.first-box {
+    border-bottom: 2px solid #f4f4f4;
+}
+
+.third-box {
+    margin-top: 20rpx;
+}

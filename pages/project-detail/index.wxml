@@ -89,4 +89,4 @@
   </block>
 </view>
 
-<button type="default" class="proposal-btn" bindtap="proposal"> 投标 </button>
+<view class="switch-role" bindtap="proposal">投标</view>
