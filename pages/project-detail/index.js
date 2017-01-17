@@ -130,7 +130,7 @@ Page({
   // 投标
   proposal (e) {
     wx.navigateTo({
-      url: 'pages/proposal/index'
+      url: '../proposal/index'
     })
   },
   onShareAppMessage () {

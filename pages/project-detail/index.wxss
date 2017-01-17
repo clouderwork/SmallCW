@@ -1,5 +1,5 @@
-.page {
-  background-color: #fff;
+page {
+  background-color: #EFEFF4;
 }
 
 .project-details {
@@ -171,9 +171,14 @@
   color: #4b4b4b;
 }
 
-.proposal-btn {
-  color: #ff6600;
-  border-radius: 0rpx;
+.switch-role {
+  background-color:#fff;
+  line-height:100rpx;
+  text-align:center;
+  font-size:34rpx;
+  color:#ff6700;
+  margin-top:40rpx;
+  border-top: 2rpx solid #e2e2e9;
 }
 
 .panel-more .text {

@@ -1,3 +1,13 @@
-<view>
-    我要投标页
+<view class="pro-money">
+    <view class="first-box">
+        <span>报价</span>
+    </view>
+    <view class="second-box">
+        实际收益：0元
+        服务费0元
+    </view>
+    <view class="third-box">
+        预计完成时间
+        一周以内
+    </view>
 </view>
