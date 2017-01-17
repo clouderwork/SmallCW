@@ -38,8 +38,13 @@ input:last-child {
 .sign-placeholder {
   color: #cfcfcf;
 }
-.icon-eye {
+.icon-eye, .icon-eye-hide {
   width: 40rpx;
   height: 34rpx;
   margin-top: 12rpx;
+  cursor: pointer;
+}
+.icon-eye {
+  height: 25rpx;
+  margin-top: 16rpx;
 }

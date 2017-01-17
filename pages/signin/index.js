@@ -2,7 +2,8 @@ var ywk = require('../../utils/ywk')
 Page({
   data: {
     username: '',
-    password: ''
+    password: '',
+    hide: true,
   },
   signin (e) {
     if (this.data.username && this.data.password) {
@@ -34,6 +35,12 @@ Page({
   getPassword (e) {
     this.setData({
       password: e.detail.value
+    })
+  },
+  change () {
+    let newValue = !this.data.hide
+    this.setData({
+      hide: newValue
     })
   }
 })
