@@ -5,14 +5,16 @@
     "pages/freelancer-detail/index",
     "pages/project-detail/index",
     "pages/team-detail/index",
-    "pages/team-member/index"
+    "pages/team-member/index",
+    "pages/proposal-detail/index",
+    "pages/invite-detail/index",
+    "pages/profile/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#ff6700",
     "navigationBarTitleText": "云沃客",
-    "navigationBarTextStyle": "#ffffff",
-    "backgroundColor": "#EFEFF4"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#6E6E70",
@@ -30,6 +32,11 @@
       "iconPath": "images/icon_people.png",
       "selectedIconPath": "images/icon_people_selected.png",
       "text": "找人才"
+    }, {
+      "pagePath": "pages/profile/index",
+      "iconPath": "images/icon_profile.png",
+      "selectedIconPath": "images/icon_profile_selected.png",
+      "text": "我"
     }]
   }
 }

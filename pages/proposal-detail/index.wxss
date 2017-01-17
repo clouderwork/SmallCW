@@ -1,0 +1,31 @@
+/**index.wxss**/
+page {
+  display: block;
+  min-height: 100%;
+  background: #efeff4;
+}
+.invite-content {
+  background-color: #fff;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #777;
+}
+.content-list {
+  line-height: 42rpx;
+  padding: 25rpx 24rpx;
+  border-bottom: 2rpx solid #efeff4;
+  display: flex;
+}
+.content-list:last-child {
+  border: 0;
+}
+.content-list text:first-child {
+  width: 180rpx;
+  margin-right: 10rpx;
+}
+.content-list text:last-child {
+  color: #4b4b4b;
+  flex: 1;
+  text-align: right;
+  display: block;
+}

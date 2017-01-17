@@ -51,13 +51,6 @@ Page({
       });
     }
   },
-  onShareAppMessage () {
-    return {
-      title: '我的小程序',
-      desc: '我的小程序',
-      path: '/pages/project/index'
-    }
-  },
   onLoad () {
     wx.showToast({
       title: '加载中',

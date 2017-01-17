@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="invite-container">
+  <view class="invite-content">
+    <view class="content-list">
+      <text>报价</text>
+      <text>500元</text>
+    </view>
+    <view class="content-list">
+      <text>附件</text>
+      <text>有附件，请前往网站查看</text>
+    </view>
+    <view class="content-list">
+      <text>预计完成时间</text>
+      <text>一周以内</text>
+    </view>
+  </view>
+</view>
