@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <import src="../../components/project-item.wxml"/>
+<import src="../../components/tab-bar.wxml"/>
 <view class="project-container">
   <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" bindscrolltolower="getData">
     <block wx:for="{{projects}}" wx:key="project.id" wx:for-item="project">
@@ -8,4 +9,5 @@
       </view>
     </block>
   </scroll-view>
+  <template is="tabBar" data="{{from}}" />
 </view>

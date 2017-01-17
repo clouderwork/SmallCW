@@ -2,6 +2,7 @@ page {
   display: block;
   min-height: 100%;
   background-color: #EFEFF4;
+  padding-bottom: 100rpx;
 }
 .user-container {
   margin: 0
@@ -102,4 +103,45 @@ page {
   padding: 11rpx 15rpx 8rpx 18rpx;
   border-radius: 60rpx;
   margin: 20rpx 20rpx 0 0;
+}
+.common-bar {
+  height: 100rpx;
+  border-top: 1px solid #efefef;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  font-size: 22rpx;
+  color: #6c6c71;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+}
+.common-bar > view {
+  flex: 1;
+}
+.common-bar image {
+  display: block;
+  margin: 15rpx auto 7rpx;
+}
+.common-bar text {
+  display: block;
+  text-align: center;
+}
+.project-bar image {
+  width: 37rpx;
+  height: 35rpx;
+}
+.freelancer-bar image {
+  width: 43rpx;
+  height: 34rpx;
+  margin: 15rpx auto 6rpx;
+}
+.profile-bar image {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 12rpx auto 5rpx;
+}
+.tab-bar-color {
+  color: #ff6700;
 }

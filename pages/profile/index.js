@@ -5,7 +5,10 @@ Page({
   data: {
     role: '',
     invites: [],
-    proposals: []
+    proposals: [],
+    id: '',
+    from: 'profile',
+    roleName: '服务方身份'
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -17,7 +20,7 @@ Page({
     return year + '-' + month + '-' + day
   },
   getData () {
-    ywk.ajaxJson('/api/user/profile', 'GET').then((res) => {
+    ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
       if (res.error_code === 0) {
         console.log(res)
         this.setData({
@@ -38,11 +41,26 @@ Page({
     })
   },
   getRole () {
-    ywk.ajaxJson('/api/v1.1/user/role', 'GET').then((res) => {
+    ywk.ajaxJson('/api/v1.1/user/role', {}, 'GET').then((res) => {
       wx.hideToast()
       if (res.error_code === 0) {
+        let role = 'f'
+        let name = '需求方身份'
+        let id = ''
+        if (res.current_id === res.roles.client.id) {
+          role = 'c'
+          name = '服务方身份'
+          id = res.roles.freelancer.id
+        } else if(res.current_id === res.roles.freelancer.id) {
+          role = 'f'
+          name = '需求方身份'
+          id = res.roles.client.id
+        }
         this.setData({
-          role: res.role
+          role: role,
+          roleName: name,
+          roles: res.roles,
+          id: id
         })
         this.getInfo()
       }
@@ -51,14 +69,16 @@ Page({
     })
   },
   getInfo () {
-    if (this.role === 'f') {
+    if (this.data.role === 'f') {
       // 服务方获取我的投标
       ywk.ajaxJson('/api/proposal', {operate: 'active'}, 'GET').then((res) => {
-        console.log(rress)
+        this.setData({
+          proposals: res.proposals
+        })
       }, (err) => {
         console.log(err)
       })
-    } else if (this.role === 'c') {
+    } else if (this.data.role === 'c') {
       // 需求方获取我的邀请
       ywk.ajaxJson('/api/proposal', {operate: 'invite'}, 'GET').then((res) => {
         console.log(rress)
@@ -66,6 +86,15 @@ Page({
         console.log(err)
       })
     }
+  },
+  changeRole () {
+    ywk.ajaxJson('/api/user/role', {id: this.data.id}, 'PUT').then((res) => {
+      if (res.error_code === 0) {
+        this.getData()
+        this.getRole()
+      }
+    }, (err) => {
+    })
   },
   onShareAppMessage () {
     return {
@@ -81,12 +110,16 @@ Page({
       duration: 10000
     })
     this.getData()
-    // this.getRole()
+    this.getRole()
   },
-  bindViewTap (e) {
-    let id = e.currentTarget.dataset.jid
+  goFreelancer () {
     wx.navigateTo({
-      url: `../project-detail/index?id=${id}`
+      url: `../freelancer/index`
+    })
+  },
+  goProject () {
+    wx.navigateTo({
+      url: `../project/index`
     })
   }
 })
