@@ -5,8 +5,7 @@
     "pages/freelancer-detail/index",
     "pages/project-detail/index",
     "pages/team-detail/index",
-    "pages/team-member/index",
-    "pages/comment/index"
+    "pages/team-member/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
