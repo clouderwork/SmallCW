@@ -2,12 +2,12 @@
 <import src="../../components/project-item.wxml"/>
 <view class="signin-container">
     <view class="section">
-      <input placeholder="请输入手机号/用户名/邮箱" focus="" />
+      <input placeholder="请输入手机号/用户名/邮箱" bindblur="getUsername" placeholder-class="sign-placeholder" focus="" />
     </view>
     <view class="section">
-      <input type="password" placeholder="请输入密码" focus="" class="signin-password"/>
-      <view class="btn-signin">
-        <button type="button">登录</button>
-      </view>
+      <input type="password" placeholder="请输入密码" bindblur="getPassword" placeholder-class="sign-placeholder" class="signin-password"/>
+    </view>
+    <view class="btn-signin">
+      <button type="button" bindtap="signin">登录</button>
     </view>
 </view>

@@ -12,6 +12,7 @@ function ajaxJson(url, data, method = 'GET') {
   if (method !== 'GET') {
     data = typeof (data) === 'object' ? data : {}
     data._xsrf = wx.getStorageSync('_xsrf')
+    data.session_token = wx.getStorageSync('session_token')
   }
   let header = {
     'content-type': 'application/x-www-form-urlencoded',
@@ -25,7 +26,7 @@ function ajaxJson(url, data, method = 'GET') {
   }
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `https://www.clouderwork.com${url}?timestamp=${new Date().getTime()}`,
+      url: `http://test.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
       data: data,
       method: method,
       header: header,

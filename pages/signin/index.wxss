@@ -33,3 +33,6 @@ input:last-child {
   line-height: 100rpx;
   box-sizing:border-box;
 }
+.sign-placeholder {
+  color: #cfcfcf;
+}
