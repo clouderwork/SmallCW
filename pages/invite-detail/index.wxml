@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="invite-container">
+  <view class="invite-content">
+    <view class="content-list">
+      <text>项目</text>
+      <text>云族佳科技有限公司网页前端开发项目</text>
+    </view>
+    <view class="content-list">
+      <text>预计完成时间</text>
+      <text>一周以内</text>
+    </view>
+  </view>
+</view>
