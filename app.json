@@ -6,7 +6,8 @@
     "pages/project-detail/index",
     "pages/team-detail/index",
     "pages/team-member/index",
-    "pages/comment/index"
+    "pages/comment/index",
+    "pages/proposal/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
