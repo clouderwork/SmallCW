@@ -43,6 +43,7 @@ Page({
       this.setData({
         profile: this.data.role === 'c' ? roles.client : roles.freelancer
       })
+      this.getInfo()
     }
   },
   getInfo () {
@@ -128,7 +129,6 @@ Page({
       duration: 10000
     })
     this.getProfile()
-    this.getInfo()
   },
   goFreelancer () {
     wx.redirectTo({

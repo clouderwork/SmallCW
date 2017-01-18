@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <import src="../../components/tab-bar.wxml"/>
 <view class="profile-container">
-  <view class="my-profile">
+  <view class="my-profile" wx:if="{{role === 'f' || role === 'c'}}">
     <image class="profile-avatar" src="{{profile.avatar}}" />
     <text class="profile-name">{{profile.name}}</text>
   </view>
