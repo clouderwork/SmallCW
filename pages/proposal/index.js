@@ -56,7 +56,7 @@ Page({
             job_id: this.data.id,
             amount: this.data.amount,
             duration: this.data.index,
-            message: '小程序我要投标'
+            message: '这里是投标的文案'
         }
         ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
