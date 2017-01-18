@@ -132,15 +132,9 @@ Page({
   },
   // 投标
   proposal (e) {
-    if (this.data.role === 'c' || this.data.role === 't') {
-        wx.redirectTo({
-          url: '../proposal/index'
-        })
-    } else if (this.data.role === 'f') {
-       wx.redirectTo({
-          url: '../invite-detail/index'
-        })
-    }
+    wx.redirectTo({
+      url: '../proposal/index?id=' + this.data.id
+    })
   },
   onShareAppMessage () {
     return {
