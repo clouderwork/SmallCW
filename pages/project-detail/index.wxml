@@ -82,7 +82,7 @@
       </li>
       <li wx:if="{{job.languages.length}}">
         <p class="list-name">必掌握语言：</p>
-        <p class="text"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+        <p class="skills"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
       <li wx:if="{{job.platforms.length}}">
         <p class="list-name">应用平台：</p>
@@ -90,7 +90,7 @@
       </li>
       <li wx:if="{{job.frameworks.length}}">
         <p class="list-name">喜欢的框架：</p>
-        <p class="text"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+        <p class="skills"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
       <li wx:if="{{job.api.length}}">
         <p class="list-name">API要求：</p>
@@ -104,4 +104,4 @@
   </block>
 </view>
 
-<view class="switch-role" bindtap="proposal">{{role === 'c'?'我要':'邀请'}}投标</view>
+<view class="switch-role" bindtap="proposal" wx:if="{{role === 'c' || role === '' || role === 't'}}">投标</view>

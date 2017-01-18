@@ -25,7 +25,22 @@ Page({
                 name: '6个月以上'
             }
         ],
-        index: 0
+        index: 0,
+        id: '',
+        job: {},
+        selfcount: '',
+        servecount: ''
+    },
+    onLoad (e) {
+        this.setData({
+            id: e.id
+        })
+        this.getJob()
+    },
+    getAmount (e) {
+        this.setData({
+            amount: e.detail.value
+        })
     },
     chooseTime (e) {
         this.setData({
@@ -33,13 +48,38 @@ Page({
         })
     },
     submitProposal (e) {
-        console.log('dsfsf')
-        ywk.ajaxJson('/api/user/signin', this.data, 'POST').then((res) => {
+        let prodata = {
+            job_id: this.data.id,
+            amount: this.data.amount,
+            duration: this.data.index,
+            message: '小程序我要投标'
+        }
+        ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
-                console.log('提交成功')
+                wx.redirectTo({
+                    url: '../project/index'
+                })
             }
         }, (err) => {
             console.log(err)
+        })
+    },
+    getJob (e) {
+        // 获取项目状态
+        ywk.ajaxJson('/api/jobs', {job_id: this.data.id}).then((res) => {
+            if (res.error_code === 0) {
+                this.setData({
+                    job: res.job
+                })
+            }
+        }, (err) => {
+            console.log(err)
+        })
+    },
+    computserve (e) {
+        this.setData({
+            selfcount:(e.detail.value * 0.9).toFixed(2),
+            servecount: (e.detail.value - (e.detail.value * 0.9)).toFixed(2)
         })
     }
 })
