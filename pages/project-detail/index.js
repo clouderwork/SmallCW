@@ -79,13 +79,15 @@ Page({
   data: {
     panel: 'base',
     // 获取身份
-    role: wx.getStorageSync('role') || '',
+    role: '',
     skillShow: false,
     languageShow: false,
     frameworkShow: false
   },
   onLoad (e) {
-    console.log(this.data.role)
+    this.setData({
+      role: wx.getStorageSync('role') || ''
+    })
     this.getDetail(e.id)
     this.setData({ id: e.id })
   },
@@ -143,7 +145,7 @@ Page({
   },
   skillOperation (e) {
     this.setData({
-      skillShow: !e.currentTarget.dataset.skillShow
+      skillShow: !this.data.skillShow
     })
   },
   frameOperation () {

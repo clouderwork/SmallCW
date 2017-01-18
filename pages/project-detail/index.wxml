@@ -100,14 +100,14 @@
         <p class="list-name">API要求：</p>
         <p class="text" ><span wx:for="{{job.api}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
-      <li wx:if="{{job.skills.length}}" class="skills-box" bindtap="skillOperation" data-skillShow="{{skillShow}}">
+      <li wx:if="{{job.skills.length}}" class="skills-box" bindtap="skillOperation">
         <p class="list-name">其他技能：{{skillShow}}</p>
         <p class="skills"><span wx:for="{{job.skills}}" wx:key="*this" wx:for-item="skill">{{skill}}</span></p>
-        <image wx:if="{{!skillShow}}" src="./images/up.png" class="select-down"/>
         <image wx:if="{{skillShow}}" src="./images/down.png" class="select-up"/>
+        <image wx:else src="./images/up.png" class="select-down"/>
       </li>
     </ul>
   </block>
 </view>
 
-<view class="switch-role" bindtap="proposal" wx:if="{{role === 'c' || role === '' || role === 't'}}">投标</view>
+<view class="switch-role" bindtap="proposal" wx:if="{{role !== 'c'}}">投标</view>
