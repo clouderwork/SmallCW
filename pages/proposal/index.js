@@ -27,13 +27,20 @@ Page({
         ],
         index: 0,
         id: '',
-        job: ''
+        job: {},
+        selfcount: '',
+        servecount: ''
     },
     onLoad (e) {
         this.setData({
             id: e.id
         })
         this.getJob()
+    },
+    getAmount (e) {
+        this.setData({
+            amount: e.detail.value
+        })
     },
     chooseTime (e) {
         this.setData({
@@ -49,7 +56,9 @@ Page({
         }
         ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
-                console.log('提交成功')
+                wx.redirectTo({
+                    url: '../project/index'
+                })
             }
         }, (err) => {
             console.log(err)
@@ -59,10 +68,18 @@ Page({
         // 获取项目状态
         ywk.ajaxJson('/api/jobs', {job_id: this.data.id}).then((res) => {
             if (res.error_code === 0) {
-                this.data.job = res.job
+                this.setData({
+                    job: res.job
+                })
             }
         }, (err) => {
             console.log(err)
+        })
+    },
+    computserve (e) {
+        this.setData({
+            selfcount:(e.detail.value * 0.9).toFixed(2),
+            servecount: (e.detail.value - (e.detail.value * 0.9)).toFixed(2)
         })
     }
 })
