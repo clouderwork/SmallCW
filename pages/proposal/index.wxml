@@ -23,4 +23,5 @@
     </view>
 </view>
 
-<view class="switch-role" bindtap="submitProposal">提交</view>
+<view class="switch-role" bindtap="submitProposal" wx:if="{{(job.paymethod==='fixed'&&amount&&index) || (job.paymethod==='hour'&&amount)}}">提交</view>
+<view class="switch-disable" bindtap="submitProposal" wx:else>提交</view>
