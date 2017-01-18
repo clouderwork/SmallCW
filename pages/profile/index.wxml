@@ -15,7 +15,7 @@
             <view class="bid-content">{{proposal.job.description}}</view>
             <view class="bid-time">
               <text class="time">报名日期 {{proposal.create_at}}</text>
-              <view class="go-next">查看报名内容<image class="next-icon" src="image/icon_next.png" /></view>
+              <view class="go-next" data-id="{{proposal.proposal_id}}" bindtap="goDetail">查看报名内容<image class="next-icon" src="image/icon_next.png" /></view>
             </view>
           </view>
         </block>

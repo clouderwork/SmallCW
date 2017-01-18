@@ -62,7 +62,7 @@ Page({
   },
   bindViewTap (e) {
     let id = e.currentTarget.dataset.jid
-    wx.redirectTo({
+    wx.navigateTo({
       url: `../project-detail/index?id=${id}`
     })
   },

@@ -104,12 +104,6 @@ Page({
       console.log(err);
     })
   },
-  bindViewTap (e) {
-    let id = e.currentTarget.dataset.fid
-    wx.redirectTo({
-      url: `../comment/index?id=${id}`
-    })
-  },
   onShow () {
     // 获取页面高度
     if (wx.getStorageSync('systemInfo')) {

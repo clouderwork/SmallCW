@@ -133,11 +133,11 @@ Page({
   // 投标
   proposal (e) {
     if (this.data.role === 'c' || this.data.role === 't') {
-        wx.redirectTo({
+        wx.navigateTo({
           url: '../proposal/index'
         })
     } else if (this.data.role === 'f') {
-       wx.redirectTo({
+       wx.navigateTo({
           url: '../invite-detail/index'
         })
     }

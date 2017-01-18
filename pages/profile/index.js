@@ -29,7 +29,7 @@ Page({
           })
         } else if (res.error_code === 80001) {
           // 去登录页面
-          wx.redirectTo({
+          wx.navigateTo({
             url: '../signin/index'
           })
         } else {
@@ -98,10 +98,16 @@ Page({
         console.log(err)
       })
     } else {
-      wx.redirectTo({
+      wx.navigateTo({
         url: `../signin/index`
       })
     }
+  },
+  goDetail (e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `../proposal-detail/index?id=${id}`
+    })
   },
   onShareAppMessage () {
     return {
