@@ -6,7 +6,7 @@
       <image class="profile-avatar" src="{{profile.avatar}}" />
       <text class="profile-name">{{profile.name}}</text>
     </view>
-    <view wx:if="{{role === 'f' && proposals.length > 0 || (role === 'c' && invites.length > 0)}}">
+    <view wx:if="{{(role === 'f' || role === 'c') && proposals.length > 0}}">
       <view class="profile-title" wx:if="{{role === 'f'}}"><image class="my-bids" src="image/icon_bid.png" />我的投标</view>
       <view class="bids-list" wx:if="{{role === 'f'}}">
         <block wx:for="{{proposals}}" wx:key="{{proposal.proposal_id}}" wx:for-item="proposal">
@@ -22,7 +22,7 @@
       </view>
       <view class="profile-title" wx:if="{{role === 'c'}}"><image class="my-invite" src="image/icon_invite.png" />我发出的邀请</view>
       <view class="invite-list" wx:if="{{role === 'c'}}">
-        <block wx:for="{{invites}}" wx:key="{{invite.proposal_id}}" wx:for-item="invite">
+        <block wx:for="{{proposals}}" wx:key="{{proposal.proposal_id}}" wx:for-item="invite">
           <view class="invite-item" data-id="{{invite.job.id}}" bindtap="goInvite">
             <image wx:if="{{invite.is_team}}" class="freelancer-avatar" src="{{invite.user.team.avatar}}" />
             <image wx:else class="freelancer-avatar" src="{{invite.user.freelancer.avatar}}" />
@@ -37,7 +37,7 @@
         </block>
       </view>
     </view>
-    <view class="no-profile-data" wx:else>
+    <view class="no-profile-data" wx:if="{{(role === 'f' || role === 'c') && proposals.length === 0}}">
       <image class="no-data-icon" src="image/icon_no_data.png" />
       <text class="no-data-tips">暂时还没有内容哦~</text>
     </view>

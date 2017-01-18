@@ -4,7 +4,6 @@ var ywk = require('../../utils/ywk')
 Page({
   data: {
     role: wx.getStorageSync('role') || '',
-    invites: [],
     proposals: [],
     from: 'profile',
     listLoad: false
@@ -48,37 +47,24 @@ Page({
     }
   },
   getInfo () {
-    if (this.data.role === 'f') {
-      // 服务方获取我的投标
-      ywk.ajaxJson('/api/proposal', {operate: 'active'}, 'GET').then((res) => {
-        wx.hideToast()
+    let operate = this.data.role === 'f' ? 'active' : 'invite'
+    // 服务方获取我的投标
+    ywk.ajaxJson('/api/proposal', {operate: operate}, 'GET').then((res) => {
+      if (res.error_code === 0) {
+        let proposals = res.proposals.map((item) => {
+          item.create_at = this.filterTime(item.create_at)
+          return item
+        })
         this.setData({
-          proposals: res.proposals.map((item) => {
-            item.create_at = this.filterTime(item.create_at)
-            return item
-          }),
+          proposals: proposals,
           listLoad: true
         })
-      }, (err) => {
-        wx.hideToast()
-        console.log(err)
-      })
-    } else if (this.data.role === 'c') {
-      // 需求方获取我的邀请
-      ywk.ajaxJson('/api/proposal', {operate: 'invite'}, 'GET').then((res) => {
-        wx.hideToast()
-        this.setData({
-          invites: res.proposals.map((item) => {
-            item.create_at = this.filterTime(item.create_at)
-            return item
-          }),
-          listLoad: true
-        })
-      }, (err) => {
-        wx.hideToast()
-        console.log(err)
-      })
-    }
+      }
+      wx.hideToast()
+    }, (err) => {
+      wx.hideToast()
+      console.log(err)
+    })
   },
   changeRole () {
     if (wx.getStorageSync('roles')) {
