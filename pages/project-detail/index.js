@@ -139,9 +139,16 @@ Page({
   },
   // 投标
   proposal (e) {
-    wx.redirectTo({
-      url: '../proposal/index?id=' + this.data.id
-    })
+    if (this.data.role === 'f' || this.data.role === 't') {
+      wx.redirectTo({
+        url: '../proposal/index?id=' + this.data.id
+      })
+    } else if (this.data.role === '') {
+      wx.redirectTo({
+        url: '../signin/index'
+      })
+    }
+    
   },
   skillOperation (e) {
     this.setData({

@@ -24,7 +24,6 @@ view {
 .money-text {
     border: none;
     text-align: right;
-    position: relative;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     box-flex: 1;
@@ -32,7 +31,7 @@ view {
     display: block;
     width: 100%;
     outline: none;
-    top: -2rpx;
+    margin-right: 8rpx;
 }
 
 .first-box-center {
