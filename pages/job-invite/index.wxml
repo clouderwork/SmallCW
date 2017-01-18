@@ -21,6 +21,6 @@
     </view>
   </view>
 </view>
-<view class="row-submit" bindtap="submit">
+<view class="row-submit {{isDisable}}" bindtap="submit">
   提 交
 </view>
