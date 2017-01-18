@@ -5,6 +5,10 @@ Page({
         time: ['一周以内', '一个月内', '1-3个月', '3-6个月', '6个月以上'],
         objectTime: [
             {
+                id: '',
+                name: '请选择'
+            },
+            {
                 id: 5,
                 name: '一周以内'
             },
@@ -52,7 +56,7 @@ Page({
             job_id: this.data.id,
             amount: this.data.amount,
             duration: this.data.index,
-            message: '小程序我要投标'
+            message: '这里是投标的文案'
         }
         ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
