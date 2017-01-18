@@ -104,4 +104,4 @@
   </block>
 </view>
 
-<view class="switch-role" bindtap="proposal">{{role === 'c'?'我要':'邀请'}}投标</view>
+<view class="switch-role" bindtap="proposal" wx:if="{{role === 'c' || role === '' || role === 't'}}">投标</view>

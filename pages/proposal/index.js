@@ -25,7 +25,15 @@ Page({
                 name: '6个月以上'
             }
         ],
-        index: 0
+        index: 0,
+        id: '',
+        job: ''
+    },
+    onLoad (e) {
+        this.setData({
+            id: e.id
+        })
+        this.getJob()
     },
     chooseTime (e) {
         this.setData({
@@ -33,10 +41,25 @@ Page({
         })
     },
     submitProposal (e) {
-        console.log('dsfsf')
-        ywk.ajaxJson('/api/user/signin', this.data, 'POST').then((res) => {
+        let prodata = {
+            job_id: this.data.id,
+            amount: this.data.amount,
+            duration: this.data.index,
+            message: '小程序我要投标'
+        }
+        ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
                 console.log('提交成功')
+            }
+        }, (err) => {
+            console.log(err)
+        })
+    },
+    getJob (e) {
+        // 获取项目状态
+        ywk.ajaxJson('/api/jobs', {job_id: this.data.id}).then((res) => {
+            if (res.error_code === 0) {
+                this.data.job = res.job
             }
         }, (err) => {
             console.log(err)
