@@ -206,13 +206,18 @@ page {
   height: 32rpx;
 }
 .skills-box .select-up {
-  margin-top: 10rpx;
+  margin-top: 19rpx;
   width: 32rpx;
   height: 18rpx;
 }
 .skills {
   flex: 1;
   right: 0;
+  max-height: 60rpx;
+  overflow: hidden;
+}
+.show-all {
+  max-height: 100%;
 }
 .skills span{
   padding: 0 24rpx;
