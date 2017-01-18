@@ -200,6 +200,14 @@ page {
 .skills-box {
   line-height: 60rpx !important;
 }
+.skills-box .select-down {
+  width: 18rpx;
+  height: 32rpx;
+}
+.skills-box .select-up {
+  width: 32rpx;
+  height: 18rpx;
+}
 .skills {
   flex: 1;
   right: 0;
