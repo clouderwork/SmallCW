@@ -6,7 +6,8 @@ Page({
     role: wx.getStorageSync('role') || '',
     invites: [],
     proposals: [],
-    from: 'profile'
+    from: 'profile',
+    listLoad: false
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -55,7 +56,8 @@ Page({
           proposals: res.proposals.map((item) => {
             item.create_at = this.filterTime(item.create_at)
             return item
-          })
+          }),
+          listLoad: true
         })
       }, (err) => {
         wx.hideToast()
@@ -69,7 +71,8 @@ Page({
           invites: res.proposals.map((item) => {
             item.create_at = this.filterTime(item.create_at)
             return item
-          })
+          }),
+          listLoad: true
         })
       }, (err) => {
         wx.hideToast()
@@ -87,6 +90,7 @@ Page({
       })
       ywk.ajaxJson('/api/v1.1/user/role', {id: profile.id}, 'PUT').then((res) => {
         if (res.error_code === 0) {
+          this.data.listLoad = false
           this.setData({
             role: this.data.role === 'c' ? 'f' : 'c',
             profile: profile

@@ -1,45 +1,47 @@
 <!--index.wxml-->
 <import src="../../components/tab-bar.wxml"/>
 <view class="profile-container">
-  <view class="my-profile" wx:if="{{role === 'f' || role === 'c'}}">
-    <image class="profile-avatar" src="{{profile.avatar}}" />
-    <text class="profile-name">{{profile.name}}</text>
-  </view>
-  <view wx:if="{{role === 'f' && proposals.length > 0 || (role === 'c' && invites.length > 0)}}">
-    <view class="profile-title" wx:if="{{role === 'f'}}"><image class="my-bids" src="image/icon_bid.png" />我的投标</view>
-    <view class="bids-list" wx:if="{{role === 'f'}}">
-      <block wx:for="{{proposals}}" wx:key="{{proposal.proposal_id}}" wx:for-item="proposal">
-        <view class="bid-item">
-          <text class="bid-title">{{proposal.job.name}}</text>
-          <view class="bid-content">{{proposal.job.description}}</view>
-          <view class="bid-time">
-            <text class="time">报名日期 {{proposal.create_at}}</text>
-            <view class="go-next" data-id="{{proposal.proposal_id}}" bindtap="goDetail">查看报名内容<image class="next-icon" src="image/icon_next.png" /></view>
-          </view>
-        </view>
-      </block>
+  <view wx:if="{{listLoad}}">
+    <view class="my-profile">
+      <image class="profile-avatar" src="{{profile.avatar}}" />
+      <text class="profile-name">{{profile.name}}</text>
     </view>
-    <view class="profile-title" wx:if="{{role === 'c'}}"><image class="my-invite" src="image/icon_invite.png" />我发出的邀请</view>
-    <view class="invite-list" wx:if="{{role === 'c'}}">
-      <block wx:for="{{invites}}" wx:key="{{invite.proposal_id}}" wx:for-item="invite">
-        <view class="invite-item" data-id="{{invite.job.id}}" bindtap="goInvite">
-          <image wx:if="{{invite.is_team}}" class="freelancer-avatar" src="{{invite.user.team.avatar}}" />
-          <image wx:else class="freelancer-avatar" src="{{invite.user.freelancer.avatar}}" />
-          <view class="freelancer-info">
-            <text wx:if="{{invite.is_team}}" class="name team-name">{{invite.user.team.name}}</text>
-            <text wx:else class="name">{{invite.user.freelancer.name}}</text>
-            <text class="position" wx:if="{{!invite.is_team}}">{{invite.user.freelancer.title}}</text>
-            <text class="time">邀请日期 {{invite.create_at}}</text>
+    <view wx:if="{{role === 'f' && proposals.length > 0 || (role === 'c' && invites.length > 0)}}">
+      <view class="profile-title" wx:if="{{role === 'f'}}"><image class="my-bids" src="image/icon_bid.png" />我的投标</view>
+      <view class="bids-list" wx:if="{{role === 'f'}}">
+        <block wx:for="{{proposals}}" wx:key="{{proposal.proposal_id}}" wx:for-item="proposal">
+          <view class="bid-item">
+            <text class="bid-title">{{proposal.job.name}}</text>
+            <view class="bid-content">{{proposal.job.description}}</view>
+            <view class="bid-time">
+              <text class="time">报名日期 {{proposal.create_at}}</text>
+              <view class="go-next" data-id="{{proposal.proposal_id}}" bindtap="goDetail">查看报名内容<image class="next-icon" src="image/icon_next.png" /></view>
+            </view>
           </view>
-          <image class="go-invite" src="image/icon_next.png" />
-        </view>
-      </block>
+        </block>
+      </view>
+      <view class="profile-title" wx:if="{{role === 'c'}}"><image class="my-invite" src="image/icon_invite.png" />我发出的邀请</view>
+      <view class="invite-list" wx:if="{{role === 'c'}}">
+        <block wx:for="{{invites}}" wx:key="{{invite.proposal_id}}" wx:for-item="invite">
+          <view class="invite-item" data-id="{{invite.job.id}}" bindtap="goInvite">
+            <image wx:if="{{invite.is_team}}" class="freelancer-avatar" src="{{invite.user.team.avatar}}" />
+            <image wx:else class="freelancer-avatar" src="{{invite.user.freelancer.avatar}}" />
+            <view class="freelancer-info">
+              <text wx:if="{{invite.is_team}}" class="name team-name">{{invite.user.team.name}}</text>
+              <text wx:else class="name">{{invite.user.freelancer.name}}</text>
+              <text class="position" wx:if="{{!invite.is_team}}">{{invite.user.freelancer.title}}</text>
+              <text class="time">邀请日期 {{invite.create_at}}</text>
+            </view>
+            <image class="go-invite" src="image/icon_next.png" />
+          </view>
+        </block>
+      </view>
     </view>
+    <view class="no-profile-data" wx:else>
+      <image class="no-data-icon" src="image/icon_no_data.png" />
+      <text class="no-data-tips">暂时还没有内容哦~</text>
+    </view>
+    <view class="switch-role" bindtap="changeRole">切换{{role === 'c'?'服务方':'需求方'}}</view>
   </view>
-  <view class="no-profile-data" wx:if="{{role === 'f' && proposals.length === 0 || (role === 'c' && invites.length === 0)}}">
-    <image class="no-data-icon" src="image/icon_no_data.png" />
-    <text class="no-data-tips">暂时还没有内容哦~</text>
-  </view>
-  <view class="switch-role" wx:if="{{role === 'f' || role === 'c'}}" bindtap="changeRole">切换{{role === 'c'?'服务方':'需求方'}}</view>
   <template is="tabBar" data="{{from}}" />
 </view>
