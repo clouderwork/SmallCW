@@ -35,7 +35,7 @@ Page({
         }
         wx.setStorageSync('role', role)
         wx.setStorageSync('roles', res.roles)
-        wx.redirectTo({
+        wx.navigateTo({
           url: '../profile/index'
         })
       }
