@@ -3,10 +3,10 @@
 var ywk = require('../../utils/ywk')
 Page({
   data: {
-    role: wx.getStorageSync('role') || '',
-    invites: [],
+    role: '',
     proposals: [],
-    from: 'profile'
+    from: 'profile',
+    listLoad: false
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -43,38 +43,30 @@ Page({
       this.setData({
         profile: this.data.role === 'c' ? roles.client : roles.freelancer
       })
+      this.getInfo()
     }
   },
   getInfo () {
-    if (this.data.role === 'f') {
-      // 服务方获取我的投标
-      ywk.ajaxJson('/api/proposal', {operate: 'active'}, 'GET').then((res) => {
-        wx.hideToast()
-        this.setData({
-          proposals: res.proposals.map((item) => {
-            item.create_at = this.filterTime(item.create_at)
-            return item
-          })
+    console.log(this.data.role)
+    let operate = this.data.role === 'f' ? 'active' : 'invite'
+    // 服务方获取我的投标
+    ywk.ajaxJson('/api/proposal', {operate: operate}, 'GET').then((res) => {
+      if (res.error_code === 0) {
+        let proposals = res.proposals.map((item) => {
+          item.create_at = this.filterTime(item.create_at)
+          return item
         })
-      }, (err) => {
-        wx.hideToast()
-        console.log(err)
-      })
-    } else if (this.data.role === 'c') {
-      // 需求方获取我的邀请
-      ywk.ajaxJson('/api/proposal', {operate: 'invite'}, 'GET').then((res) => {
-        wx.hideToast()
+        console.log(proposals)
         this.setData({
-          invites: res.proposals.map((item) => {
-            item.create_at = this.filterTime(item.create_at)
-            return item
-          })
+          proposals: proposals,
+          listLoad: true
         })
-      }, (err) => {
-        wx.hideToast()
-        console.log(err)
-      })
-    }
+      }
+      wx.hideToast()
+    }, (err) => {
+      wx.hideToast()
+      console.log(err)
+    })
   },
   changeRole () {
     if (wx.getStorageSync('roles')) {
@@ -86,6 +78,7 @@ Page({
       })
       ywk.ajaxJson('/api/v1.1/user/role', {id: profile.id}, 'PUT').then((res) => {
         if (res.error_code === 0) {
+          this.data.listLoad = false
           this.setData({
             role: this.data.role === 'c' ? 'f' : 'c',
             profile: profile
@@ -127,8 +120,10 @@ Page({
       icon: 'loading',
       duration: 10000
     })
+    this.setData({
+      role: wx.getStorageSync('role') || ''
+    })
     this.getProfile()
-    this.getInfo()
   },
   goFreelancer () {
     wx.redirectTo({
