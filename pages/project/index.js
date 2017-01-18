@@ -74,13 +74,16 @@ Page({
     }
   },
   goFreelancer () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../freelancer/index`
     })
   },
   goProfile () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../profile/index`
     })
+  },
+  goProject () {
+    return
   }
 })

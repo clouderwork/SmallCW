@@ -16,9 +16,6 @@ Page({
         if (res.error_code === 0) {
           wx.setStorageSync('session_token', res.session_token || '')
           this.getRole()
-          wx.navigateTo({
-            url: '../profile/index'
-          })
         } else {
           console.log(res)
         }
@@ -29,7 +26,6 @@ Page({
   },
   getRole () {
     ywk.ajaxJson('/api/v1.1/user/role', {}, 'GET').then((res) => {
-      wx.hideToast()
       if (res.error_code === 0) {
         let role = 'f'
         if (res.current_id === res.roles.client.id) {
@@ -39,6 +35,9 @@ Page({
         }
         wx.setStorageSync('role', role)
         wx.setStorageSync('roles', res.roles)
+        wx.redirectTo({
+          url: '../profile/index'
+        })
       }
     }, (err) => {
       wx.hideToast()

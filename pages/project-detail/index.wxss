@@ -240,13 +240,3 @@ page {
 .panel-more .text span:last-child:after {
   content: ''
 }
-
-
-.proposal-btn {
-  margin-top: 30rpx;
-  font-size: 38rpx;
-  color: #ff6700;
-  background-color: #fff;
-  border-radius: 0;
-  line-height: 100rpx;
-}
