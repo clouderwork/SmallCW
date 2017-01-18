@@ -43,7 +43,6 @@ Page({
       this.setData({
         profile: this.data.role === 'c' ? roles.client : roles.freelancer
       })
-      this.getInfo()
     }
   },
   getInfo () {
@@ -55,6 +54,7 @@ Page({
           item.create_at = this.filterTime(item.create_at)
           return item
         })
+        console.log(proposals)
         this.setData({
           proposals: proposals,
           listLoad: true
@@ -119,6 +119,7 @@ Page({
       duration: 10000
     })
     this.getProfile()
+    this.getInfo()
   },
   goFreelancer () {
     wx.redirectTo({

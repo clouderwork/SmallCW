@@ -50,6 +50,7 @@ page {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
 }
 .bid-content {
   margin: 20rpx 20rpx 29rpx;
