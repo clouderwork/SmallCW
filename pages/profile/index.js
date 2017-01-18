@@ -3,7 +3,7 @@
 var ywk = require('../../utils/ywk')
 Page({
   data: {
-    role: wx.getStorageSync('role') || '',
+    role: '',
     proposals: [],
     from: 'profile',
     listLoad: false
@@ -43,9 +43,11 @@ Page({
       this.setData({
         profile: this.data.role === 'c' ? roles.client : roles.freelancer
       })
+      this.getInfo()
     }
   },
   getInfo () {
+    console.log(this.data.role)
     let operate = this.data.role === 'f' ? 'active' : 'invite'
     // 服务方获取我的投标
     ywk.ajaxJson('/api/proposal', {operate: operate}, 'GET').then((res) => {
@@ -118,8 +120,10 @@ Page({
       icon: 'loading',
       duration: 10000
     })
+    this.setData({
+      role: wx.getStorageSync('role') || ''
+    })
     this.getProfile()
-    this.getInfo()
   },
   goFreelancer () {
     wx.redirectTo({
