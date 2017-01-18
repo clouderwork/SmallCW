@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <import src="../../components/tab-bar.wxml"/>
 <view class="profile-container">
-  <view wx:if="{{profileLoad && listLoad}}">
+  <view wx:if="{{listLoad}}">
     <view class="my-profile">
       <image class="profile-avatar" src="{{profile.avatar}}" />
-      <text class="profile-name">{{profile.nickname}}</text>
+      <text class="profile-name">{{profile.name}}</text>
     </view>
     <view wx:if="{{role === 'f' && proposals.length > 0 || (role === 'c' && invites.length > 0)}}">
       <view class="profile-title" wx:if="{{role === 'f'}}"><image class="my-bids" src="image/icon_bid.png" />我的投标</view>

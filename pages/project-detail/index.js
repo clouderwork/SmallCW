@@ -129,7 +129,7 @@ Page({
   },
   // 投标
   proposal (e) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../proposal/index'
     })
   },
