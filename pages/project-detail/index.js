@@ -79,7 +79,10 @@ Page({
   data: {
     panel: 'base',
     // 获取身份
-    role: wx.getStorageSync('role') || ''
+    role: wx.getStorageSync('role') || '',
+    skillShow: false,
+    languageShow: false,
+    frameworkShow: false
   },
   onLoad (e) {
     console.log(this.data.role)
@@ -136,6 +139,21 @@ Page({
   proposal (e) {
     wx.redirectTo({
       url: '../proposal/index?id=' + this.data.id
+    })
+  },
+  skillOperation (e) {
+    this.setData({
+      skillShow: !e.currentTarget.dataset.skillShow
+    })
+  },
+  frameOperation () {
+    this.setData({
+      frameworkShow: !e.currentTarget.dataset.frameworkShow
+    })
+  },
+  langOperation () {
+    this.setData({
+      languageShow: !e.currentTarget.dataset.languageShow
     })
   },
   onShareAppMessage () {

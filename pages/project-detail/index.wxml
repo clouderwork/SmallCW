@@ -80,25 +80,31 @@
         <p class="list-name">项目阶段：</p>
         <p class="text">{{job.stage}}</p>
       </li>
-      <li wx:if="{{job.languages.length}}">
+      <li wx:if="{{job.languages.length}}" class="skills-box" bindtap="skillOperation" data-languageShow="{{languageShow}}">
         <p class="list-name">必掌握语言：</p>
         <p class="skills"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+        <image wx:if="{{!skillShow}}" src="./images/up.png" class="select-down"/>
+        <image wx:if="{{skillShow}}" src="./images/down.png" class="select-up"/>
       </li>
       <li wx:if="{{job.platforms.length}}">
         <p class="list-name">应用平台：</p>
         <p class="text"><span wx:for="{{job.platforms}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
-      <li wx:if="{{job.frameworks.length}}">
+      <li wx:if="{{job.frameworks.length}}" class="skills-box" bindtap="frameOperation" data-frameworkShow="{{frameworkShow}}">
         <p class="list-name">喜欢的框架：</p>
         <p class="skills"><span wx:for="{{job.frameworks}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
+        <image wx:if="{{!skillShow}}" src="./images/up.png" class="select-down"/>
+        <image wx:if="{{skillShow}}" src="./images/down.png" class="select-up"/>
       </li>
       <li wx:if="{{job.api.length}}">
         <p class="list-name">API要求：</p>
         <p class="text" ><span wx:for="{{job.api}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
       </li>
-      <li wx:if="{{job.skills.length}}" class="skills-box">
-        <p class="list-name">其他技能：</p>
+      <li wx:if="{{job.skills.length}}" class="skills-box" bindtap="skillOperation" data-skillShow="{{skillShow}}">
+        <p class="list-name">其他技能：{{skillShow}}</p>
         <p class="skills"><span wx:for="{{job.skills}}" wx:key="*this" wx:for-item="skill">{{skill}}</span></p>
+        <image wx:if="{{!skillShow}}" src="./images/up.png" class="select-down"/>
+        <image wx:if="{{skillShow}}" src="./images/down.png" class="select-up"/>
       </li>
     </ul>
   </block>
