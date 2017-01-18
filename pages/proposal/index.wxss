@@ -9,7 +9,7 @@ view {
 }
 
 .pro-money {
-    margin-top: 20px;
+    margin-top: 20rpx;
     font-size: 30rpx;
 }
 
