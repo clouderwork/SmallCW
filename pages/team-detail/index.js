@@ -90,6 +90,11 @@ Page({
       console.log(err)
     })
   },
+  invite () {
+    wx.navigateTo({
+      url: `../job-invite/index?id=${this.data.team_id}&type=team`
+    })
+  },
   onShareAppMessage () {
     return {
       title: '云沃客',

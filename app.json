@@ -8,6 +8,7 @@
     "pages/team-member/index",
     "pages/proposal/index",
     "pages/proposal-detail/index",
+    "pages/job-invite/index",
     "pages/invite-detail/index",
     "pages/profile/index",
     "pages/signin/index"

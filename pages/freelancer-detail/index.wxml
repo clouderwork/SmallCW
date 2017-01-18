@@ -128,4 +128,7 @@
       </block>
     </view>
   </view>
+  <view class="row-invite" data-id="{{profile.id}}" bindtap="invite">
+    邀请TA
+  </view>
 </view>

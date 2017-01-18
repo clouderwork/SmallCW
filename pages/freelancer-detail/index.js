@@ -125,6 +125,11 @@ Page({
       descImg: `./images/icon-${state}.png`
     })
   },
+  invite () {
+    wx.navigateTo({
+      url: `../job-invite/index?id=${this.data.id}&type=user`
+    })
+  },
   onShareAppMessage () {
     return {
       title: '云沃客',

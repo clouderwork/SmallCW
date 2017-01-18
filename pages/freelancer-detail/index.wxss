@@ -270,3 +270,17 @@ page {
   color: #777;
   font-size: 26rpx;
 }
+
+.row-invite {
+  text-align: center;
+  font-family:PingFangSC-Medium;
+  font-size:38rpx;
+  color:#ff6700;
+  letter-spacing:0;
+  text-align:center;
+  background-color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  vertical-align: middle;
+  border-top: 40rpx solid #f4f4f4;
+}

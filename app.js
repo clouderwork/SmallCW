@@ -17,7 +17,7 @@ App({
       })
     }
     // 微信授权
-    // if (wx.getStorageSync('session_key')) {
+    if (wx.getStorageSync('session_key')) {
       wx.login({
         success: function(res) {
           if (res.code) {
@@ -48,7 +48,7 @@ App({
           }
         }
       });
-    // }
+    }
 
     //  获取系统信息
     this.getSystemInfo();
@@ -64,26 +64,5 @@ App({
     if (systemInfo.model) {
       wx.setStorageSync('systemInfo', systemInfo)
     };
-  },
-  getUserInfo:function(cb){
-    var that = this
-    if(this.globalData.userInfo){
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      })
-    }
-  },
-  globalData:{
-    userInfo: null
   }
 })

@@ -99,3 +99,6 @@
     </view>
   </block>
 </view>
+<view class="row-invite" bindtap="invite">
+  邀请TA
+</view>
