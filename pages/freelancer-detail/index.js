@@ -106,7 +106,7 @@ Page({
   },
   bindViewTap (e) {
     let id = e.currentTarget.dataset.fid
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../comment/index?id=${id}`
     })
   },

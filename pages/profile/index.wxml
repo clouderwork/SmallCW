@@ -1,20 +1,20 @@
 <!--index.wxml-->
 <import src="../../components/tab-bar.wxml"/>
 <view class="profile-container">
-  <view wx:if="{{profileLoad && listLoad}}">
+  <view wx:if="{{listLoad}}">
     <view class="my-profile">
       <image class="profile-avatar" src="{{profile.avatar}}" />
-      <text class="profile-name">{{profile.nickname}}</text>
+      <text class="profile-name">{{profile.name}}</text>
     </view>
     <view wx:if="{{role === 'f' && proposals.length > 0 || (role === 'c' && invites.length > 0)}}">
       <view class="profile-title" wx:if="{{role === 'f'}}"><image class="my-bids" src="image/icon_bid.png" />我的投标</view>
       <view class="bids-list" wx:if="{{role === 'f'}}">
-        <block wx:for="{{[1]}}" wx:for-item="bid">
+        <block wx:for="{{proposals}}" wx:key="{{proposal.proposal_id}}" wx:for-item="proposal">
           <view class="bid-item">
-            <text class="bid-title">工程机械WEB、 移动端及APP开发</text>
-            <view class="bid-content">本公司为初创型的科技公司.需要设计一个logo，1的有upsc四个字母组成，2、色调：以蓝色为主调…</view>
+            <text class="bid-title">{{proposal.job.name}}</text>
+            <view class="bid-content">{{proposal.job.description}}</view>
             <view class="bid-time">
-              <text class="time">报名日期 2016-12-12</text>
+              <text class="time">报名日期 {{proposal.create_at}}</text>
               <view class="go-next">查看报名内容<image class="next-icon" src="image/icon_next.png" /></view>
             </view>
           </view>
@@ -22,7 +22,7 @@
       </view>
       <view class="profile-title" wx:if="{{role === 'c'}}"><image class="my-invite" src="image/icon_invite.png" />我发出的邀请</view>
       <view class="invite-list" wx:if="{{role === 'c'}}">
-        <block wx:for="{{[1]}}" wx:for-item="invite">
+        <block wx:for="{{invites}}" wx:key="{{invite.id}}" wx:for-item="invite">
           <view class="invite-item">
             <image class="freelancer-avatar" src="image/avatar.png" />
             <view class="freelancer-info">

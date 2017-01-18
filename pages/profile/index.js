@@ -7,7 +7,6 @@ Page({
     invites: [],
     proposals: [],
     from: 'profile',
-    profileLoad: false,
     listLoad: false
   },
   filterTime (time) {
@@ -20,25 +19,32 @@ Page({
     return year + '-' + month + '-' + day
   },
   getProfile () {
-    ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
-      wx.hideToast()
-      if (res.error_code === 0) {
-        this.setData({
-          profile: res.profile,
-          profileLoad: true
-        })
-      } else if (res.error_code === 80001) {
-        // 去登录页面
-        wx.navigateTo({
-          url: '../signin/index'
-        })
-      } else {
-        console.log(res)
-      }
-    }, (err) => {
-      wx.hideToast()
-      console.log(err)
-    })
+    if (!wx.getStorageSync('roles')) {
+      ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
+        wx.hideToast()
+        if (res.error_code === 0) {
+          let roles = wx.getStorageSync('roles')
+          this.setData({
+            profile: this.data.role === 'c' ? roles.client : roles.freelancer
+          })
+        } else if (res.error_code === 80001) {
+          // 去登录页面
+          wx.redirectTo({
+            url: '../signin/index'
+          })
+        } else {
+          console.log(res)
+        }
+      }, (err) => {
+        wx.hideToast()
+        console.log(err)
+      })
+    } else {
+      let roles = wx.getStorageSync('roles')
+      this.setData({
+        profile: this.data.role === 'c' ? roles.client : roles.freelancer
+      })
+    }
   },
   getInfo () {
     if (this.data.role === 'f') {
@@ -46,7 +52,10 @@ Page({
       ywk.ajaxJson('/api/proposal', {operate: 'active'}, 'GET').then((res) => {
         wx.hideToast()
         this.setData({
-          proposals: res.proposals,
+          proposals: res.proposals.map((item) => {
+            item.create_at = this.filterTime(item.create_at)
+            return item
+          }),
           listLoad: true
         })
       }, (err) => {
@@ -68,24 +77,31 @@ Page({
     }
   },
   changeRole () {
-    let roles = wx.getStorageSync('roles')
-    console.log(roles)
-    let id = this.data.role === 'c' ? roles.freelancer.id : roles.client.id
-    ywk.ajaxJson('/api/user/role', {id: id}, 'PUT').then((res) => {
-      if (res.error_code === 0) {
-        this.data.profileLoad = false
-        this.data.listLoad = false
-        this.setData({
-          role: this.data.role === 'c' ? 'f' : 'c'
-        })
-        console.log(this.data.role)
-        wx.setStorageSync('role', this.data.role)
-        this.getProfile()
-        this.getInfo()
-      }
-    }, (err) => {
-      console.log(err)
-    })
+    if (wx.getStorageSync('roles')) {
+      let profile = this.data.role === 'c' ? wx.getStorageSync('roles').freelancer : wx.getStorageSync('roles').client
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 10000
+      })
+      ywk.ajaxJson('/api/v1.1/user/role', {id: profile.id}, 'PUT').then((res) => {
+        if (res.error_code === 0) {
+          this.data.listLoad = false
+          this.setData({
+            role: this.data.role === 'c' ? 'f' : 'c',
+            profile: profile
+          })
+          wx.setStorageSync('role', this.data.role)
+          this.getInfo()
+        }
+      }, (err) => {
+        console.log(err)
+      })
+    } else {
+      wx.redirectTo({
+        url: `../signin/index`
+      })
+    }
   },
   onShareAppMessage () {
     return {
@@ -104,13 +120,16 @@ Page({
     this.getInfo()
   },
   goFreelancer () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../freelancer/index`
     })
   },
   goProject () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../project/index`
     })
+  },
+  goProfile () {
+    return
   }
 })

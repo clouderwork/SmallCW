@@ -62,7 +62,7 @@ Page({
   },
   bindViewTap (e) {
     let id = e.currentTarget.dataset.jid
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../project-detail/index?id=${id}`
     })
   },
@@ -74,13 +74,16 @@ Page({
     }
   },
   goFreelancer () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../freelancer/index`
     })
   },
   goProfile () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../profile/index`
     })
+  },
+  goProject () {
+    return
   }
 })

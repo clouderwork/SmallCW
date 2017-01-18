@@ -17,7 +17,7 @@ Page({
     let id = event.currentTarget.dataset.id
     let ftype = event.currentTarget.dataset.ftype
     let url = ftype === 't' ? `../team-detail/index?team_id=${id}` : `../freelancer-detail/index?id=${id}`
-    wx.navigateTo({
+    wx.redirectTo({
       url: url
     })
   },
@@ -69,13 +69,16 @@ Page({
     }
   },
   goProfile () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../profile/index`
     })
   },
   goProject () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: `../project/index`
     })
+  },
+  goFreelancer () {
+    return
   }
 })
