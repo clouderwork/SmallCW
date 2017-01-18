@@ -55,6 +55,7 @@ Page({
           item.create_at = this.filterTime(item.create_at)
           return item
         })
+        console.log(proposals)
         this.setData({
           proposals: proposals,
           listLoad: true
