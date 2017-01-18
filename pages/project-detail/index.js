@@ -157,12 +157,12 @@ Page({
   },
   frameOperation () {
     this.setData({
-      frameworkShow: !e.currentTarget.dataset.frameworkShow
+      frameworkShow: !this.data.frameworkShow
     })
   },
   langOperation () {
     this.setData({
-      languageShow: !e.currentTarget.dataset.languageShow
+      languageShow: !this.data.languageShow
     })
   },
   onShareAppMessage () {
