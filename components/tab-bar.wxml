@@ -1,0 +1,22 @@
+<template name="tabBar">
+  <view class="common-bar">
+    <view class="project-bar" bindtap="goProject">
+      <image wx:if="{{from === 'project'}}" src="../../images/icon_project_selected.png" />
+      <image wx:else src="../../images/icon_project.png" />
+      <text wx:if="{{from === 'project'}}" class="tab-bar-color">找项目</text>
+      <text wx:else>找项目</text>
+    </view>
+    <view class="freelancer-bar" bindtap="goFreelancer">
+      <image wx:if="{{from === 'freelancer'}}" src="../../images/icon_people_selected.png" />
+      <image wx:else src="../../images/icon_people.png" />
+      <text wx:if="{{from === 'freelancer'}}" class="tab-bar-color">找人才</text>
+      <text wx:else>找人才</text>
+    </view>
+    <view class="profile-bar" bindtap="goProfile">
+      <image wx:if="{{from === 'profile'}}" src="../../images/icon_profile_selected.png" />
+      <image wx:else src="../../images/icon_profile.png" />
+      <text wx:if="{{from === 'profile'}}" class="tab-bar-color">我</text>
+      <text wx:else>我</text>
+    </view>
+  </view>
+</template>

@@ -12,8 +12,8 @@ function ajaxJson(url, data, method = 'GET') {
   if (method !== 'GET') {
     data = typeof (data) === 'object' ? data : {}
     data._xsrf = wx.getStorageSync('_xsrf')
-    data.session_token = wx.getStorageSync('session_token')
   }
+  data.session_token = wx.getStorageSync('session_token') || ''
   let header = {
     'content-type': 'application/x-www-form-urlencoded',
     'CW-Agent': ' x/1.0.0/9.2.1/iPhone/wifi'

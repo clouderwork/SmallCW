@@ -9,7 +9,8 @@ Page({
       pagenum: 1,
       ftype: 'all'
     },
-    count: 0
+    count: 0,
+    from: 'freelancer'
   },
   //事件处理函数
   goDetail (event) {
@@ -66,5 +67,15 @@ Page({
       desc: '人才列表',
       path: 'pages/freelancer/index'
     }
+  },
+  goProfile () {
+    wx.navigateTo({
+      url: `../profile/index`
+    })
+  },
+  goProject () {
+    wx.navigateTo({
+      url: `../project/index`
+    })
   }
 })

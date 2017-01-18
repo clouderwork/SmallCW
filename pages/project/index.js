@@ -5,7 +5,8 @@ Page({
   data: {
     projects: [],
     pagenum: 1,
-    count: 0
+    count: 0,
+    from: 'project'
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -71,5 +72,15 @@ Page({
       desc: '项目列表',
       path: 'pages/project/index'
     }
+  },
+  goFreelancer () {
+    wx.navigateTo({
+      url: `../freelancer/index`
+    })
+  },
+  goProfile () {
+    wx.navigateTo({
+      url: `../profile/index`
+    })
   }
 })

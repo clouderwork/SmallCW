@@ -4,7 +4,7 @@ var ywk = require('../../utils/ywk')
 Page({
   data: {},
   getData () {
-    ywk.ajaxJson('/api/user/profile', 'GET').then((res) => {
+    ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
       if (res.error_code === 0) {
         console.log(res)
         this.setData({
