@@ -77,9 +77,12 @@ let format = {
 
 Page({
   data: {
-    panel: 'base'
+    panel: 'base',
+    // 获取身份
+    role: wx.getStorageSync('role') || ''
   },
   onLoad (e) {
+    console.log(this.data.role)
     this.getDetail(e.id)
     this.setData({ id: e.id })
   },
@@ -129,9 +132,15 @@ Page({
   },
   // 投标
   proposal (e) {
-    wx.redirectTo({
-      url: '../proposal/index'
-    })
+    if (this.data.role === 'c' || this.data.role === 't') {
+        wx.redirectTo({
+          url: '../proposal/index'
+        })
+    } else if (this.data.role === 'f') {
+       wx.redirectTo({
+          url: '../invite-detail/index'
+        })
+    }
   },
   onShareAppMessage () {
     return {
