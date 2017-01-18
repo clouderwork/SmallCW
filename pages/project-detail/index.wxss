@@ -50,7 +50,7 @@ page {
   margin-top: 35rpx;
   display: block;
   background-color: #f4f4f4;
-  border: 1px solid #f8f8f8;
+  border: 2rpx solid #f8f8f8;
   padding: 0 25rpx 20rpx;
 }
 
@@ -82,7 +82,7 @@ page {
   padding: 20rpx 30rpx;
   color: #6e6e70;
   font-size: 26rpx;
-  border-bottom: 1px solid #f4f4f4;
+  border-bottom: 2rpx solid #f4f4f4;
   box-sizing: border-box;
   align-items: center;
   -webkit-box-align: center;
@@ -153,7 +153,7 @@ page {
   margin-top: 20rpx;
   padding: 0 80rpx;
   height: 100rpx;
-  border-bottom: 1px solid #f4f4f4;
+  border-bottom: 2rpx solid #f4f4f4;
   background-color: #fff;
   text-align: center;
 }
@@ -169,7 +169,7 @@ page {
 }
 .job-description .active {
   color: #ff6700 !important;
-  border-bottom: 1px solid #ff6700;
+  border-bottom: 2rpx solid #ff6700;
 }
 
 .job-description .description {
@@ -187,10 +187,10 @@ page {
 .panel-more li {
   display: flex;
   padding: 15rpx 5rpx;
-  border-bottom: 1px solid #f4f4f4;
+  border-bottom: 2rpx solid #f4f4f4;
   font-size: 30rpx;
   color: #4b4b4b;
-  line-height: 50px;
+  line-height: 50rpx;
 }
 .list-name {
   min-width: 150rpx;
@@ -209,7 +209,7 @@ page {
   height: 50rpx;
   line-height: 50rpx;
   display: inline-block;
-  border: 1px solid #cacaca;
+  border: 2rpx solid #cacaca;
   border-radius: 24rpx;
   margin-right: 20rpx;
   box-sizing: border-box;
