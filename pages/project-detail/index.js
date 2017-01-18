@@ -86,6 +86,8 @@ Page({
   getDetail (id) {
     ywk.ajaxJson('/api/jobs', { job_id: id }, 'GET').then((res) => {
       let job = res.job
+      job.publish_at = job.publish_at.replace(/-/g, '/').split(' ')[0]
+      job.last_view_time = job.last_view_time.split(' ')[0]
       job.hourPrice = '< 100元/时'
       if (job.level === 'middle') { job.hourPrice = '100 - 300元/时' }
       if (job.level === 'expert') { job.hourPrice = '> 300元/时'}
