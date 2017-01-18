@@ -3,7 +3,7 @@ page {
   display: block;
   min-height: 100%;
   background: #efeff4;
-  padding-bottom: 100rpx;
+  padding-bottom: 130rpx;
 }
 .my-profile {
   background-color: #fff;
@@ -142,7 +142,7 @@ page {
   margin-top: 40rpx;
 }
 .no-profile-data {
-  margin-top: 170rpx;
+  margin: 208rpx 0;
 }
 .no-data-icon {
   width: 340rpx;

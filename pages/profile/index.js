@@ -46,7 +46,10 @@ Page({
       ywk.ajaxJson('/api/proposal', {operate: 'active'}, 'GET').then((res) => {
         wx.hideToast()
         this.setData({
-          proposals: res.proposals,
+          proposals: res.proposals.map((item) => {
+            item.create_at = this.filterTime(item.create_at)
+            return item
+          }),
           listLoad: true
         })
       }, (err) => {
