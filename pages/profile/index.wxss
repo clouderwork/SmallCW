@@ -189,12 +189,12 @@ page {
 .freelancer-bar image {
   width: 43rpx;
   height: 34rpx;
-  margin: 15rpx auto 6rpx;
+  margin: 15rpx auto 7rpx;
 }
 .profile-bar image {
-  width: 36rpx;
+  width: 28rpx;
   height: 36rpx;
-  margin: 12rpx auto 5rpx;
+  margin: 14rpx auto 6rpx;
 }
 .tab-bar-color {
   color: #ff6700;
