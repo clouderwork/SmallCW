@@ -1,13 +1,21 @@
 <view class="pro-money">
     <view class="first-box">
-        <span>报价</span>
+        <span class="first-box-left">报价</span>
+        <input type="text" placeholder="请输入您的报价" class="money-text" bindblur="amount" />
+        <span class="first-box-right">元</span>
     </view>
     <view class="second-box">
         实际收益：0元
-        服务费0元
+        <text class="service-money">服务费0元</text>
     </view>
     <view class="third-box">
-        预计完成时间
-        一周以内
+        <span class="third-box-left">预计完成时间</span>
+        <picker range="{{time}}" value="{{index}}" bindchange="chooseTime">
+            <text class="third-box-right">
+                {{time[index]}}
+            </text>
+        </picker>
     </view>
 </view>
+
+<view class="switch-role" bindtap="submitProposal">提交</view>
