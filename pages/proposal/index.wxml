@@ -3,7 +3,7 @@
         <span class="first-box-left">报价</span>
         <input type="number" value="{{amount}}" wx:if="{{job.paymethod==='fixed'}}" placeholder="请输入您的报价" class="money-text" bindblur="getAmount" bindinput="computserve" />
         <input type="number" value="{{amount}}" wx:if="{{job.paymethod==='hour'}}" placeholder="请输入您的时薪报价" class="money-text" bindblur="getAmount" bindinput="computserve"/>
-        <span class="first-box-right">元<template wx:if="{{job.paymethod==='hour'}}">/小时</template></span>
+        <span class="first-box-right">元<span wx:if="{{job.paymethod==='hour'}}">/小时</span></span>
     </view>
     <view class="second-box">
         <view>实际收益：{{selfcount?selfcount:'0'}}元
