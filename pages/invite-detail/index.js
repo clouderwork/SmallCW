@@ -3,18 +3,15 @@
 var ywk = require('../../utils/ywk')
 Page({
   data: {},
-  getData () {
-    ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
+  getData (id) {
+    ywk.ajaxJson('/api/proposal', {proposal_id: id}, 'GET').then((res) => {
+      wx.hideToast()
       if (res.error_code === 0) {
-        console.log(res)
+        let invite = res.proposals[0]
         this.setData({
-          profile: res.profile
+          invite: invite
         })
-      } else if (res.error_code === 80001) {
-        wx.hideToast()
-        // 去登录页面
       } else {
-        wx.hideToast()
         console.log(res)
       }
     }, (err) => {
@@ -28,18 +25,12 @@ Page({
       path: '/pages/invite-detail/index'
     }
   },
-  onLoad () {
+  onLoad (e) {
     wx.showToast({
       title: '加载中',
       icon: 'loading',
       duration: 10000
     })
-    this.getData()
-  },
-  bindViewTap (e) {
-    let id = e.currentTarget.dataset.jid
-    wx.redirectTo({
-      url: `../project-detail/index?id=${id}`
-    })
+    this.getData(e.id)
   }
 })

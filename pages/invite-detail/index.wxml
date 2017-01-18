@@ -3,11 +3,15 @@
   <view class="invite-content">
     <view class="content-list">
       <text>项目</text>
-      <text>云族佳科技有限公司网页前端开发项目</text>
+      <text>{{invite.job.name}}</text>
     </view>
-    <view class="content-list">
+    <view class="content-list" wx:if="{{invite.job.paymethod === 'fixed'}}">
       <text>预计完成时间</text>
-      <text>一周以内</text>
+      <text wx:if="{{invite.duration == 1}}">6个月以上</text>
+      <text wx:if="{{invite.duration == 2}}">3到6个月</text>
+      <text wx:if="{{invite.duration == 3}}">1到3个月</text>
+      <text wx:if="{{invite.duration == 4}}">一个月以内</text>
+      <text wx:if="{{invite.duration == 5}}">一周以内</text>
     </view>
   </view>
 </view>

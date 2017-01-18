@@ -102,6 +102,7 @@ page {
   height: 80rpx;
   float: left;
   margin-top: 35rpx;
+  border-radius: 50%;
 }
 .freelancer-info {
   margin: 12rpx 0 11rpx 20rpx;

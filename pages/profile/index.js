@@ -67,7 +67,10 @@ Page({
       ywk.ajaxJson('/api/proposal', {operate: 'invite'}, 'GET').then((res) => {
         wx.hideToast()
         this.setData({
-          invites: res.proposals,
+          invites: res.proposals.map((item) => {
+            item.create_at = this.filterTime(item.create_at)
+            return item
+          }),
           listLoad: true
         })
       }, (err) => {
@@ -107,6 +110,12 @@ Page({
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: `../proposal-detail/index?id=${id}`
+    })
+  },
+  goInvite (e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `../invite-detail/index?id=${id}`
     })
   },
   onShareAppMessage () {
