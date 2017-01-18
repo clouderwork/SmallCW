@@ -5,13 +5,13 @@
         <span class="first-box-right">元</span>
     </view>
     <view class="second-box">
-        实际收益：0元
-        <text class="service-money">服务费0元</text>
+        <view>实际收益：0元</view>
+        <view class="service-money">服务费0元</view>
     </view>
     <view class="third-box">
         <span class="third-box-left">预计完成时间</span>
         <picker range="{{time}}" value="{{index}}" bindchange="chooseTime">
-            <text class="third-box-right">
+            <text>
                 {{time[index]}}
             </text>
         </picker>

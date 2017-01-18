@@ -13,14 +13,12 @@ view {
     font-size: 30rpx;
 }
 
-.pro-money view {
-    height: 100rpx;
-    background: #fff;
-    padding: 29rpx 19rpx;
-}
 .first-box {
     border-bottom: 2px solid #f4f4f4;
     display: flex;
+    background: #fff;
+    padding: 29rpx 19rpx;
+    line-height: 26px;
 }
 
 .money-text {
@@ -34,7 +32,7 @@ view {
     display: block;
     width: 100%;
     outline: none;
-    top: -5rpx;
+    top: -2rpx;
 }
 
 .first-box-center {
@@ -45,6 +43,8 @@ view {
     text-align: center;
     font-size: 30rpx;
     color: #ff6700;
+    background: #fff;
+    padding: 29rpx 19rpx;
 }
 
 .service-money {
@@ -56,15 +56,13 @@ view {
 
 .third-box {
     margin-top: 20rpx;
+    background: #fff;
+    padding: 29rpx 19rpx;
+    line-height: 26px;
 }
 
 .third-box-left {
     float: left;
-}
-
-.third-box-right {
-    float: right;
-    margin-top: -30rpx;
 }
 
 .switch-role {
@@ -79,4 +77,17 @@ view {
   bottom:0;
   left: 0;
   right: 0;
+}
+
+picker {
+    float: right;
+    background: url('images/icon_next.png') no-repeat right center;
+    background-size: 14rpx 25rpx;
+    height: 53rpx;
+    line-height: 17rpx;
+    padding-right: 30rpx;
+}
+
+.img-box {
+    line-height: 40rpx;
 }
