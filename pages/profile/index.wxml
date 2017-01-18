@@ -23,11 +23,11 @@
       <view class="profile-title" wx:if="{{role === 'c'}}"><image class="my-invite" src="image/icon_invite.png" />我发出的邀请</view>
       <view class="invite-list" wx:if="{{role === 'c'}}">
         <block wx:for="{{invites}}" wx:key="{{invite.proposal_id}}" wx:for-item="invite">
-          <view class="invite-item" data-id="{{invite.proposal_id}}" bindtap="goInvite">
+          <view class="invite-item" data-id="{{invite.job.id}}" bindtap="goInvite">
             <image wx:if="{{invite.is_team}}" class="freelancer-avatar" src="{{invite.user.team.avatar}}" />
             <image wx:else class="freelancer-avatar" src="{{invite.user.freelancer.avatar}}" />
             <view class="freelancer-info">
-              <text wx:if="{{invite.is_team}}" class="name">{{invite.user.team.name}}</text>
+              <text wx:if="{{invite.is_team}}" class="name team-name">{{invite.user.team.name}}</text>
               <text wx:else class="name">{{invite.user.freelancer.name}}</text>
               <text class="position" wx:if="{{!invite.is_team}}">{{invite.user.freelancer.title}}</text>
               <text class="time">邀请日期 {{invite.create_at}}</text>

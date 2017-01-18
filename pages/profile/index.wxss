@@ -114,6 +114,9 @@ page {
   color: #4b4b4b;
   display: block;
 }
+.freelancer-info .team-name {
+  margin-top: 20rpx;
+}
 .freelancer-info .position {
   line-height: 38rpx;
   font-size: 26rpx;

@@ -4,7 +4,7 @@ var ywk = require('../../utils/ywk')
 Page({
   data: {},
   getData (id) {
-    ywk.ajaxJson('/api/proposal', {proposal_id: id}, 'GET').then((res) => {
+    ywk.ajaxJson('/api/proposal', {job_id: id, operate: 'invite'}, 'GET').then((res) => {
       wx.hideToast()
       if (res.error_code === 0) {
         let invite = res.proposals[0]
