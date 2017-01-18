@@ -1,13 +1,17 @@
 <view class="pro-money">
     <view class="first-box">
         <span class="first-box-left">报价</span>
-        <input type="text" wx:if="{{job.paymethod==='fixed'}}" placeholder="请输入您的报价" class="money-text" bindblur="amount" />
-        <input type="text" wx:if="{{job.paymethod==='hour'}}" placeholder="请输入您的时薪报价" class="money-text" bindblur="amount" />
+        <input type="number" value="{{amount}}" wx:if="{{job.paymethod==='fixed'}}" placeholder="请输入您的报价" class="money-text" bindblur="getAmount" bindinput="computserve" />
+        <input type="number" value="{{amount}}" wx:if="{{job.paymethod==='hour'}}" placeholder="请输入您的时薪报价" class="money-text" bindblur="getAmount" bindinput="computserve"/>
         <span class="first-box-right">元<template wx:if="{{job.paymethod==='hour'}}">/小时</template></span>
     </view>
     <view class="second-box">
-        <view>实际收益：0元{{job.paymethod}}<template wx:if="{{job.paymethod==='hour'}}">/小时</template></view>
-        <view class="service-money">服务费0元<template wx:if="{{job.paymethod==='hour'}}">/小时</template></view>
+        <view>实际收益：{{selfcount?selfcount:'0'}}元
+            <span wx:if="{{job.paymethod==='hour'}}">/小时</span>
+        </view>
+        <view class="service-money">服务费{{servecount?servecount:'0'}}元
+            <span wx:if="{{job.paymethod==='hour'}}">/小时</span>
+        </view>
     </view>
     <view class="third-box" wx:if="{{job.paymethod==='fixed'}}">
         <span class="third-box-left">预计完成时间</span>

@@ -55,7 +55,7 @@ view {
 }
 
 .third-box {
-    margin-top: 20rpx;
+    margin-top: 40rpx;
     background: #fff;
     padding: 29rpx 19rpx;
     line-height: 26px;
