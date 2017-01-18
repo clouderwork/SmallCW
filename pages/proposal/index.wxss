@@ -43,14 +43,14 @@ view {
     font-size: 30rpx;
     color: #ff6700;
     background: #fff;
-    padding: 29rpx 19rpx;
+    padding: 18rpx 19rpx;
 }
 
 .service-money {
     display: block;
     font-size: 24rpx;
     color: #9e9e9e;
-    margin-top: 5rpx;
+    margin-top: 12rpx;
 }
 
 .third-box {
