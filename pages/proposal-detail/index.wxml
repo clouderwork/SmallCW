@@ -3,15 +3,24 @@
   <view class="invite-content">
     <view class="content-list">
       <text>报价</text>
-      <text>500元</text>
+      <text wx:if="{{proposal.job.paymethod === 'fixed'}}">{{proposal.price}}元</text>
+      <text wx:if="{{proposal.job.paymethod === 'hour'}}">{{proposal.price}}元/小时</text>
     </view>
-    <view class="content-list">
+    <view class="last-budget" wx:if="{{proposal.job.paymethod === 'hour'}}">
+      <text class="money-tips">实际收益：{{proposal.money}}元/小时</text>
+      <text class="service">服务费{{proposal.service}}元/小时</text>
+    </view>
+    <view class="content-list" wx:if="{{proposal.attachment.id}}">
       <text>附件</text>
       <text>有附件，请前往网站查看</text>
     </view>
-    <view class="content-list">
+    <view class="content-list" wx:if="{{proposal.job.paymethod === 'fixed'}}">
       <text>预计完成时间</text>
-      <text>一周以内</text>
+      <text wx:if="{{proposal.duration == 1}}">6个月以上</text>
+      <text wx:if="{{proposal.duration == 2}}">3到6个月</text>
+      <text wx:if="{{proposal.duration == 3}}">1到3个月</text>
+      <text wx:if="{{proposal.duration == 4}}">一个月以内</text>
+      <text wx:if="{{proposal.duration == 5}}">一周以内</text>
     </view>
   </view>
 </view>

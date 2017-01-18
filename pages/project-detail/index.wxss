@@ -3,22 +3,39 @@ page {
 }
 
 .project-details {
+  border: 2rpx solid #f4f4f4;
+  border-left: none;
+  border-right: none;
   background-color: #fff;
-  padding: 0px 30rpx;
+  padding: 30rpx 30rpx;
+  position: relative;
 }
 
 .job-name {
   display: block;
-  padding: 22rpx 6rpx 10rpx 0;
   color: #4b4b4b;
   line-height: 48rpx;
   font-size: 36rpx;
 }
 
+.job-method {
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
 .job-price {
   display: block;
   color: #ff6700;
-  font-size: 32rpx;
+  font-size: 36rpx;
+  flex: 1;
+}
+
+.job-create {
+  font-size: 24rpx;
+  color: #cacaca;
+  text-align: right;
+  width: 150rpx;
 }
 
 .job-price i {
@@ -28,20 +45,32 @@ page {
   padding-left: 20rpx;
   display: inline-block;
 }
-
-.work-time {
+.work-box {
+  border-radius: 6rpx;
+  margin-top: 35rpx;
   display: block;
   background-color: #f4f4f4;
   border: 1px solid #f8f8f8;
+  padding: 0 25rpx 20rpx;
+}
+
+.work-box:before {
+  content: '';
+  height: 30rpx;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+  border-bottom: 30rpx solid #f4f4f4;
+  position: absolute;
+  bottom: 145rpx;
+  left: 50rpx;
+}
+.work-box p {
+  display: block;
   color: #777;
-  padding: 16rpx 24rpx;
-  border-radius: 6rpx;
-  line-height: 32rpx;
   margin-top: 20rpx;
   font-size: 26rpx;
 }
-
-.work-time span {
+.work-box p span {
   color: #f8bb00;
   display: inline-block;
   padding-left: 10rpx;
@@ -51,7 +80,7 @@ page {
   display: flex;
   width: 100%;
   padding: 20rpx 30rpx;
-  color: #777;
+  color: #6e6e70;
   font-size: 26rpx;
   border-bottom: 1px solid #f4f4f4;
   box-sizing: border-box;
@@ -67,9 +96,14 @@ page {
   border-radius: 50%;
   margin-right:  20rpx;
 }
+
 .company-score {
   display: block;
   flex: 1;
+}
+
+.company-score p i {
+  color: #aaaaaa;
 }
 
 .job-info {
@@ -78,15 +112,22 @@ page {
   line-height: 1.7;
   background-color: #fff;
 }
+
+.mr-top {
+  margin-top: 20rpx;
+}
+
 .job-info ul{
   display: block;
-  padding: 25rpx 30rpx;
+  padding: 0 30rpx 30rpx;
   box-sizing: border-box;
 }
 .job-info li {
   display: block;
   height: 40rpx;
-  margin-bottom: 20rpx;
+  color: 4b4b4b;
+  font-size: 30rpx;
+  margin-top: 20rpx;
 }
 .job-info label {
   display: inline-block;
@@ -127,7 +168,7 @@ page {
   color: #777777;
 }
 .job-description .active {
-  color: #ff6700;
+  color: #ff6700 !important;
   border-bottom: 1px solid #ff6700;
 }
 
@@ -140,24 +181,29 @@ page {
 }
 .panel-more {
   display: block;
-  padding: 30rpx 40rpx;
+  padding: 0 30rpx;
 }
 
 .panel-more li {
-  display: block;
-  padding: 20rpx 0;
+  display: flex;
+  padding: 15rpx 5rpx;
   border-bottom: 1px solid #f4f4f4;
   font-size: 30rpx;
   color: #4b4b4b;
+  line-height: 50px;
 }
 .list-name {
-  display: block;
+  min-width: 150rpx;
   color: #aaaaaa;
-  border-left: 2px solid #ff6700;
   font-size: 30rpx;
-  padding-left: 30rpx;
 }
-
+.skills-box {
+  line-height: 60rpx !important;
+}
+.skills {
+  flex: 1;
+  right: 0;
+}
 .skills span{
   padding: 0 24rpx;
   height: 50rpx;
@@ -165,7 +211,7 @@ page {
   display: inline-block;
   border: 1px solid #cacaca;
   border-radius: 24rpx;
-  margin: 18rpx 20rpx 0 0;
+  margin-right: 20rpx;
   box-sizing: border-box;
   font-size: 30rpx;
   color: #4b4b4b;
@@ -182,11 +228,10 @@ page {
 }
 
 .panel-more .text {
-  display: block;
-  margin: 10rpx 0 0;
-  line-height: 50rpx;
+  text-align: right;
   font-size: 30rpx;
   color: #4b4b4b;
+  flex: 1;
 }
 
 .panel-more .text span:after {

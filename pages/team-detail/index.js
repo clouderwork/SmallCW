@@ -98,7 +98,7 @@ Page({
     }
   },
   goMember () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: `../team-member/index?team_id=${this.data.team_id}`
     })
   }
