@@ -9,3 +9,43 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+
+.week-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(75, 75, 75, 0.85);
+  color: #ffffff;
+  font-size: 30rpx;
+  z-index: 2;
+}
+
+.alert-show {
+  padding: 18rpx 40rpx;
+  animation: show 2s;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(-100%);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.week-alert strong {
+  color: #fb6700;
+  font-weight: normal;
+}

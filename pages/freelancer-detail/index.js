@@ -1,7 +1,7 @@
 //logs.js
 var ywk = require('../../utils/ywk')
 var util = require('../../utils/util')
-
+var app = getApp()
 Page({
   data: {
     id: '',
@@ -126,9 +126,7 @@ Page({
     })
   },
   invite () {
-    wx.navigateTo({
-      url: `../job-invite/index?id=${this.data.id}&type=user`
-    })
+    app.ckAndNav(`../job-invite/index?id=${this.data.id}&type=user`)
   },
   onShareAppMessage () {
     return {

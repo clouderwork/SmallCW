@@ -9,10 +9,6 @@ Page({
     time: ['请选择', '一周以内', '一个月内', '1-3个月', '3-6个月', '6个月以上'],
     objectTime: [
         {
-            id: 0,
-            name: '请选择'
-        },
-        {
             id: 5,
             name: '一周以内'
         },
@@ -36,12 +32,8 @@ Page({
     index: 0,
     jobIndex: 0,
     jobs: ['请选择'],
-    jobObj: [
-      {
-        id: 0,
-        name: '请选择'
-      }
-    ]
+    jobObj: [],
+    alertData: {msg: '', showClass: 'alert-show'}
   },
   chooseTime (e) {
       this.setData({
@@ -83,19 +75,23 @@ Page({
           jobs: job,
           jobObj: jobObj
         })
+      } else if (res.error_code === 80001) {
+        let url = encodeURIComponent(`../job-invite/index?id=${this.data.id}&type=${this.data.type}`)
+        console.log(url)
+        wx.navigateTo({
+          url: `../signin/index?redirect=${url}`
+        })
       }
+      wx.hideToast()
     }, (err) => {
       console.log(err)
     })
   },
-  onShareAppMessage () {
-    return {
-      title: '云沃客',
-      desc: '邀请内容',
-      path: `/pages/job-invate/index?id=${this.data.id}&type=${this.data.type}`
-    }
-  },
   onLoad (opt) {
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading'
+    })
     if (opt && opt.id) {
       this.setData({
         id: opt.id,
@@ -130,11 +126,15 @@ Page({
           })
         },2000)
       } else {
-        wx.showToast({
-          title: res.msg,
-          icon: 'success',
-          duration: 2000
+        this.setData({
+          alertData: {msg: res.msg, cls: 'alert-show'}
         })
+
+        setTimeout(() => {
+          this.setData({
+            alertData: {msg: '', cls: ''}
+          })
+        }, 2000)
       }
     }, (err) => {})
   }

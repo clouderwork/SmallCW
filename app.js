@@ -64,5 +64,16 @@ App({
     if (systemInfo.model) {
       wx.setStorageSync('systemInfo', systemInfo)
     };
+  },
+  ckAndNav (url) {
+    if (wx.setStorageSync('role')) {
+      wx.navigateTo({
+        url: url
+      })
+    } else {
+      wx.navigateTo({
+        url: `../signin/index?redirect=${url}`
+      })
+    }
   }
 })

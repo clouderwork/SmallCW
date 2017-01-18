@@ -4,6 +4,7 @@ Page({
     username: '',
     password: '',
     hide: true,
+    redirect: ''
   },
   signin (e) {
     if (this.data.username && this.data.password) {
@@ -35,8 +36,9 @@ Page({
         }
         wx.setStorageSync('role', role)
         wx.setStorageSync('roles', res.roles)
+        let url = this.data.redirect ? this.data.redirect : 'pages/profile/index'
         wx.navigateTo({
-          url: '../profile/index'
+          url: url
         })
       }
     }, (err) => {
@@ -59,5 +61,12 @@ Page({
     this.setData({
       hide: newValue
     })
+  },
+  onLoad (opt) {
+    if (opt && opt.redirect) {
+      this.setData({
+        redirect: decodeURIComponent(opt.redirect)
+      })
+    }
   }
 })

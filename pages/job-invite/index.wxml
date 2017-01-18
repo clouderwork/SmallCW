@@ -1,5 +1,7 @@
 <!--index.wxml-->
+<import src="../../components/alert.wxml"/>
 <view class="invite-container">
+  <template is="alertTpl" data="{{...alertData}}" />
   <view class="invite-content">
     <view class="content-list">
       <view class="section__title">项目</view>
