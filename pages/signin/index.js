@@ -13,9 +13,9 @@ Page({
         duration: 10000
       })
       ywk.ajaxJson('/api/user/signin', this.data, 'POST').then((res) => {
-        wx.hideToast()
         if (res.error_code === 0) {
           wx.setStorageSync('session_token', res.session_token || '')
+          this.getRole()
           wx.navigateTo({
             url: '../profile/index'
           })
@@ -26,6 +26,24 @@ Page({
         wx.hideToast()
       })
     }
+  },
+  getRole () {
+    ywk.ajaxJson('/api/v1.1/user/role', {}, 'GET').then((res) => {
+      wx.hideToast()
+      if (res.error_code === 0) {
+        let role = 'f'
+        if (res.current_id === res.roles.client.id) {
+          role = 'c'
+        } else if(res.current_id === res.roles.freelancer.id) {
+          role = 'f'
+        }
+        wx.setStorageSync('role', role)
+        wx.setStorageSync('roles', res.roles)
+      }
+    }, (err) => {
+      wx.hideToast()
+      console.log(err)
+    })
   },
   getUsername (e) {
     this.setData({

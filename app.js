@@ -16,7 +16,6 @@ App({
         }
       })
     }
-
     // 微信授权
     // if (wx.getStorageSync('session_key')) {
       wx.login({
