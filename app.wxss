@@ -22,25 +22,32 @@
 .week-toast {
   position: fixed;
   z-index: 5000;
-  width:270rpx;
-  min-height:300rpx;
+  width:343rpx;
+  min-height:243rpx;
   top:180px;
   left:50%;
-  margin-left:-150rpx;
-  background:rgba(17, 17, 17, 0.6);
+  margin-left:-200rpx;
+  background:rgba(48, 48, 48, 0.7);
   text-align:center;
   border-radius:5px;
   color:#FFFFFF;
   padding:30rpx;
+  text-align: center;
 }
 
 .icon_toast {
-  margin: 22px 0 10px;
-  display: block;
+  margin: 52rpx 130rpx 28rpx;
+  display: inline-block;
+  width: 75rpx;
+  height:75rpx;
 }
 
 .week-toast__content {
   word-wrap: break-word;
   word-break: break-all;
-  line-height: 1.2;
+  font-family:FZLANTY_XIANJW--GB1-0;
+  font-size:30rpx;
+  color:#fff;
+  letter-spacing:0.63px;
+  text-align:left;
 }
