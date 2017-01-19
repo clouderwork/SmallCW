@@ -205,13 +205,14 @@ page {
   width: 26rpx;
   height: 26rpx;
   vertical-align: middle;
+  margin-top:-4rpx;
 }
 
 .row-item .detail .time {
   font-size: 26rpx;
   color: #9e9e9e;
   margin-left: 15rpx;
-  flex: 1;
+  display: inline-block;
   vertical-align: middle;
 }
 
