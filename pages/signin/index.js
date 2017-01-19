@@ -49,10 +49,15 @@ Page({
         }
         wx.setStorageSync('role', role)
         wx.setStorageSync('roles', res.roles)
-        let url = this.data.redirect ? this.data.redirect : '../profile/index'
-        wx.navigateTo({
-          url: url
-        })
+        if (this.data.redirect) {
+          wx.navigateTo({
+            url: this.data.redirect
+          })
+        } else {
+          wx.switchTab({
+            url: '/pages/profile/index'
+          })
+        }
       }
     }, (err) => {
       wx.hideToast()
