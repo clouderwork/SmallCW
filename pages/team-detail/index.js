@@ -7,7 +7,8 @@ Page({
     profile: {},
     portfolios: [],
     contracts: [],
-    team_id: ''
+    team_id: '',
+    role: ''
   },
   onLoad (e) {
     wx.showToast({
@@ -19,7 +20,8 @@ Page({
     this.getContract(e.team_id)
     this.setData({ id: e.team_id })
     this.setData({
-      team_id: e.team_id
+      team_id: e.team_id,
+      role: wx.getStorageSync('role') || ''
     })
   },
   getData (id) {

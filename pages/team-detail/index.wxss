@@ -1,3 +1,9 @@
+.team-detail {
+  padding-bottom: 140rpx;
+}
+.no-btn {
+  padding-bottom: 0;
+}
 .team-info {
   padding: 32rpx 0;
 }
@@ -325,7 +331,6 @@
 }
 
 .row-invite {
-  border-top: 40rpx solid #f4f4f4;
   text-align: center;
   font-family:PingFangSC-Medium;
   font-size:38rpx;
@@ -336,4 +341,9 @@
   height: 100rpx;
   line-height: 100rpx;
   vertical-align: middle;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  display: block;
+  border-top: 2rpx solid #e2e2e9;
 }

@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/signin/index",
     "pages/project/index",
     "pages/freelancer/index",
     "pages/freelancer-detail/index",
@@ -11,7 +10,8 @@
     "pages/proposal-detail/index",
     "pages/job-invite/index",
     "pages/invite-detail/index",
-    "pages/profile/index"
+    "pages/profile/index",
+    "pages/signin/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
