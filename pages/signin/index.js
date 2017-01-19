@@ -4,7 +4,8 @@ Page({
     username: '',
     password: '',
     hide: true,
-    redirect: ''
+    redirect: '',
+    alertData: {msg: '', showClass: 'alert-show'}
   },
   signin (e) {
     if (this.data.username && this.data.password) {
@@ -18,7 +19,15 @@ Page({
           wx.setStorageSync('session_token', res.session_token || '')
           this.getRole()
         } else {
-          console.log(res)
+          this.setData({
+            alertData: {msg: res.msg, cls: 'alert-show'}
+          })
+
+          setTimeout(() => {
+            this.setData({
+              alertData: {msg: '', cls: ''}
+            })
+          }, 2000)
         }
       }, (err) => {
         wx.hideToast()

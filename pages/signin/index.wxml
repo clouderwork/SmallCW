@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <import src="../../components/project-item.wxml"/>
+<import src="../../components/alert.wxml"/>
 <view class="signin-container">
+    <template is="alertTpl" data="{{...alertData}}" />
     <view class="section">
       <input placeholder="请输入手机号/用户名/邮箱" bindblur="getUsername" placeholder-class="sign-placeholder" focus="" />
     </view>
@@ -13,6 +15,7 @@
       <image class="icon-eye" src="images/password-show.png" bindtap="change" />
     </view>
     <view class="btn-signin">
-      <button type="button" bindtap="signin">登录</button>
+      <button wx:if="{{password && username}}" type="button" bindtap="signin">登录</button>
+      <button wx:else class="disabled" type="button" bindtap="signin">登录</button>
     </view>
 </view>
