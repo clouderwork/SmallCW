@@ -88,7 +88,7 @@
         <p wx:else class="skills"><span wx:for="{{job.languages}}" wx:key="*this" wx:for-item="item">{{item}}</span></p>
 
         <image wx:if="{{languageShow}}" wx:if="{{!skillShow}}" src="./images/up.png" class="select-down"/>
-        
+
         <image wx:else src="./images/down.png" class="select-up"/>
       </li>
       <li wx:if="{{job.platforms.length}}">
@@ -125,4 +125,4 @@
   </block>
 </view>
 
-<view class="switch-role" bindtap="proposal" wx:if="{{role === 'f' || role === '' || role === 't'}}">投标</view>
+<view class="switch-role" bindtap="proposal" wx:if="{{role === 'f' || role === ''}}">投标</view>
