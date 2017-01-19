@@ -5,10 +5,6 @@ Page({
         time: ['请选择','一周以内', '一个月内', '1-3个月', '3-6个月', '6个月以上'],
         objectTime: [
             {
-                id: '',
-                name: '请选择'
-            },
-            {
                 id: 5,
                 name: '一周以内'
             },
@@ -61,17 +57,24 @@ Page({
         }
         ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
-              wx.switchTab({
-                url: '/pages/profile/index'
-              })
+                wx.showToast({
+                title: '提交成功',
+                icon: 'success',
+                duration: 2000
+            })
+            setTimeout(function(){
+                wx.switchTab({
+                    url: '/pages/profile/index'
+                })
+            },2000)
             } else {
               this.setData({
-                alertData: {msg: res.msg, cls: 'alert-show'}
+                alertData: {msg: wx.getStorageSync('CODE')[res.error_code]}
               })
 
               setTimeout(() => {
                 this.setData({
-                  alertData: {msg: '', cls: ''}
+                   alertData: {msg: ''}
                 })
               }, 2000)
             }
