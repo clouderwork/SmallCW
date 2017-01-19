@@ -62,7 +62,7 @@ Page({
         ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
                 wx.redirectTo({
-                    url: '../project/index'
+                    url: '../profile/index'
                 })
             } else {
               this.setData({

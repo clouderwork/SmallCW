@@ -19,6 +19,7 @@ view {
     background: #fff;
     padding: 29rpx 19rpx;
     line-height: 26px;
+    align-items: center;
 }
 
 .money-text {
