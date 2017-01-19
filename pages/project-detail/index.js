@@ -1,6 +1,6 @@
 var ywk = require('../../utils/ywk')
 var WxParse = require('../../wxParse/wxParse.js')
-
+var app = getApp()
 let format = {
   getDuration (val) {
     let str = '大于6个月'

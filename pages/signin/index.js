@@ -5,7 +5,8 @@ Page({
     password: '',
     hide: true,
     redirect: '',
-    alertData: {msg: '', showClass: 'alert-show'}
+    alertData: {msg: '', showClass: 'alert-show'},
+    disabled: false
   },
   signin (e) {
     if (this.data.username && this.data.password) {
