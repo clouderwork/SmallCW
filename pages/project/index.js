@@ -6,7 +6,8 @@ Page({
     projects: [],
     pagenum: 1,
     count: 0,
-    from: 'project'
+    from: 'project',
+    reget: false
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -34,7 +35,8 @@ Page({
             return item
           })),
           pagenum: res.pagenum + 1,
-          count: res.count
+          count: res.count,
+          reget: true
         })
       } else {
         console.log(res)
@@ -50,6 +52,19 @@ Page({
       this.setData({
         windowHeight: sys.windowHeight
       });
+    }
+    if (this.data.reget) {
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 10000
+      })
+      this.setData({
+        projects: [],
+        pagenum: 1,
+        count: 0
+      })
+      this.getData()
     }
   },
   onLoad () {

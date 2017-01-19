@@ -49,6 +49,11 @@ Page({
   },
   onShow () {
     if (this.data.isGet && wx.getStorageSync('role')) {
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 10000
+      })
       this.getInfo()
     }
   },

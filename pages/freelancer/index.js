@@ -10,7 +10,8 @@ Page({
       ftype: 'all'
     },
     count: 0,
-    from: 'freelancer'
+    from: 'freelancer',
+    reget: false
   },
   //事件处理函数
   goDetail (event) {
@@ -36,6 +37,21 @@ Page({
         windowHeight: sys.windowHeight
       });
     }
+    if (this.data.reget) {
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 10000
+      })
+      this.setData({
+        search: {
+          pagenum: 1,
+          ftype: 'all'
+        },
+        count: 0
+      })
+      this.getData()
+    }
   },
   lower (e) {
     if (this.data.search.pagenum * 10 < this.data.count) {
@@ -53,7 +69,8 @@ Page({
       if (res.error_code === 0) {
         this.setData({
           users: this.data.users.concat(res.users),
-          count: res.count
+          count: res.count,
+          reget: true
         });
       }
       wx.hideToast()
