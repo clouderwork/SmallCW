@@ -61,9 +61,9 @@ Page({
         }
         ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
-                wx.redirectTo({
-                    url: '../profile/index'
-                })
+              wx.switchTab({
+                url: '/pages/profile/index'
+              })
             } else {
               this.setData({
                 alertData: {msg: res.msg, cls: 'alert-show'}

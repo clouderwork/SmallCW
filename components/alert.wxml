@@ -1,5 +1,12 @@
 <template name="alertTpl">
-  <view wx:if="msg" class="week-alert {{cls}}" id="alertWeek">
+  <!-- <view wx:if="msg" class="week-alert {{cls}}" id="alertWeek">
     {{msg}}
+  </view> -->
+  <view wx:if="{{msg}}" id="alertWeek" class="week-alert" >
+      <view class="week-mask_transparent"></view>
+      <view class="week-toast">
+          <icon class="icon_toast" type="warn" size="35" color="red"/>
+          <p class="week-toast__content">{{msg}}</p>
+      </view>
   </view>
 </template>

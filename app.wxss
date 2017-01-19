@@ -10,42 +10,37 @@
   box-sizing: border-box;
 }
 
-.week-alert {
+.week-mask_transparent {
   position: fixed;
+  z-index: 1000;
   top: 0;
-  left: 0;
   right: 0;
-  text-align: center;
-  background-color: rgba(75, 75, 75, 0.85);
-  color: #ffffff;
-  font-size: 30rpx;
-  z-index: 2;
+  left: 0;
+  bottom: 0;
 }
 
-.alert-show {
-  padding: 18rpx 40rpx;
-  animation: show 2s;
+.week-toast {
+  position: fixed;
+  z-index: 5000;
+  width:270rpx;
+  min-height:300rpx;
+  top:180px;
+  left:50%;
+  margin-left:-150rpx;
+  background:rgba(17, 17, 17, 0.6);
+  text-align:center;
+  border-radius:5px;
+  color:#FFFFFF;
+  padding:30rpx;
 }
 
-@keyframes show {
-  0% {
-    transform: translateY(-100%);
-  }
-  20% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  80% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+.icon_toast {
+  margin: 22px 0 10px;
+  display: block;
 }
 
-.week-alert strong {
-  color: #fb6700;
-  font-weight: normal;
+.week-toast__content {
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 1.2;
 }
