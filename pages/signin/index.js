@@ -9,7 +9,8 @@ Page({
     alertData: {msg: '', showClass: 'alert-show'},
     disabled: false,
     showUser: false,
-    showPass: true
+    showPass: true,
+    disabled: true
   },
   signin (e) {
     if (this.data.username && this.data.password) {
@@ -91,6 +92,7 @@ Page({
         showUser: false
       })
     }
+    this.checkDis()
   },
   showDelPass (e) {
     if (e.detail.value) {
@@ -102,16 +104,32 @@ Page({
         showUser: true
       })
     }
+    this.checkDis()
+  },
+  checkDis () {
+    if (this.data.showUser && !this.data.showPass) {
+      this.setData({
+        disabled: false
+      })
+    } else {
+      this.setData({
+        disabled: true
+      })
+    }
   },
   delUser () {
     this.setData({
-      username: ''
+      username: '',
+      showUser: false
     })
+    this.checkDis()
   },
   delValue () {
     this.setData({
-      password: ''
+      password: '',
+      showPass: true
     })
+    this.checkDis()
   },
   onLoad (opt) {
     if (opt && opt.redirect) {

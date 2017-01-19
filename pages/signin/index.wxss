@@ -38,9 +38,12 @@ input:last-child {
 .btn-signin .disabled {
   background-color: #e2e2e2;
   color: #9e9e9e;
+  border: 2rpx solid #e2e2e2;
+}
+button::after {
+  content: '';
   border: 0;
 }
-
 .sign-placeholder {
   color: #cfcfcf;
 }

@@ -19,7 +19,8 @@
       <image wx:else class="del-content" src="images/icon_delete.png" bindtap="delValue" />
     </view>
     <view class="btn-signin">
-      <button type="button" bindtap="signin">登录</button>
+      <button wx:if="{{disabled}}" class="disabled" type="default">登录</button>
+      <button wx:else type="default" bindtap="signin">登录</button>
     </view>
     <template is="tabBar" />
 </view>
