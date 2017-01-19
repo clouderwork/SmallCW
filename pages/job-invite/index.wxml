@@ -8,7 +8,7 @@
       <picker range="{{jobs}}" value="{{jobIndex}}" bindchange="chooseJob">
           <view class="third-box-right">
               <text>{{jobs[jobIndex]}}</text>
-              <image wx:if="{{jobIndex == 0}}" class="icon_next" src="./image/icon_next.png" />
+              <image class="icon_next" src="./image/icon_next.png" />
           </view>
       </picker>
     </view>
@@ -17,7 +17,7 @@
       <picker range="{{time}}" value="{{index}}" bindchange="chooseTime">
           <view class="third-box-right">
               <text>{{time[index]}}</text>
-              <image wx:if="{{index == 0}}" class="icon_next" src="./image/icon_next.png" />
+              <image class="icon_next" src="./image/icon_next.png" />
           </view>
       </picker>
     </view>
