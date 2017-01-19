@@ -26,7 +26,7 @@ function ajaxJson(url, data, method = 'GET') {
   }
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `http://test.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
+      url: `https://test.yunwoke.com${url}?timestamp=${new Date().getTime()}`,
       data: data,
       method: method,
       header: header,
