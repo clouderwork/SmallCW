@@ -65,14 +65,17 @@ App({
       wx.setStorageSync('systemInfo', systemInfo)
     };
   },
-  ckAndNav (url) {
-    if (wx.setStorageSync('role')) {
+  // 检查并跳转页面
+  ckAndNav (url, currentUrl) {
+    if (wx.getStorageSync('role')) {
       wx.navigateTo({
         url: url
       })
     } else {
+      let site = currentUrl ? encodeURIComponent(currentUrl) : encodeURIComponent(url)
+      console.log(site)
       wx.navigateTo({
-        url: `../signin/index?redirect=${url}`
+        url: `../signin/index?redirect=${site}`
       })
     }
   }

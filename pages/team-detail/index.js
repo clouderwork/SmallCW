@@ -92,7 +92,7 @@ Page({
     })
   },
   invite () {
-    app.ckAndNav(`../job-invite/index?id=${this.data.team_id}&type=team`)
+    app.ckAndNav(`../job-invite/index?id=${this.data.team_id}&type=team`, `../team-detail/index?team_id=${this.data.team_id}`)
   },
   onShareAppMessage () {
     return {

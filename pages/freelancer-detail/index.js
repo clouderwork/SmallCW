@@ -129,7 +129,7 @@ Page({
     })
   },
   invite () {
-    app.ckAndNav(`../job-invite/index?id=${this.data.id}&type=user`)
+    app.ckAndNav(`../job-invite/index?id=${this.data.id}&type=user`, `../freelancer-detail/index?id=${this.data.id}`)
   },
   onShareAppMessage () {
     return {
