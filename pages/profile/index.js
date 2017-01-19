@@ -28,7 +28,7 @@ Page({
           })
         } else if (res.error_code === 80001) {
           // 去登录页面
-          wx.navigateTo({
+          wx.redirectTo({
             url: '../signin/index'
           })
         } else {
@@ -90,7 +90,7 @@ Page({
         console.log(err)
       })
     } else {
-      wx.navigateTo({
+      wx.redirectTo({
         url: `../signin/index`
       })
     }

@@ -139,7 +139,7 @@ Page({
   },
   // 投标
   proposal (e) {
-    app.ckAndNav(`../proposal/index?id=${this.data.id}`)
+    app.ckAndNav(`../project-detail/index?id=${this.data.id}`)
   },
   skillOperation (e) {
     this.setData({
