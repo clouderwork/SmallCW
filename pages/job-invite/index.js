@@ -33,7 +33,7 @@ Page({
     jobIndex: '0',
     jobs: ['请选择'],
     jobObj: [],
-    alertData: {msg: '', showClass: 'alert-show'}
+    alertData: {msg: ''}
   },
   chooseTime (e) {
       this.setData({
