@@ -2,7 +2,12 @@ page {
   display: block;
   min-height: 100%;
   background-color: #EFEFF4;
+}
+.user-container {
   padding-bottom: 140rpx;
+}
+.no-btn {
+  padding-bottom: 0;
 }
 .user-container {
   margin: 0

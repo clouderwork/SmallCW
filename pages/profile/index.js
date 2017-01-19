@@ -123,18 +123,4 @@ Page({
     })
     this.getProfile()
   }
-  // },
-  // goFreelancer () {
-  //   wx.redirectTo({
-  //     url: `../freelancer/index`
-  //   })
-  // },
-  // goProject () {
-  //   wx.redirectTo({
-  //     url: `../project/index`
-  //   })
-  // },
-  // goProfile () {
-  //   return
-  // }
 })

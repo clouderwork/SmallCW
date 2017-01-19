@@ -73,18 +73,4 @@ Page({
       path: 'pages/project/index'
     }
   }
-  // },
-  // goFreelancer () {
-  //   wx.redirectTo({
-  //     url: `../freelancer/index`
-  //   })
-  // },
-  // goProfile () {
-  //   wx.redirectTo({
-  //     url: `../profile/index`
-  //   })
-  // },
-  // goProject () {
-  //   return
-  // }
 })

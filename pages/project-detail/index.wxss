@@ -1,8 +1,9 @@
 page {
   background-color: #EFEFF4;
+}
+.project-container {
   padding-bottom: 140rpx;
 }
-
 .project-details {
   border: 2rpx solid #f4f4f4;
   border-left: none;
@@ -11,7 +12,9 @@ page {
   padding: 30rpx 30rpx;
   position: relative;
 }
-
+.no-btn {
+  padding-bottom: 0;
+}
 .job-name {
   display: block;
   color: #4b4b4b;
