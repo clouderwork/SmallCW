@@ -1,5 +1,6 @@
 page {
   background-color: #EFEFF4;
+  padding-bottom: 140rpx;
 }
 
 .project-details {
@@ -238,8 +239,10 @@ page {
   text-align:center;
   font-size:34rpx;
   color:#ff6700;
-  margin-top:40rpx;
   border-top: 2rpx solid #e2e2e9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .panel-more .text {
