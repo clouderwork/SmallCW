@@ -198,6 +198,7 @@ page {
 .row-item .detail .time-row {
   display: flex;
   margin-top: 25rpx;
+  align-items:center;
 }
 
 .row-item .detail .time-icon {
