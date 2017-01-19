@@ -104,7 +104,7 @@ Page({
     let data = {
       job_id: this.data.jobObj[this.data.jobIndex - 1].id,
       duration: this.data.objectTime[this.data.timeIndex - 1].id,
-      message: '这里是邀请的文案'
+      message: '看了你的资料和经历，很适合我们，希望有机会可以合作'
     }
     if (this.data.type === 'team') {
       data.team_id = this.data.id
