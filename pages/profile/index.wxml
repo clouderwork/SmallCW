@@ -40,6 +40,6 @@
       <image class="no-data-icon" src="image/icon_no_data.png" />
       <text class="no-data-tips">暂时还没有内容哦~</text>
     </view>
-    <view class="switch-role" bindtap="changeRole">切换{{role === 'c'?'服务方':'需求方'}}</view>
+    <view class="switch-role" bindtap="changeRole">切换为{{role === 'c'?'服务方':'需求方'}}</view>
   </view>
 </view>
