@@ -119,5 +119,15 @@ Page({
         redirect: decodeURIComponent(opt.redirect)
       })
     }
+  },
+  goProject () {
+    wx.switchTab({
+      url: '../project/index'
+    })
+  },
+  goFreelancer () {
+    wx.switchTab({
+      url: '../freelancer/index'
+    })
   }
 })

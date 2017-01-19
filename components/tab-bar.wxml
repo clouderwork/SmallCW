@@ -1,0 +1,16 @@
+<template name="tabBar">
+  <view class="common-bar">
+    <view class="project-bar" bindtap="goProject">
+      <image src="../../images/icon_project.png" />
+      <text>找项目</text>
+    </view>
+    <view class="freelancer-bar" bindtap="goFreelancer">
+      <image src="../../images/icon_people.png" />
+      <text>找人才</text>
+    </view>
+    <view class="profile-bar">
+      <image src="../../images/icon_profile_selected.png" />
+      <text class="tab-bar-color">我</text>
+    </view>
+  </view>
+</template>

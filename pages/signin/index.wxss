@@ -59,3 +59,43 @@ input:last-child {
   height: 36rpx;
   margin-top:8rpx;
 }
+.common-bar {
+  height: 115rpx;
+  border-top: 1px solid #efefef;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  font-size: 26rpx;
+  color: #6c6c71;
+  width: 100%;
+  box-sizing: border-box;
+}
+.common-bar > view {
+  flex: 1;
+}
+.common-bar image {
+  display: block;
+  margin: 14rpx auto 10rpx;
+}
+.common-bar text {
+  display: block;
+  text-align: center;
+}
+.project-bar image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.freelancer-bar image {
+  width: 52rpx;
+  height: 52rpx;
+  margin: 14rpx auto 10rpx;
+}
+.profile-bar image {
+  width: 48rpx;
+  height: 50rpx;
+  margin: 14rpx auto 10rpx;
+}
+.tab-bar-color {
+  color: #ff6700;
+}
