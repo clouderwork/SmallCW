@@ -6,7 +6,8 @@ Page({
     role: '',
     proposals: [],
     from: 'profile',
-    listLoad: false
+    listLoad: false,
+    isGet: false
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -46,6 +47,16 @@ Page({
       this.getInfo()
     }
   },
+  onShow () {
+    if (this.data.isGet && wx.getStorageSync('role')) {
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 10000
+      })
+      this.getInfo()
+    }
+  },
   getInfo () {
     let operate = this.data.role === 'f' ? 'active' : 'invite'
     // 服务方获取我的投标
@@ -57,7 +68,8 @@ Page({
         })
         this.setData({
           proposals: proposals,
-          listLoad: true
+          listLoad: true,
+          isGet: true
         })
       }
       wx.hideToast()
@@ -119,7 +131,7 @@ Page({
       duration: 10000
     })
     this.setData({
-      role: wx.getStorageSync('role') || ''
+      role: wx.getStorageSync('role') || '',
     })
     this.getProfile()
   }
