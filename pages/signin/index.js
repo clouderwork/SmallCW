@@ -1,4 +1,5 @@
 var ywk = require('../../utils/ywk')
+var app = getApp()
 Page({
   data: {
     username: '',
@@ -34,6 +35,7 @@ Page({
       }, (err) => {
         wx.hideToast()
       })
+      app.getSystemInfo()
     }
   },
   getRole () {
