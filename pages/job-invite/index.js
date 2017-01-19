@@ -37,13 +37,13 @@ Page({
   },
   chooseTime (e) {
       this.setData({
-          index: e.detail.value
+          index: parseInt(e.detail.value)
       })
       this.ckDis()
   },
   chooseJob (e) {
     this.setData({
-        jobIndex: e.detail.value
+        jobIndex: parseInt(e.detail.value)
     })
     this.ckDis()
   },
@@ -102,8 +102,8 @@ Page({
   submit () {
     if (this.data.index === 0 || this.data.jobIndex === 0 || this.data.isDisable === 'disabled') return false;
     let data = {
-      job_id: this.data.jobObj[this.data.jobIndex].id,
-      duration: this.data.objectTime[this.data.index].id,
+      job_id: this.data.jobObj[this.data.jobIndex - 1].id,
+      duration: this.data.objectTime[this.data.index - 1].id,
       message: '这里是邀请的文案'
     }
     if (this.data.type === 'team') {
