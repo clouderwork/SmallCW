@@ -68,14 +68,6 @@
   </view>
   <block wx:if="{{panel==='more'}}">
     <ul class="panel-more">
-      <li wx:if="{{job.status}}">
-        <p class="list-name">项目状态：</p>
-        <p class="text">{{job.status}}</p>
-      </li>
-      <li wx:if="{{job.stage}}">
-        <p class="list-name">一次性项目：</p>
-        <p class="text">{{job.status}}</p>
-      </li>
       <li wx:if="{{job.stage}}">
         <p class="list-name">项目阶段：</p>
         <p class="text">{{job.stage}}</p>
