@@ -49,7 +49,7 @@ Page({
   },
   ckDis () {
     let dis = 'disabled'
-    if (!(this.data.index === 0 || this.data.jobIndex === 0)) {
+    if (this.data.index != 0 && this.data.jobIndex != 0) {
       dis = ''
     }
     this.setData({
@@ -100,7 +100,7 @@ Page({
     }
   },
   submit () {
-    if (this.data.isDisable === 'disabled') return false;
+    if (this.data.index === 0 || this.data.jobIndex === 0 || this.data.isDisable === 'disabled') return false;
     let data = {
       job_id: this.data.jobObj[this.data.jobIndex].id,
       duration: this.data.objectTime[this.data.index].id,

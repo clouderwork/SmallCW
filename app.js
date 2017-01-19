@@ -73,7 +73,6 @@ App({
       })
     } else {
       let site = currentUrl ? encodeURIComponent(currentUrl) : encodeURIComponent(url)
-      console.log(site)
       wx.navigateTo({
         url: `../signin/index?redirect=${site}`
       })
