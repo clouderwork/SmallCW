@@ -54,7 +54,6 @@ Page({
       }
     }, (err) => {
       wx.hideToast()
-      console.log(err)
     })
   },
   getUsername (e) {
