@@ -17,11 +17,14 @@
     </view>
     <view class="third-box" wx:if="{{job.paymethod==='fixed'}}">
         <span class="third-box-left">预计完成时间</span>
-        <picker range="{{time}}" value="{{index}}" bindchange="chooseTime">
-            <text>
-                {{time[index]}}
-            </text>
-        </picker>
+        <span class="third-box-right">
+            <image class="img-box" src="images/icon_next.png"/>
+            <picker range="{{time}}" value="{{index}}" bindchange="chooseTime">
+                <text>
+                    {{time[index]}}
+                </text>
+            </picker>
+        </span>
     </view>
 </view>
 
