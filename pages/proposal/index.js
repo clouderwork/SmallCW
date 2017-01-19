@@ -66,12 +66,12 @@ Page({
               })
             } else {
               this.setData({
-                alertData: {msg: res.msg, cls: 'alert-show'}
+                alertData: {msg: wx.getStorageSync('CODE')[res.error_code]}
               })
 
               setTimeout(() => {
                 this.setData({
-                  alertData: {msg: '', cls: ''}
+                   alertData: {msg: ''}
                 })
               }, 2000)
             }
