@@ -14,10 +14,10 @@
     </view>
     <view class="content-list">
       <view class="section__title">预计完成时间</view>
-      <picker range="{{time}}" value="{{index}}" bindchange="chooseTime">
+      <picker range="{{time}}" value="{{timeIndex}}" bindchange="chooseTime">
           <view class="third-box-right">
-              <text>{{time[index]}}</text>
-              <image wx:if="{{index == 0}}" class="icon_next" src="./image/icon_next.png" />
+              <text>{{time[timeIndex]}}</text>
+              <image wx:if="{{timeIndex == 0}}" class="icon_next" src="./image/icon_next.png" />
           </view>
       </picker>
     </view>

@@ -29,27 +29,27 @@ Page({
             name: '6个月以上'
         }
     ],
-    index: 0,
-    jobIndex: 0,
+    timeIndex: '0',
+    jobIndex: '0',
     jobs: ['请选择'],
     jobObj: [],
     alertData: {msg: '', showClass: 'alert-show'}
   },
   chooseTime (e) {
       this.setData({
-          index: parseInt(e.detail.value)
+          timeIndex: e.detail.value
       })
       this.ckDis()
   },
   chooseJob (e) {
     this.setData({
-        jobIndex: parseInt(e.detail.value)
+        jobIndex: e.detail.value
     })
     this.ckDis()
   },
   ckDis () {
     let dis = 'disabled'
-    if (this.data.index != 0 && this.data.jobIndex != 0) {
+    if (parseInt(this.data.timeIndex) !== 0 && parseInt(this.data.jobIndex) !== 0) {
       dis = ''
     }
     this.setData({
@@ -100,10 +100,10 @@ Page({
     }
   },
   submit () {
-    if (this.data.index === 0 || this.data.jobIndex === 0 || this.data.isDisable === 'disabled') return false;
+    if (this.data.timeIndex === 0 || this.data.jobIndex === 0 || this.data.isDisable === 'disabled') return false;
     let data = {
       job_id: this.data.jobObj[this.data.jobIndex - 1].id,
-      duration: this.data.objectTime[this.data.index - 1].id,
+      duration: this.data.objectTime[this.data.timeIndex - 1].id,
       message: '这里是邀请的文案'
     }
     if (this.data.type === 'team') {
