@@ -2,9 +2,9 @@
  * author: Di (微信小程序开发工程师)
  * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
  *               垂直微信小程序开发交流社区
- * 
+ *
  * github地址: https://github.com/icindy/wxParse
- * 
+ *
  * for: 微信小程序富文本解析
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
@@ -85,8 +85,6 @@ function html2json(html, bindName) {
                     var name = attr.name;
                     var value = attr.value;
                     if (name == 'class') {
-                        console.dir(value);
-                        //  value = value.join("")
                         node.classStr = value;
                     }
                     // has multi attibutes
@@ -99,7 +97,7 @@ function html2json(html, bindName) {
                     if (value.match(/ /)) {
                         value = value.split(' ');
                     }
-                    
+
 
                     // if attr already exists
                     // merge it
@@ -167,7 +165,7 @@ function html2json(html, bindName) {
                 text: text,
                 textArray:transEmojiStr(text)
             };
-            
+
             if (bufArray.length === 0) {
                 results.nodes.push(node);
             } else {
@@ -197,7 +195,7 @@ function html2json(html, bindName) {
 function transEmojiStr(str){
   // var eReg = new RegExp("["+__reg+' '+"]");
 //   str = str.replace(/\[([^\[\]]+)\]/g,':$1:')
-  
+
   var emojiObjs = [];
   //如果正则表达式为空
   if(__emojisReg.length == 0 || !__emojis){
@@ -225,7 +223,7 @@ function transEmojiStr(str){
     }
     emojiObjs.push(emojiObj);
   }
-  
+
   return emojiObjs;
 }
 
@@ -239,4 +237,3 @@ module.exports = {
     html2json: html2json,
     emojisInit:emojisInit
 };
-

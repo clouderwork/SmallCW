@@ -77,7 +77,6 @@ Page({
         })
       } else if (res.error_code === 80001) {
         let url = encodeURIComponent(`../job-invite/index?id=${this.data.id}&type=${this.data.type}`)
-        console.log(url)
         wx.navigateTo({
           url: `../signin/index?redirect=${url}`
         })
