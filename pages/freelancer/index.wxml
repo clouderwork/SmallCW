@@ -1,11 +1,9 @@
 <!--index.wxml-->
 <import src="../../components/freelancer-item.wxml"/>
-<import src="../../components/tab-bar.wxml"/>
 <view class="user-container">
   <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" lower-threshold="150" bindscrolltolower="lower">
     <block wx:for="{{users}}" wx:key="id" wx:for-item="user">
       <template is="freelancerItem" data="{{...user}}" />
     </block>
   </scroll-view>
-  <template is="tabBar" data="{{from}}" />
 </view>

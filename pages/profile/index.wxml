@@ -1,5 +1,4 @@
 <!--index.wxml-->
-<import src="../../components/tab-bar.wxml"/>
 <view class="profile-container">
   <view wx:if="{{listLoad}}">
     <view class="my-profile">
@@ -43,5 +42,4 @@
     </view>
     <view class="switch-role" bindtap="changeRole">切换{{role === 'c'?'服务方':'需求方'}}</view>
   </view>
-  <template is="tabBar" data="{{from}}" />
 </view>

@@ -67,18 +67,19 @@ Page({
       desc: '人才列表',
       path: 'pages/freelancer/index'
     }
-  },
-  goProfile () {
-    wx.redirectTo({
-      url: `../profile/index`
-    })
-  },
-  goProject () {
-    wx.redirectTo({
-      url: `../project/index`
-    })
-  },
-  goFreelancer () {
-    return
   }
+  // },
+  // goProfile () {
+  //   wx.redirectTo({
+  //     url: `../profile/index`
+  //   })
+  // },
+  // goProject () {
+  //   wx.redirectTo({
+  //     url: `../project/index`
+  //   })
+  // },
+  // goFreelancer () {
+  //   return
+  // }
 })

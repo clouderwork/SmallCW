@@ -72,18 +72,19 @@ Page({
       desc: '项目列表',
       path: 'pages/project/index'
     }
-  },
-  goFreelancer () {
-    wx.redirectTo({
-      url: `../freelancer/index`
-    })
-  },
-  goProfile () {
-    wx.redirectTo({
-      url: `../profile/index`
-    })
-  },
-  goProject () {
-    return
   }
+  // },
+  // goFreelancer () {
+  //   wx.redirectTo({
+  //     url: `../freelancer/index`
+  //   })
+  // },
+  // goProfile () {
+  //   wx.redirectTo({
+  //     url: `../profile/index`
+  //   })
+  // },
+  // goProject () {
+  //   return
+  // }
 })

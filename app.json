@@ -18,5 +18,27 @@
     "navigationBarBackgroundColor": "#ff6700",
     "navigationBarTitleText": "云沃客",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#6c6c71",
+    "selectedColor": "#ff6700",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/project/index",
+      "iconPath": "images/icon_project.png",
+      "selectedIconPath": "images/icon_project_selected.png",
+      "text": "找项目"
+    }, {
+      "pagePath": "pages/freelancer/index",
+      "iconPath": "images/icon_people.png",
+      "selectedIconPath": "images/icon_people_selected.png",
+      "text": "找人才"
+    }, {
+      "pagePath": "pages/profile/index",
+      "iconPath": "images/icon_profile.png",
+      "selectedIconPath": "images/icon_profile_selected.png",
+      "text": "我"
+    }]
   }
 }

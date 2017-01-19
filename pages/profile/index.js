@@ -122,18 +122,19 @@ Page({
       role: wx.getStorageSync('role') || ''
     })
     this.getProfile()
-  },
-  goFreelancer () {
-    wx.redirectTo({
-      url: `../freelancer/index`
-    })
-  },
-  goProject () {
-    wx.redirectTo({
-      url: `../project/index`
-    })
-  },
-  goProfile () {
-    return
   }
+  // },
+  // goFreelancer () {
+  //   wx.redirectTo({
+  //     url: `../freelancer/index`
+  //   })
+  // },
+  // goProject () {
+  //   wx.redirectTo({
+  //     url: `../project/index`
+  //   })
+  // },
+  // goProfile () {
+  //   return
+  // }
 })
