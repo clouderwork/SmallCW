@@ -29,6 +29,7 @@ Page({
               alertData: {msg: '', cls: ''}
             })
           }, 2000)
+          wx.hideToast()
         }
       }, (err) => {
         wx.hideToast()
