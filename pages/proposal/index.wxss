@@ -93,15 +93,19 @@ view {
     right: 0;
 }
 
+.third-box-right {
+    float:right;
+}
+
 picker {
-    float: right;
-    background: url('images/icon_next.png') no-repeat right center;
-    background-size: 14rpx 25rpx;
+    float: left;
     height: 53rpx;
     line-height: 17rpx;
-    padding-right: 30rpx;
+    padding-right: 20rpx;
 }
 
 .img-box {
     line-height: 40rpx;
+    width: 14rpx;
+    height: 25rpx;
 }

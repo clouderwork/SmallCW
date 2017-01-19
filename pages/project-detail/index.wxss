@@ -204,24 +204,9 @@ page {
 .skills-box {
   line-height: 60rpx !important;
 }
-.skills-box .select-down {
-  margin-top: 10rpx;
-  width: 18rpx;
-  height: 32rpx;
-}
-.skills-box .select-up {
-  margin-top: 19rpx;
-  width: 32rpx;
-  height: 18rpx;
-}
 .skills {
   flex: 1;
   right: 0;
-  max-height: 60rpx;
-  overflow: hidden;
-}
-.show-all {
-  max-height: 100%;
 }
 .skills span{
   padding: 0 24rpx;
@@ -252,6 +237,7 @@ page {
   text-align: right;
   font-size: 30rpx;
   color: #4b4b4b;
+  word-break: break-all;
   flex: 1;
 }
 
