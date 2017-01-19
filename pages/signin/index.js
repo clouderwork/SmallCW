@@ -6,7 +6,7 @@ Page({
     password: '',
     hide: true,
     redirect: '',
-    alertData: {msg: '', showClass: 'alert-show'},
+    alertData: {msg: ''},
     disabled: false,
     showUser: false,
     showPass: true,
@@ -25,12 +25,12 @@ Page({
           this.getRole()
         } else {
           this.setData({
-            alertData: {msg: res.msg, cls: 'alert-show'}
+            alertData: {msg: wx.getStorageSync('CODE')[res.error_code]}
           })
 
           setTimeout(() => {
             this.setData({
-              alertData: {msg: '', cls: ''}
+              alertData: {msg: ''}
             })
           }, 2000)
           wx.hideToast()
