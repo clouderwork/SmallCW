@@ -196,9 +196,8 @@ page {
 }
 
 .row-item .detail .time-row {
-  display: flex;
+  display: block;
   margin-top: 25rpx;
-  align-items:center;
 }
 
 .row-item .detail .time-icon {
