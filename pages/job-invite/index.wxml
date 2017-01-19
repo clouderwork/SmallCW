@@ -7,7 +7,7 @@
       <view class="section__title">项目</view>
       <picker range="{{jobs}}" value="{{jobIndex}}" bindchange="chooseJob">
           <view class="third-box-right">
-              <text>{{jobs[jobIndex]}}</text>
+              <text class="text-box">{{jobs[jobIndex]}}</text>
               <image class="icon_next" src="./image/icon_next.png" />
           </view>
       </picker>
