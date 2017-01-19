@@ -19,13 +19,19 @@ Page({
         icon: 'loading',
         duration: 10000
       })
+      this.setData({
+        disabled: true
+      })
       ywk.ajaxJson('/api/user/signin', this.data, 'POST').then((res) => {
         if (res.error_code === 0) {
           wx.setStorageSync('session_token', res.session_token || '')
           this.getRole()
         } else {
           this.setData({
-            alertData: {msg: res.msg, cls: 'alert-show'}
+            disabled: false
+          })
+          this.setData({
+            alertData: {msg: wx.getStorageSync('CODE')[res.error_code], cls: 'alert-show'}
           })
 
           setTimeout(() => {
@@ -52,6 +58,9 @@ Page({
         }
         wx.setStorageSync('role', role)
         wx.setStorageSync('roles', res.roles)
+        this.setData({
+          disabled: false
+        })
         if (this.data.redirect) {
           wx.navigateTo({
             url: this.data.redirect
