@@ -9,7 +9,7 @@
       <text>附件</text>
       <text>有附件，请前往网站查看</text>
     </view>
-    <view class="content-list" wx:if="{{invite.job.paymethod === 'fixed'}}">
+    <view class="content-list">
       <text>预计完成时间</text>
       <text wx:if="{{invite.duration == 0}}">未设置</text>
       <text wx:if="{{invite.duration == 1}}">6个月以上</text>
