@@ -28,7 +28,7 @@ Page({
           })
         } else if (res.error_code === 80001) {
           // 去登录页面
-          wx.navigateTo({
+          wx.redirectTo({
             url: '../signin/index'
           })
         } else {
@@ -47,7 +47,6 @@ Page({
     }
   },
   getInfo () {
-    console.log(this.data.role)
     let operate = this.data.role === 'f' ? 'active' : 'invite'
     // 服务方获取我的投标
     ywk.ajaxJson('/api/proposal', {operate: operate}, 'GET').then((res) => {
@@ -56,7 +55,6 @@ Page({
           item.create_at = this.filterTime(item.create_at)
           return item
         })
-        console.log(proposals)
         this.setData({
           proposals: proposals,
           listLoad: true
@@ -90,7 +88,7 @@ Page({
         console.log(err)
       })
     } else {
-      wx.navigateTo({
+      wx.redirectTo({
         url: `../signin/index`
       })
     }

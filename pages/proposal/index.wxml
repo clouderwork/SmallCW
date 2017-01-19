@@ -1,4 +1,6 @@
+<import src="../../components/alert.wxml"/>
 <view class="pro-money">
+    <template is="alertTpl" data="{{...alertData}}" />
     <view class="first-box">
         <span class="first-box-left">报价</span>
         <input type="number" value="{{amount}}" wx:if="{{job.paymethod==='fixed'}}" placeholder="请输入您的报价" class="money-text" bindblur="getAmount" bindinput="computserve" />

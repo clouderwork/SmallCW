@@ -33,8 +33,14 @@ input:last-child {
   border: 2rpx solid #ff6700;
   height: 100rpx;
   line-height: 100rpx;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
+.btn-signin .disabled {
+  background-color: #e2e2e2;
+  color: #9e9e9e;
+  border: 0;
+}
+
 .sign-placeholder {
   color: #cfcfcf;
 }

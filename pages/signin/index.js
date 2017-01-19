@@ -4,7 +4,9 @@ Page({
     username: '',
     password: '',
     hide: true,
-    redirect: ''
+    redirect: '',
+    alertData: {msg: '', showClass: 'alert-show'},
+    disabled: false
   },
   signin (e) {
     if (this.data.username && this.data.password) {
@@ -18,7 +20,16 @@ Page({
           wx.setStorageSync('session_token', res.session_token || '')
           this.getRole()
         } else {
-          console.log(res)
+          this.setData({
+            alertData: {msg: res.msg, cls: 'alert-show'}
+          })
+
+          setTimeout(() => {
+            this.setData({
+              alertData: {msg: '', cls: ''}
+            })
+          }, 2000)
+          wx.hideToast()
         }
       }, (err) => {
         wx.hideToast()
@@ -36,7 +47,7 @@ Page({
         }
         wx.setStorageSync('role', role)
         wx.setStorageSync('roles', res.roles)
-        let url = this.data.redirect ? this.data.redirect : 'pages/profile/index'
+        let url = this.data.redirect ? this.data.redirect : '../profile/index'
         wx.navigateTo({
           url: url
         })

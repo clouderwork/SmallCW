@@ -33,7 +33,8 @@ Page({
         id: '',
         job: {},
         selfcount: '',
-        servecount: ''
+        servecount: '',
+        alertData: {msg: '', showClass: 'alert-show'}
     },
     onLoad (e) {
         this.setData({
@@ -63,6 +64,16 @@ Page({
                 wx.redirectTo({
                     url: '../project/index'
                 })
+            } else {
+              this.setData({
+                alertData: {msg: res.msg, cls: 'alert-show'}
+              })
+
+              setTimeout(() => {
+                this.setData({
+                  alertData: {msg: '', cls: ''}
+                })
+              }, 2000)
             }
         }, (err) => {
             console.log(err)

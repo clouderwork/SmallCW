@@ -1,6 +1,6 @@
 var ywk = require('../../utils/ywk')
 var WxParse = require('../../wxParse/wxParse.js')
-
+var app = getApp()
 let format = {
   getDuration (val) {
     let str = '大于6个月'
@@ -139,7 +139,7 @@ Page({
   },
   // 投标
   proposal (e) {
-    app.ckAndNav(`../proposal/index?id=${this.data.id}`)
+    app.ckAndNav(`../project-detail/index?id=${this.data.id}`)
   },
   skillOperation (e) {
     this.setData({
