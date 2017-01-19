@@ -19,6 +19,9 @@ Page({
       title: '加载中...',
       icon: 'loading'
     })
+    this.setData({
+      role: wx.getStorageSync('role')
+    })
     if (opt && opt.id) {
       this.setData({
         id: opt.id

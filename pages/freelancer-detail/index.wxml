@@ -128,7 +128,7 @@
       </block>
     </view>
   </view>
-  <view class="row-invite" data-id="{{profile.id}}" bindtap="invite">
+  <view class="row-invite" wx:if="{{role !== 'f'}}" data-id="{{profile.id}}" bindtap="invite">
     邀请TA
   </view>
 </view>
