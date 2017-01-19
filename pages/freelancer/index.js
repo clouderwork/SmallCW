@@ -68,18 +68,4 @@ Page({
       path: 'pages/freelancer/index'
     }
   }
-  // },
-  // goProfile () {
-  //   wx.redirectTo({
-  //     url: `../profile/index`
-  //   })
-  // },
-  // goProject () {
-  //   wx.redirectTo({
-  //     url: `../project/index`
-  //   })
-  // },
-  // goFreelancer () {
-  //   return
-  // }
 })

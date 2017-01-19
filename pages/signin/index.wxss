@@ -54,3 +54,8 @@ input:last-child {
   height: 25rpx;
   margin-top: 16rpx;
 }
+.del-content {
+  width: 36rpx;
+  height: 36rpx;
+  margin-top:8rpx;
+}

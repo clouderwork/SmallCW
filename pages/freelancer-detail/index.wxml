@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="user-container">
+<view class="user-container{{role !== 'f'?'':' no-btn'}}">
   <view class="profile">
     <view class="workload"></view>
     <text wx:if="{{profile.workload > 0}}" class="workload-txt">{{profile.canWork}}</text>

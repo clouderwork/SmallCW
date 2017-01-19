@@ -4,15 +4,18 @@
 <view class="signin-container">
     <template is="alertTpl" data="{{...alertData}}" />
     <view class="section">
-      <input placeholder="请输入手机号/用户名/邮箱" bindblur="getUsername" placeholder-class="sign-placeholder" focus="" />
+      <input placeholder="请输入手机号/用户名/邮箱" value="{{username}}" bindinput="showDelUser" bindblur="getUsername" placeholder-class="sign-placeholder" focus="" />
+      <image wx:if="{{showUser}}" class="del-content" src="images/icon_delete.png" bindtap="delUser" />
     </view>
     <view class="section" wx:if="{{hide}}">
-      <input value="{{password}}" type="password" placeholder="请输入密码" bindblur="getPassword" placeholder-class="sign-placeholder" class="signin-password"/>
-      <image class="icon-eye-hide" src="images/password.png" bindtap="change" />
+      <input value="{{password}}" password type="text" bindinput="showDelPass" placeholder="请输入密码" bindblur="getPassword" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image wx:if="{{showPass}}" class="icon-eye-hide" src="images/password.png" bindtap="change" />
+      <image wx:else class="del-content" src="images/icon_delete.png" bindtap="delValue" />
     </view>
     <view class="section" wx:else>
-      <input value="{{password}}" type="text" placeholder="请输入密码" bindblur="getPassword" placeholder-class="sign-placeholder" class="signin-password"/>
-      <image class="icon-eye" src="images/password-show.png" bindtap="change" />
+      <input value="{{password}}" placeholder="请输入密码" bindinput="showDelPass" bindblur="getPassword" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image wx:if="{{showPass}}" class="icon-eye" src="images/password-show.png" bindtap="change" />
+      <image wx:else class="del-content" src="images/icon_delete.png" bindtap="delValue" />
     </view>
     <view class="btn-signin">
       <button type="button" bindtap="signin">登录</button>

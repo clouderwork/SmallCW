@@ -1,8 +1,9 @@
 page {
   background-color: #EFEFF4;
+}
+.project-container {
   padding-bottom: 140rpx;
 }
-
 .project-details {
   border: 2rpx solid #f4f4f4;
   border-left: none;
@@ -11,7 +12,9 @@ page {
   padding: 30rpx 30rpx;
   position: relative;
 }
-
+.no-btn {
+  padding-bottom: 0;
+}
 .job-name {
   display: block;
   color: #4b4b4b;
@@ -201,24 +204,9 @@ page {
 .skills-box {
   line-height: 60rpx !important;
 }
-.skills-box .select-down {
-  margin-top: 10rpx;
-  width: 18rpx;
-  height: 32rpx;
-}
-.skills-box .select-up {
-  margin-top: 19rpx;
-  width: 32rpx;
-  height: 18rpx;
-}
 .skills {
   flex: 1;
   right: 0;
-  max-height: 60rpx;
-  overflow: hidden;
-}
-.show-all {
-  max-height: 100%;
 }
 .skills span{
   padding: 0 24rpx;
@@ -249,6 +237,7 @@ page {
   text-align: right;
   font-size: 30rpx;
   color: #4b4b4b;
+  word-break: break-all;
   flex: 1;
 }
 
