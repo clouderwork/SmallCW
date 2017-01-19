@@ -80,9 +80,9 @@
             <text class="team-name">{{team.name}}</text>
             <view class="team-content">
               <image class="peole-icon" src="./images/icon-people.png" />
-              <text wx:if="{{team.mtype === 'owner'}}">创建人</text>
-              <text wx:elif="{{team.mtype === 'staff'}}">普通成员</text>
-              <text wx:else>管理员</text>
+              <text class="text" wx:if="{{team.mtype === 'owner'}}">创建人</text>
+              <text class="text" wx:elif="{{team.mtype === 'staff'}}">普通成员</text>
+              <text class="text" wx:else>管理员</text>
             </view>
           </view>
         </view>

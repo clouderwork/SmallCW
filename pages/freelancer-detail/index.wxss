@@ -268,7 +268,11 @@ page {
   width: 30rpx;
   height: 30rpx;
   margin-right: 15rpx;
-  vertical-align: bottom;
+  vertical-align: middle;
+}
+.row-item .team-item .text {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .row-item .team-item .team-content {
