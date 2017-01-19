@@ -141,21 +141,6 @@ Page({
   proposal (e) {
     app.ckAndNav(`../proposal/index?id=${this.data.id}`, `../project-detail/index?id=${this.data.id}`)
   },
-  skillOperation (e) {
-    this.setData({
-      skillShow: !this.data.skillShow
-    })
-  },
-  frameOperation () {
-    this.setData({
-      frameworkShow: !this.data.frameworkShow
-    })
-  },
-  langOperation () {
-    this.setData({
-      languageShow: !this.data.languageShow
-    })
-  },
   onShareAppMessage () {
     return {
       title: '云沃客',
