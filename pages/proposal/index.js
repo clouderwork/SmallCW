@@ -53,7 +53,7 @@ Page({
             job_id: this.data.id,
             amount: this.data.amount,
             duration: this.data.index,
-            message: '这里是投标的文案'
+            message: '看了你发布的项目，很感兴趣，希望有机会为你服务'
         }
         ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
             if (res.error_code === 0) {
