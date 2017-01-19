@@ -46,7 +46,7 @@ Page({
         }
         wx.setStorageSync('role', role)
         wx.setStorageSync('roles', res.roles)
-        let url = this.data.redirect ? this.data.redirect : 'pages/profile/index'
+        let url = this.data.redirect ? this.data.redirect : '../profile/index'
         wx.navigateTo({
           url: url
         })
