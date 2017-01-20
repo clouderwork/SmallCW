@@ -63,6 +63,18 @@ Page({
     }
   },
   register (e) {
+    if (!/^[A-Za-z0-9\x21-\x7e]{6,20}$/.test(this.data.password)) {
+      this.setData({
+        alertData: {msg: '密码要求输入6-20个字符,支持英文、数字、特殊符号'}
+      })
+
+      setTimeout(() => {
+        this.setData({
+          alertData: {msg: ''}
+        })
+      }, 2000)
+      return
+    }
     this.setData({
       disabled: true
     })
