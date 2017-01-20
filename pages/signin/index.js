@@ -115,7 +115,7 @@ Page({
     this.checkDis()
   },
   checkDis () {
-    if (this.data.showUser && !this.data.showPass) {
+    if (this.data.username && this.data.password) {
       this.setData({
         disabled: false
       })
