@@ -51,7 +51,8 @@ input:last-child {
   font-size: 26rpx;
   color: #ff6700;
   position: absolute;
-  top: 15rpx;
+  top: 50%;
+  margin-top: -36rpx;
   right: 26rpx;
 }
 .no-send-btn {
