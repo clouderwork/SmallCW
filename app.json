@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/register/index",
     "pages/project/index",
     "pages/freelancer/index",
     "pages/freelancer-detail/index",

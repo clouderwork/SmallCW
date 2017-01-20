@@ -7,7 +7,6 @@ Page({
     hide: true,
     redirect: '',
     alertData: {msg: ''},
-    disabled: false,
     showUser: false,
     showPass: true,
     disabled: true
@@ -155,6 +154,11 @@ Page({
   goFreelancer () {
     wx.switchTab({
       url: '../freelancer/index'
+    })
+  },
+  register () {
+    wx.navigateTo({
+      url: '../register/index'
     })
   }
 })

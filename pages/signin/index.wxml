@@ -22,5 +22,6 @@
       <button wx:if="{{disabled}}" class="disabled" type="default">登录</button>
       <button wx:else type="default" bindtap="signin">登录</button>
     </view>
+    <view class="register-new" bindtap="register">注册新账号<image src="images/icon_register.png" /></view>
     <template is="tabBar" />
 </view>

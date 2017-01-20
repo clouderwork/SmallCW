@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<import src="../../components/project-item.wxml"/>
+<import src="../../components/alert.wxml"/>
+<import src="../../components/tab-bar.wxml"/>
+<view class="signin-container">
+    <template is="alertTpl" data="{{...alertData}}" />
+    <view class="section">
+      <input placeholder="请输入手机号" value="{{phone}}" bindinput="inputPhone" placeholder-class="sign-placeholder" bindfocus="focusPhone" />
+      <image wx:if="{{showPhone}}" class="del-content del-phone-icon" src="images/icon_delete.png" bindtap="delPhone" />
+      <text wx:if="{{noSend}}" class="send-code{{codeDis?' no-send-btn':''}}" bindtap="getCode">{{first?'发送验证码' : '重新发送'}}</text>
+      <text wx:else class="send-code">{{secode}}s</text>
+    </view>
+    <view class="section">
+      <input value="{{vcode}}" type="text" bindinput="inputCode" placeholder="请输入收到的验证码" bindfocus="focusCode" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image wx:if="{{showVcode}}" class="del-content" src="images/icon_delete.png" bindtap="delVcode" />
+    </view>
+    <view class="section in-password" wx:if="{{hide}}">
+      <input value="{{password}}" password type="text" bindinput="inputPwd" placeholder="请输入您的密码" bindfocus="focusPwd" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image wx:if="{{showPass}}" class="del-content" src="images/icon_delete.png" bindtap="delValue" />
+      <image wx:else class="icon-eye-hide" src="images/password.png" bindtap="change" />
+    </view>
+    <view class="section in-password" wx:else>
+      <input value="{{password}}" placeholder="请输入您的密码" bindinput="inputPwd" bindblur="blurPwd" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image wx:if="{{showPass}}" class="del-content" src="images/icon_delete.png" bindtap="delValue" />
+      <image wx:else class="icon-eye" src="images/password-show.png" bindtap="change" />
+    </view>
+    <view class="btn-signin">
+      <button wx:if="{{disabled}}" class="disabled" type="default">注册</button>
+      <button wx:else type="default" bindtap="register">注册</button>
+    </view>
+    <view class="register-new" bindtap="signin">已有账号请登录<image src="images/icon_register.png" /></view>
+    <template is="tabBar" />
+</view>
