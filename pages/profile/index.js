@@ -51,6 +51,7 @@ Page({
         console.log(err)
       })
     } else {
+      let roles = wx.getStorageSync('roles')
       this.setData({
         profile: this.data.role === 'c' ? roles.client : roles.freelancer,
         roles: roles
