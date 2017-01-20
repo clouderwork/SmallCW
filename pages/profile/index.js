@@ -33,6 +33,7 @@ Page({
           roles.client = {}
           this.setData({
             roles: roles,
+            profile: roles.freelancer,
             listLoad: true
           })
           wx.setStorageSync('roles', roles)

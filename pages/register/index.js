@@ -38,7 +38,7 @@ Page({
           wx.showToast({
             title: '发送成功',
             icon: 'success',
-            duration: 200
+            duration: 2000
           })
           this.setData({
             noSend: false,
@@ -70,7 +70,7 @@ Page({
       icon: 'loading',
       duration: 10000
     })
-    ywk.ajaxJson('/api/user/signup', {rtype: '2', name: 'ywk', phone: this.data.phone, password: this.data.password, vcode: this.data.vcode}, 'POST').then((res) => {
+    ywk.ajaxJson('/api/user/signup', {rtype: '2', name: '小程序用户', phone: this.data.phone, password: this.data.password, vcode: this.data.vcode}, 'POST').then((res) => {
       if (res.error_code === 0) {
         wx.hideToast()
         wx.setStorageSync('session_token', res.session_token)
