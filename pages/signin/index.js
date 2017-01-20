@@ -74,44 +74,36 @@ Page({
       wx.hideToast()
     })
   },
-  getUsername (e) {
-    this.setData({
-      username: e.detail.value
-    })
-  },
-  getPassword (e) {
-    this.setData({
-      password: e.detail.value
-    })
-  },
   change () {
     let newValue = !this.data.hide
     this.setData({
       hide: newValue
     })
   },
-  showDelUser (e) {
-    if (e.detail.value) {
-      this.setData({
-        showUser: true
-      })
-    } else {
-      this.setData({
-        showUser: false
-      })
-    }
+  inputUser (e) {
+    this.setData({
+      username: e.detail.value,
+      showUser: true
+    })
     this.checkDis()
   },
-  showDelPass (e) {
-    if (e.detail.value) {
-      this.setData({
-        showPass: false
-      })
-    } else {
-      this.setData({
-        showUser: true
-      })
-    }
+  focusUser (e) {
+    this.setData({
+      showPass: true,
+      showUser: !!e.detail.value
+    })
+  },
+  focusPass (e) {
+    this.setData({
+      showUser: false,
+      showPass: !e.detail.value
+    })
+  },
+  inputPass (e) {
+    this.setData({
+      password: e.detail.value,
+      showPass: !e.detail.value
+    })
     this.checkDis()
   },
   checkDis () {
