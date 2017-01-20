@@ -38,7 +38,7 @@ Page({
           wx.showToast({
             title: '发送成功',
             icon: 'success',
-            duration: 2000
+            duration: 1000
           })
           this.setData({
             noSend: false,
@@ -70,17 +70,10 @@ Page({
       icon: 'loading',
       duration: 10000
     })
-    ywk.ajaxJson('/api/user/signup', {rtype: '2', name: '小程序用户', phone: this.data.phone, password: this.data.password, vcode: this.data.vcode}, 'POST').then((res) => {
+    ywk.ajaxJson('/api/user/signup', {phone: this.data.phone, password: this.data.password, vcode: this.data.vcode}, 'POST').then((res) => {
       if (res.error_code === 0) {
-        wx.hideToast()
         wx.setStorageSync('session_token', res.session_token)
-        wx.setStorageSync('role', 'f')
-        this.setData({
-          disabled: false
-        })
-        wx.switchTab({
-          url: '/pages/project/index'
-        })
+        this.getRole()
       } else {
         this.setData({
           disabled: false
@@ -100,6 +93,20 @@ Page({
       wx.hideToast()
     })
     app.getSystemInfo()
+  },
+  getRole () {
+    ywk.ajaxJson('/api/user/role', {role: 'f'}, 'POST').then((res) => {
+      wx.hideToast()
+      wx.setStorageSync('role', 'f')
+      this.setData({
+        disabled: false
+      })
+      wx.switchTab({
+        url: '/pages/project/index'
+      })
+    }, (err) => {
+      wx.hideToast()
+    })
   },
   change () {
     let newValue = !this.data.hide
