@@ -20,7 +20,7 @@ Page({
     return year + '-' + month + '-' + day
   },
   getProfile () {
-    if (!wx.getStorageSync('roles')) {
+    if (!wx.getStorageSync('roles') || (wx.getStorageSync('role') ==='f' && !wx.getStorageSync('roles').client.id)) {
       ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
         wx.hideToast()
         if (res.error_code === 0) {
@@ -56,8 +56,28 @@ Page({
         profile: this.data.role === 'c' ? roles.client : roles.freelancer,
         roles: roles
       })
+      this.getRole()
       this.getInfo()
     }
+  },
+  getRole () {
+    ywk.ajaxJson('/api/v1.1/user/role', {}, 'GET').then((res) => {
+      if (res.error_code === 0) {
+        let role = 'f'
+        if (res.current_id === res.roles.client.id) {
+          role = 'c'
+        } else if(res.current_id === res.roles.freelancer.id) {
+          role = 'f'
+        }
+        wx.setStorageSync('role', role)
+        wx.setStorageSync('roles', res.roles)
+        this.setData({
+          disabled: false
+        })
+      }
+    }, (err) => {
+      wx.hideToast()
+    })
   },
   onShow () {
     if (this.data.isGet && wx.getStorageSync('role')) {
@@ -66,7 +86,7 @@ Page({
         icon: 'loading',
         duration: 10000
       })
-      this.getInfo()
+      this.getProfile()
     }
   },
   getInfo () {
