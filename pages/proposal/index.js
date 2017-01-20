@@ -49,7 +49,6 @@ Page({
         })
     },
     submitProposal (e) {
-      console.log(this.data.index)
         let prodata = {
             job_id: this.data.id,
             amount: this.data.amount,
