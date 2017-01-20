@@ -52,7 +52,7 @@ input:last-child {
   color: #ff6700;
   position: absolute;
   top: 50%;
-  margin-top: -36rpx;
+  margin-top: -34rpx;
   right: 26rpx;
 }
 .no-send-btn {
