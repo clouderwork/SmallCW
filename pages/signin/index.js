@@ -88,15 +88,23 @@ Page({
     this.checkDis()
   },
   focusUser (e) {
+    if (e.detail.value) {
+      this.setData({
+        showUser: !!e.detail.value
+      })
+    }
     this.setData({
-      showPass: true,
-      showUser: !!e.detail.value
+      showPass: true
     })
   },
   focusPass (e) {
+    if (e.detail.value) {
+      this.setData({
+        showPass: !e.detail.value
+      })
+    }
     this.setData({
-      showUser: false,
-      showPass: !e.detail.value
+      showUser: false
     })
   },
   inputPass (e) {
