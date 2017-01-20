@@ -49,10 +49,11 @@ Page({
         })
     },
     submitProposal (e) {
+      console.log(this.data.index)
         let prodata = {
             job_id: this.data.id,
             amount: this.data.amount,
-            duration: this.data.index,
+            duration: this.data.objectTime[this.data.index].id,
             message: '看了你发布的项目，很感兴趣，希望有机会为你服务'
         }
         ywk.ajaxJson('/api/proposal', prodata, 'POST').then((res) => {
