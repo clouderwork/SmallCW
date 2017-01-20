@@ -20,7 +20,6 @@ Page({
     return year + '-' + month + '-' + day
   },
   getProfile () {
-    console.log(wx.getStorageSync('roles'))
     if (!wx.getStorageSync('roles')) {
       ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
         wx.hideToast()
@@ -52,9 +51,9 @@ Page({
         console.log(err)
       })
     } else {
-      let roles = wx.getStorageSync('roles')
       this.setData({
-        profile: this.data.role === 'c' ? roles.client : roles.freelancer
+        profile: this.data.role === 'c' ? roles.client : roles.freelancer,
+        roles: roles
       })
       this.getInfo()
     }
