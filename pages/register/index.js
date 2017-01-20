@@ -6,7 +6,6 @@ Page({
     vcode: '',
     password: '',
     hide: true,
-    redirect: '',
     alertData: {msg: ''},
     showPhone: false,
     showVcode: false,
@@ -71,12 +70,17 @@ Page({
       icon: 'loading',
       duration: 10000
     })
-    ywk.ajaxJson('/api/user/signup', {phone: this.data.phone, password: this.data.password, vcode: this.data.vcode}, 'POST').then((res) => {
+    ywk.ajaxJson('/api/user/signup', {rtype: '2', name: 'ywk', phone: this.data.phone, password: this.data.password, vcode: this.data.vcode}, 'POST').then((res) => {
       if (res.error_code === 0) {
         wx.hideToast()
-        console.log(res)
         wx.setStorageSync('session_token', res.session_token)
-        this.getRole()
+        wx.setStorageSync('role', 'f')
+        this.setData({
+          disabled: false
+        })
+        wx.switchTab({
+          url: '/pages/project/index'
+        })
       } else {
         this.setData({
           disabled: false
@@ -96,34 +100,6 @@ Page({
       wx.hideToast()
     })
     app.getSystemInfo()
-  },
-  getRole () {
-    ywk.ajaxJson('/api/v1.1/user/role', {}, 'GET').then((res) => {
-      if (res.error_code === 0) {
-        let role = 'f'
-        if (res.current_id === res.roles.client.id) {
-          role = 'c'
-        } else if(res.current_id === res.roles.freelancer.id) {
-          role = 'f'
-        }
-        wx.setStorageSync('role', role)
-        wx.setStorageSync('roles', res.roles)
-        this.setData({
-          disabled: false
-        })
-        if (this.data.redirect) {
-          wx.navigateTo({
-            url: this.data.redirect
-          })
-        } else {
-          wx.switchTab({
-            url: '/pages/profile/index'
-          })
-        }
-      }
-    }, (err) => {
-      wx.hideToast()
-    })
   },
   change () {
     let newValue = !this.data.hide

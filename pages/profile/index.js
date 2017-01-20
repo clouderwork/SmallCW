@@ -7,7 +7,8 @@ Page({
     proposals: [],
     from: 'profile',
     listLoad: false,
-    isGet: false
+    isGet: false,
+    roles: {}
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -23,10 +24,18 @@ Page({
       ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
         wx.hideToast()
         if (res.error_code === 0) {
-          let roles = wx.getStorageSync('roles')
+          let roles = {}
+          roles.freelancer = {
+            avatar: res.profile.avatar,
+            name: res.profile.nickname,
+            id: res.profile.id
+          }
+          roles.client = {}
           this.setData({
-            profile: this.data.role === 'c' ? roles.client : roles.freelancer
+            roles: roles,
+            listLoad: true
           })
+          wx.setStorageSync('roles', roles)
         } else if (res.error_code === 80001) {
           // 去登录页面
           wx.redirectTo({

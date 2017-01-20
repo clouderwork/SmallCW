@@ -6,7 +6,6 @@
       <view class="week-mask_transparent"></view>
       <view class="week-toast">
           <image class="icon_toast" src="../../images/icon-error.png" />
-          <!-- <icon class="icon_toast" type="clear" size="35"/> -->
           <p class="week-toast__content">{{msg}}</p>
       </view>
   </view>

@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/register/index",
     "pages/project/index",
     "pages/freelancer/index",
     "pages/freelancer-detail/index",
@@ -12,6 +11,7 @@
     "pages/job-invite/index",
     "pages/invite-detail/index",
     "pages/profile/index",
+    "pages/register/index",
     "pages/signin/index"
   ],
   "window":{
