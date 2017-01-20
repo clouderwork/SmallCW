@@ -8,10 +8,13 @@ page {
 }
 .section {
   border-bottom: 2rpx solid #f4f4f4;
-  padding: 24rpx 30rpx;
+  padding: 0 30rpx;
   background: #fff;
   display: flex;
   position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  align-items: center;
 }
 .section:last-child {
   border-bottom: none;
@@ -25,6 +28,8 @@ input {
   text-align: left;
   margin-right: 40rpx;
   flex: 1;
+  height: 34rpx;
+  linehight: 34rpx;
 }
 input:last-child {
   border-bottom: none;
