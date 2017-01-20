@@ -20,6 +20,7 @@ Page({
     return year + '-' + month + '-' + day
   },
   getProfile () {
+    console.log(wx.getStorageSync('roles'))
     if (!wx.getStorageSync('roles')) {
       ywk.ajaxJson('/api/user/profile', {}, 'GET').then((res) => {
         wx.hideToast()
@@ -37,6 +38,7 @@ Page({
             listLoad: true
           })
           wx.setStorageSync('roles', roles)
+          this.getInfo()
         } else if (res.error_code === 80001) {
           // 去登录页面
           wx.redirectTo({
