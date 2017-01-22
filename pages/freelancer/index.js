@@ -5,12 +5,11 @@ Page({
   data: {
     users: [],
     windowHeight: 100,
+    count: 0,
     search: {
       pagenum: 1,
       ftype: 'all'
-    },
-    count: 0,
-    reget: false
+    }
   },
   //事件处理函数
   goDetail (event) {
@@ -34,23 +33,7 @@ Page({
       let sys = wx.getStorageSync('systemInfo')
       this.setData({
         windowHeight: sys.windowHeight
-      });
-    }
-    if (this.data.reget) {
-      wx.showToast({
-        title: '加载中',
-        icon: 'loading',
-        duration: 10000
       })
-      this.setData({
-        search: {
-          pagenum: 1,
-          ftype: 'all'
-        },
-        count: 0,
-        users: []
-      })
-      this.getData()
     }
   },
   lower (e) {
@@ -69,8 +52,7 @@ Page({
       if (res.error_code === 0) {
         this.setData({
           users: this.data.users.concat(res.users),
-          count: res.count,
-          reget: true
+          count: res.count
         });
       }
       wx.hideToast()
