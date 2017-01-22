@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
 .team-detail {
   padding-bottom: 140rpx;
 }
 .no-btn {
   padding-bottom: 0;
 }
->>>>>>> yzj/master
 .team-info {
   padding: 32rpx 0;
 }
@@ -332,8 +329,6 @@
   line-height: 100rpx;
   padding-left: 35rpx;
 }
-<<<<<<< HEAD
-=======
 
 .row-invite {
   text-align: center;
@@ -352,4 +347,3 @@
   display: block;
   border-top: 2rpx solid #e2e2e9;
 }
->>>>>>> yzj/master

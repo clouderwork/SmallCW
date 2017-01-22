@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-.page {
-  background-color: #fff;
-}
-
-.project-details {
-  background-color: #fff;
-  padding: 0px 30rpx;
-}
-
-.job-name {
-  display: block;
-  padding: 22rpx 6rpx 10rpx 0;
-=======
 page {
   background-color: #EFEFF4;
 }
@@ -31,18 +17,11 @@ page {
 }
 .job-name {
   display: block;
->>>>>>> yzj/master
   color: #4b4b4b;
   line-height: 48rpx;
   font-size: 36rpx;
 }
 
-<<<<<<< HEAD
-.job-price {
-  display: block;
-  color: #ff6700;
-  font-size: 32rpx;
-=======
 .job-method {
   margin-top: 30rpx;
   display: flex;
@@ -61,7 +40,6 @@ page {
   color: #cacaca;
   text-align: right;
   width: 150rpx;
->>>>>>> yzj/master
 }
 
 .job-price i {
@@ -71,22 +49,6 @@ page {
   padding-left: 20rpx;
   display: inline-block;
 }
-<<<<<<< HEAD
-
-.work-time {
-  display: block;
-  background-color: #f4f4f4;
-  border: 1px solid #f8f8f8;
-  color: #777;
-  padding: 16rpx 24rpx;
-  border-radius: 6rpx;
-  line-height: 32rpx;
-  margin-top: 20rpx;
-  font-size: 26rpx;
-}
-
-.work-time span {
-=======
 .work-box {
   border-radius: 6rpx;
   margin-top: 35rpx;
@@ -113,7 +75,6 @@ page {
   font-size: 26rpx;
 }
 .work-box p span {
->>>>>>> yzj/master
   color: #f8bb00;
   display: inline-block;
   padding-left: 10rpx;
@@ -123,15 +84,9 @@ page {
   display: flex;
   width: 100%;
   padding: 20rpx 30rpx;
-<<<<<<< HEAD
-  color: #777;
-  font-size: 26rpx;
-  border-bottom: 1px solid #f4f4f4;
-=======
   color: #6e6e70;
   font-size: 26rpx;
   border-bottom: 2rpx solid #f4f4f4;
->>>>>>> yzj/master
   box-sizing: border-box;
   align-items: center;
   -webkit-box-align: center;
@@ -145,33 +100,22 @@ page {
   border-radius: 50%;
   margin-right:  20rpx;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> yzj/master
 .company-score {
   display: block;
   flex: 1;
 }
 
-<<<<<<< HEAD
-=======
 .company-score p i {
   color: #aaaaaa;
 }
 
->>>>>>> yzj/master
 .job-info {
   color: #4b4b4b;
   font-size: 30rpx;
   line-height: 1.7;
   background-color: #fff;
 }
-<<<<<<< HEAD
-.job-info ul{
-  display: block;
-  padding: 25rpx 30rpx;
-=======
 
 .mr-top {
   margin-top: 20rpx;
@@ -180,19 +124,14 @@ page {
 .job-info ul{
   display: block;
   padding: 0 30rpx 30rpx;
->>>>>>> yzj/master
   box-sizing: border-box;
 }
 .job-info li {
   display: block;
   height: 40rpx;
-<<<<<<< HEAD
-  margin-bottom: 20rpx;
-=======
   color: 4b4b4b;
   font-size: 30rpx;
   margin-top: 20rpx;
->>>>>>> yzj/master
 }
 .job-info label {
   display: inline-block;
@@ -218,11 +157,7 @@ page {
   margin-top: 20rpx;
   padding: 0 80rpx;
   height: 100rpx;
-<<<<<<< HEAD
-  border-bottom: 1px solid #f4f4f4;
-=======
   border-bottom: 2rpx solid #f4f4f4;
->>>>>>> yzj/master
   background-color: #fff;
   text-align: center;
 }
@@ -237,13 +172,8 @@ page {
   color: #777777;
 }
 .job-description .active {
-<<<<<<< HEAD
-  color: #ff6700;
-  border-bottom: 1px solid #ff6700;
-=======
   color: #ff6700 !important;
   border-bottom: 2rpx solid #ff6700;
->>>>>>> yzj/master
 }
 
 .job-description .description {
@@ -255,26 +185,6 @@ page {
 }
 .panel-more {
   display: block;
-<<<<<<< HEAD
-  padding: 30rpx 40rpx;
-}
-
-.panel-more li {
-  display: block;
-  padding: 20rpx 0;
-  border-bottom: 1px solid #f4f4f4;
-  font-size: 30rpx;
-  color: #4b4b4b;
-}
-.list-name {
-  display: block;
-  color: #aaaaaa;
-  border-left: 2px solid #ff6700;
-  font-size: 30rpx;
-  padding-left: 30rpx;
-}
-
-=======
   padding: 0 30rpx;
 }
 
@@ -298,34 +208,19 @@ page {
   flex: 1;
   right: 0;
 }
->>>>>>> yzj/master
 .skills span{
   padding: 0 24rpx;
   height: 50rpx;
   line-height: 50rpx;
   display: inline-block;
-<<<<<<< HEAD
-  border: 1px solid #cacaca;
-  border-radius: 24rpx;
-  margin: 18rpx 20rpx 0 0;
-=======
   border: 2rpx solid #cacaca;
   border-radius: 24rpx;
   margin-right: 20rpx;
->>>>>>> yzj/master
   box-sizing: border-box;
   font-size: 30rpx;
   color: #4b4b4b;
 }
 
-<<<<<<< HEAD
-.panel-more .text {
-  display: block;
-  margin: 10rpx 0 0;
-  line-height: 50rpx;
-  font-size: 30rpx;
-  color: #4b4b4b;
-=======
 .switch-role {
   background-color:#fff;
   line-height:100rpx;
@@ -344,7 +239,6 @@ page {
   color: #4b4b4b;
   word-break: break-all;
   flex: 1;
->>>>>>> yzj/master
 }
 
 .panel-more .text span:after {

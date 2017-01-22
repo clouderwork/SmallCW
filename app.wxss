@@ -9,8 +9,6 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
-<<<<<<< HEAD
-=======
 
 .week-mask_transparent {
   position: fixed;
@@ -55,4 +53,3 @@
   text-align:left;
   line-height: 34rpx;
 }
->>>>>>> yzj/master

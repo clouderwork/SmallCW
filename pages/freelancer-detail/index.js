@@ -1,11 +1,7 @@
 //logs.js
 var ywk = require('../../utils/ywk')
 var util = require('../../utils/util')
-<<<<<<< HEAD
-
-=======
 var app = getApp()
->>>>>>> yzj/master
 Page({
   data: {
     id: '',
@@ -23,12 +19,9 @@ Page({
       title: '加载中...',
       icon: 'loading'
     })
-<<<<<<< HEAD
-=======
     this.setData({
       role: wx.getStorageSync('role')
     })
->>>>>>> yzj/master
     if (opt && opt.id) {
       this.setData({
         id: opt.id
@@ -114,15 +107,6 @@ Page({
       console.log(err);
     })
   },
-<<<<<<< HEAD
-  bindViewTap (e) {
-    let id = e.currentTarget.dataset.fid
-    wx.navigateTo({
-      url: `../comment/index?id=${id}`
-    })
-  },
-=======
->>>>>>> yzj/master
   onShow () {
     // 获取页面高度
     if (wx.getStorageSync('systemInfo')) {
@@ -144,12 +128,9 @@ Page({
       descImg: `./images/icon-${state}.png`
     })
   },
-<<<<<<< HEAD
-=======
   invite () {
     app.ckAndNav(`../job-invite/index?id=${this.data.id}&type=user`, `../freelancer-detail/index?id=${this.data.id}`)
   },
->>>>>>> yzj/master
   onShareAppMessage () {
     return {
       title: '云沃客',

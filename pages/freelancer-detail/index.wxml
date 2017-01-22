@@ -1,9 +1,5 @@
 <!--index.wxml-->
-<<<<<<< HEAD
-<view class="user-container">
-=======
 <view class="user-container{{role !== 'f'?'':' no-btn'}}">
->>>>>>> yzj/master
   <view class="profile">
     <view class="workload"></view>
     <text wx:if="{{profile.workload > 0}}" class="workload-txt">{{profile.canWork}}</text>
@@ -84,15 +80,9 @@
             <text class="team-name">{{team.name}}</text>
             <view class="team-content">
               <image class="peole-icon" src="./images/icon-people.png" />
-<<<<<<< HEAD
-              <text wx:if="{{team.mtype === 'owner'}}">创建人</text>
-              <text wx:elif="{{team.mtype === 'staff'}}">普通成员</text>
-              <text wx:else>管理员</text>
-=======
               <text class="text" wx:if="{{team.mtype === 'owner'}}">创建人</text>
               <text class="text" wx:elif="{{team.mtype === 'staff'}}">普通成员</text>
               <text class="text" wx:else>管理员</text>
->>>>>>> yzj/master
             </view>
           </view>
         </view>
@@ -138,10 +128,7 @@
       </block>
     </view>
   </view>
-<<<<<<< HEAD
-=======
   <view class="row-invite" wx:if="{{role !== 'f'}}" data-id="{{profile.id}}" bindtap="invite">
     邀请TA
   </view>
->>>>>>> yzj/master
 </view>

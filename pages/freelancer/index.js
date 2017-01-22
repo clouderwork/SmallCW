@@ -5,19 +5,11 @@ Page({
   data: {
     users: [],
     windowHeight: 100,
-<<<<<<< HEAD
-    search: {
-      pagenum: 1,
-      ftype: 'all'
-    },
-    count: 0
-=======
     count: 0,
     search: {
       pagenum: 1,
       ftype: 'all'
     }
->>>>>>> yzj/master
   },
   //事件处理函数
   goDetail (event) {
@@ -41,11 +33,7 @@ Page({
       let sys = wx.getStorageSync('systemInfo')
       this.setData({
         windowHeight: sys.windowHeight
-<<<<<<< HEAD
-      });
-=======
       })
->>>>>>> yzj/master
     }
   },
   lower (e) {

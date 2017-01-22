@@ -5,11 +5,7 @@ Page({
   data: {
     projects: [],
     pagenum: 1,
-<<<<<<< HEAD
-    count: 0
-=======
     count: 0,
->>>>>>> yzj/master
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -52,18 +48,7 @@ Page({
       let sys = wx.getStorageSync('systemInfo')
       this.setData({
         windowHeight: sys.windowHeight
-<<<<<<< HEAD
-      });
-    }
-  },
-  onShareAppMessage () {
-    return {
-      title: '我的小程序',
-      desc: '我的小程序',
-      path: '/pages/project/index'
-=======
       })
->>>>>>> yzj/master
     }
   },
   onLoad () {

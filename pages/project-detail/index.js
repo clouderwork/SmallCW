@@ -1,10 +1,6 @@
 var ywk = require('../../utils/ywk')
 var WxParse = require('../../wxParse/wxParse.js')
-<<<<<<< HEAD
-
-=======
 var app = getApp()
->>>>>>> yzj/master
 let format = {
   getDuration (val) {
     let str = '大于6个月'
@@ -81,11 +77,6 @@ let format = {
 
 Page({
   data: {
-<<<<<<< HEAD
-    panel: 'base'
-  },
-  onLoad (e) {
-=======
     panel: 'base',
     // 获取身份
     role: '',
@@ -97,18 +88,14 @@ Page({
     this.setData({
       role: wx.getStorageSync('role') || ''
     })
->>>>>>> yzj/master
     this.getDetail(e.id)
     this.setData({ id: e.id })
   },
   getDetail (id) {
     ywk.ajaxJson('/api/jobs', { job_id: id }, 'GET').then((res) => {
       let job = res.job
-<<<<<<< HEAD
-=======
       job.publish_at = job.publish_at.replace(/-/g, '/').split(' ')[0]
       job.last_view_time = job.last_view_time.split(' ')[0]
->>>>>>> yzj/master
       job.hourPrice = '< 100元/时'
       if (job.level === 'middle') { job.hourPrice = '100 - 300元/时' }
       if (job.level === 'expert') { job.hourPrice = '> 300元/时'}
@@ -150,13 +137,10 @@ Page({
       panel: e.currentTarget.dataset.panel
     })
   },
-<<<<<<< HEAD
-=======
   // 投标
   proposal (e) {
     app.ckAndNav(`../proposal/index?id=${this.data.id}`, `../project-detail/index?id=${this.data.id}`)
   },
->>>>>>> yzj/master
   onShareAppMessage () {
     return {
       title: '云沃客',
