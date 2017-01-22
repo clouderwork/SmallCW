@@ -5,7 +5,6 @@ Page({
   data: {
     role: '',
     proposals: [],
-    from: 'profile',
     listLoad: false,
     isGet: false,
     roles: {}

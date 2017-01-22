@@ -6,7 +6,6 @@ Page({
     projects: [],
     pagenum: 1,
     count: 0,
-    from: 'project',
     reget: false
   },
   filterTime (time) {

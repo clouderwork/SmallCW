@@ -10,7 +10,6 @@ Page({
       ftype: 'all'
     },
     count: 0,
-    from: 'freelancer',
     reget: false
   },
   //事件处理函数
@@ -48,7 +47,8 @@ Page({
           pagenum: 1,
           ftype: 'all'
         },
-        count: 0
+        count: 0,
+        users: []
       })
       this.getData()
     }
