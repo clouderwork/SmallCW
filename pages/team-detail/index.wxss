@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+.team-detail {
+  padding-bottom: 140rpx;
+}
+.no-btn {
+  padding-bottom: 0;
+}
+>>>>>>> yzj/master
 .team-info {
   padding: 32rpx 0;
 }
@@ -323,3 +332,24 @@
   line-height: 100rpx;
   padding-left: 35rpx;
 }
+<<<<<<< HEAD
+=======
+
+.row-invite {
+  text-align: center;
+  font-family:PingFangSC-Medium;
+  font-size:38rpx;
+  color:#ff6700;
+  letter-spacing:0;
+  text-align:center;
+  background-color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  vertical-align: middle;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  display: block;
+  border-top: 2rpx solid #e2e2e9;
+}
+>>>>>>> yzj/master

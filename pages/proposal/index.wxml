@@ -1,0 +1,32 @@
+<import src="../../components/alert.wxml"/>
+<view class="pro-money">
+    <template is="alertTpl" data="{{...alertData}}" />
+    <view class="first-box">
+        <span class="first-box-left">报价</span>
+        <input type="number" value="{{amount}}" wx:if="{{job.paymethod==='fixed'}}" placeholder="请输入您的报价" class="money-text" bindblur="getAmount" bindinput="computserve" />
+        <input type="number" value="{{amount}}" wx:if="{{job.paymethod==='hour'}}" placeholder="请输入您的时薪报价" class="money-text" bindblur="getAmount" bindinput="computserve"/>
+        <span class="first-box-right">元<span wx:if="{{job.paymethod==='hour'}}">/小时</span></span>
+    </view>
+    <view class="second-box">
+        <view>实际收益：{{selfcount?selfcount:'0'}}元
+            <span wx:if="{{job.paymethod==='hour'}}">/小时</span>
+        </view>
+        <view class="service-money">服务费{{servecount?servecount:'0'}}元
+            <span wx:if="{{job.paymethod==='hour'}}">/小时</span>
+        </view>
+    </view>
+    <view class="third-box" wx:if="{{job.paymethod==='fixed'}}">
+        <span class="third-box-left">预计完成时间</span>
+        <span class="third-box-right">
+            <image class="img-box" src="images/icon_next.png"/>
+            <picker range="{{time}}" value="{{index}}" bindchange="chooseTime">
+                <text>
+                    {{time[index]}}
+                </text>
+            </picker>
+        </span>
+    </view>
+</view>
+
+<view class="switch-role" bindtap="submitProposal" wx:if="{{(job.paymethod==='fixed'&&amount&&index) || (job.paymethod==='hour'&&amount)}}">提交</view>
+<view class="switch-disable" bindtap="submitProposal" wx:else>提交</view>

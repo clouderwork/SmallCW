@@ -1,12 +1,21 @@
 var ywk = require('../../utils/ywk')
 var util = require('../../utils/util')
+<<<<<<< HEAD
+=======
+var app = getApp()
+>>>>>>> yzj/master
 
 Page({
   data: {
     profile: {},
     portfolios: [],
     contracts: [],
+<<<<<<< HEAD
     team_id: ''
+=======
+    team_id: '',
+    role: ''
+>>>>>>> yzj/master
   },
   onLoad (e) {
     wx.showToast({
@@ -18,7 +27,12 @@ Page({
     this.getContract(e.team_id)
     this.setData({ id: e.team_id })
     this.setData({
+<<<<<<< HEAD
       team_id: e.team_id
+=======
+      team_id: e.team_id,
+      role: wx.getStorageSync('role') || ''
+>>>>>>> yzj/master
     })
   },
   getData (id) {
@@ -90,6 +104,12 @@ Page({
       console.log(err)
     })
   },
+<<<<<<< HEAD
+=======
+  invite () {
+    app.ckAndNav(`../job-invite/index?id=${this.data.team_id}&type=team`, `../team-detail/index?team_id=${this.data.team_id}`)
+  },
+>>>>>>> yzj/master
   onShareAppMessage () {
     return {
       title: '云沃客',

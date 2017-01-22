@@ -6,12 +6,23 @@
     "pages/project-detail/index",
     "pages/team-detail/index",
     "pages/team-member/index",
+<<<<<<< HEAD
     "pages/comment/index"
+=======
+    "pages/proposal/index",
+    "pages/proposal-detail/index",
+    "pages/job-invite/index",
+    "pages/invite-detail/index",
+    "pages/profile/index",
+    "pages/register/index",
+    "pages/signin/index"
+>>>>>>> yzj/master
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#ff6700",
     "navigationBarTitleText": "云沃客",
+<<<<<<< HEAD
     "navigationBarTextStyle": "#ffffff",
     "backgroundColor": "#EFEFF4"
   },
@@ -21,6 +32,15 @@
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "position": "bottom",
+=======
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#6c6c71",
+    "selectedColor": "#ff6700",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+>>>>>>> yzj/master
     "list": [{
       "pagePath": "pages/project/index",
       "iconPath": "images/icon_project.png",
@@ -31,6 +51,14 @@
       "iconPath": "images/icon_people.png",
       "selectedIconPath": "images/icon_people_selected.png",
       "text": "找人才"
+<<<<<<< HEAD
+=======
+    }, {
+      "pagePath": "pages/profile/index",
+      "iconPath": "images/icon_profile.png",
+      "selectedIconPath": "images/icon_profile_selected.png",
+      "text": "我"
+>>>>>>> yzj/master
     }]
   }
 }

@@ -1,0 +1,57 @@
+/**index.wxss**/
+page {
+  display: block;
+  min-height: 100%;
+  background: #efeff4;
+}
+.invite-content {
+  background-color: #fff;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #777;
+}
+.content-list {
+  line-height: 42rpx;
+  padding: 25rpx 24rpx;
+  border-bottom: 2rpx solid #efeff4;
+  display: flex;
+}
+.last-budget {
+  height: 98rpx;
+  border: 0;
+  padding: 0 0 20rpx;
+  background-color: #efeff4;
+}
+.last-budget .money-tips {
+  font-size: 30rpx;
+  color: #ff6700;
+  text-align: center;
+  line-height: 42rpx;
+  padding-top: 9rpx;
+  background-color: #fff;
+}
+.last-budget text {
+  display: block
+}
+.last-budget .service {
+  font-size: 24rpx;
+  color: #9e9e9e;
+  line-height: 33rpx;
+  padding-top: 5rpx;
+  text-align: center;
+  background-color: #fff;
+  padding-bottom: 9rpx;
+}
+.content-list:last-child {
+  border: 0;
+}
+.content-list text:first-child {
+  width: 180rpx;
+  margin-right: 10rpx;
+}
+.content-list text:last-child {
+  color: #4b4b4b;
+  flex: 1;
+  text-align: right;
+  display: block;
+}

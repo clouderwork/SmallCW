@@ -17,6 +17,7 @@ App({
       })
     }
 
+<<<<<<< HEAD
     // 微信授权
     // if (wx.getStorageSync('session_key')) {
       wx.login({
@@ -50,6 +51,13 @@ App({
         }
       });
     // }
+=======
+    if (!wx.getStorageSync('CODE')) {
+      ywk.ajaxJson('/static/locale/locale-zh-cn.json', {}).then((res) => {
+        wx.setStorageSync('CODE', res.CODE || {})
+      })
+    }
+>>>>>>> yzj/master
 
     //  获取系统信息
     this.getSystemInfo();
@@ -66,6 +74,7 @@ App({
       wx.setStorageSync('systemInfo', systemInfo)
     };
   },
+<<<<<<< HEAD
   getUserInfo:function(cb){
     var that = this
     if(this.globalData.userInfo){
@@ -86,5 +95,19 @@ App({
   },
   globalData:{
     userInfo: null
+=======
+  // 检查并跳转页面
+  ckAndNav (url, currentUrl) {
+    if (wx.getStorageSync('role')) {
+      wx.navigateTo({
+        url: url
+      })
+    } else {
+      let site = currentUrl ? encodeURIComponent(currentUrl) : encodeURIComponent(url)
+      wx.navigateTo({
+        url: `../signin/index?redirect=${site}`
+      })
+    }
+>>>>>>> yzj/master
   }
 })

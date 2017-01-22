@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<import src="../../components/project-item.wxml"/>
+<import src="../../components/alert.wxml"/>
+<import src="../../components/tab-bar.wxml"/>
+<view class="signin-container">
+    <template is="alertTpl" data="{{...alertData}}" />
+    <view class="section">
+      <input placeholder="请输入手机号/用户名/邮箱" value="{{username}}" bindinput="inputUser" bindfocus="focusUser" placeholder-class="sign-placeholder" focus="" />
+      <image wx:if="{{showUser}}" class="del-content" src="images/icon_delete.png" bindtap="delUser" />
+    </view>
+    <view class="section" wx:if="{{hide}}">
+      <input value="{{password}}" password type="text" bindinput="inputPass" bindfocus="focusPass" placeholder="请输入密码" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image wx:if="{{showPass}}" class="icon-eye-hide" src="images/password.png" bindtap="change" />
+      <image wx:else class="del-content" src="images/icon_delete.png" bindtap="delValue" />
+    </view>
+    <view class="section" wx:else>
+      <input value="{{password}}" bindinput="inputPass" placeholder="请输入密码" bindfocus="focusPass" placeholder-class="sign-placeholder" class="signin-password"/>
+      <image wx:if="{{showPass}}" class="icon-eye" src="images/password-show.png" bindtap="change" />
+      <image wx:else class="del-content" src="images/icon_delete.png" bindtap="delValue" />
+    </view>
+    <view class="btn-signin">
+      <button wx:if="{{disabled}}" class="disabled" type="default">登录</button>
+      <button wx:else type="default" bindtap="signin">登录</button>
+    </view>
+    <view class="register-new" bindtap="register">注册新账号<image src="images/icon_register.png" /></view>
+    <template is="tabBar" />
+</view>

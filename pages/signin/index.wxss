@@ -1,0 +1,124 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #EFEFF4;
+}
+.signin-container {
+  margin-top: 20rpx;
+}
+.section {
+  border-bottom: 2rpx solid #f4f4f4;
+  padding: 0 30rpx;
+  background: #fff;
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  align-items: center;
+}
+.section:last-child {
+  border-bottom: none;
+}
+input {
+  font-size: 30rpx;
+  color: #4b4b4b4;
+  text-align: left;
+  margin-right: 40rpx;
+  flex: 1;
+  height: 34rpx;
+  linehight: 34rpx;
+}
+input:last-child {
+  border-bottom: none;
+}
+.btn-signin button {
+  font-size: 38rpx;
+  color: #ff6700;
+  margin: 20rpx 30rpx 0;
+  background: #ffffff;
+  border: 2rpx solid #ff6700;
+  height: 100rpx;
+  line-height: 100rpx;
+  box-sizing: border-box;
+}
+.btn-signin .disabled {
+  background-color: #e2e2e2;
+  color: #9e9e9e;
+  border: 2rpx solid #e2e2e2;
+}
+button::after {
+  content: '';
+  border: 0;
+}
+.sign-placeholder {
+  color: #cfcfcf;
+}
+.icon-eye, .icon-eye-hide {
+  width: 40rpx;
+  height: 34rpx;
+  margin-top: 12rpx;
+  cursor: pointer;
+}
+.icon-eye {
+  height: 25rpx;
+  margin-top: 16rpx;
+}
+.del-content {
+  width: 36rpx;
+  height: 36rpx;
+  margin-top:8rpx;
+}
+.common-bar {
+  height: 115rpx;
+  border-top: 1px solid #efefef;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  font-size: 26rpx;
+  color: #6c6c71;
+  width: 100%;
+  box-sizing: border-box;
+}
+.common-bar > view {
+  flex: 1;
+}
+.common-bar image {
+  display: block;
+  margin: 14rpx auto 10rpx;
+}
+.common-bar text {
+  display: block;
+  text-align: center;
+}
+.project-bar image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.freelancer-bar image {
+  width: 52rpx;
+  height: 52rpx;
+  margin: 14rpx auto 10rpx;
+}
+.profile-bar image {
+  width: 48rpx;
+  height: 50rpx;
+  margin: 14rpx auto 10rpx;
+}
+.tab-bar-color {
+  color: #ff6700;
+}
+.register-new {
+  margin-top: 60rpx;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  text-align: center;
+}
+.register-new image {
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  margin: 0 0 0 10rpx;
+  position: relative;
+  top: 4rpx;
+}

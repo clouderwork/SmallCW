@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<import src="../../components/alert.wxml"/>
+<view class="invite-container">
+  <template is="alertTpl" data="{{...alertData}}" />
+  <view class="invite-content">
+    <view class="content-list">
+      <view class="section__title">项目</view>
+      <picker range="{{jobs}}" value="{{jobIndex}}" bindchange="chooseJob">
+          <view class="third-box-right">
+              <text class="text-box">{{jobs[jobIndex]}}</text>
+              <image class="icon_next" src="./image/icon_next.png" />
+          </view>
+      </picker>
+    </view>
+    <view class="content-list">
+      <view class="section__title">预计完成时间</view>
+      <picker range="{{time}}" value="{{timeIndex}}" bindchange="chooseTime">
+          <view class="third-box-right">
+              <text>{{time[timeIndex]}}</text>
+              <image class="icon_next" src="./image/icon_next.png" />
+          </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<view class="row-submit {{isDisable}}" bindtap="submit">
+  提 交
+</view>

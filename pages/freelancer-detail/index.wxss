@@ -4,6 +4,15 @@ page {
   background-color: #EFEFF4;
 }
 .user-container {
+<<<<<<< HEAD
+=======
+  padding-bottom: 140rpx;
+}
+.no-btn {
+  padding-bottom: 0;
+}
+.user-container {
+>>>>>>> yzj/master
   margin: 0
 }
 
@@ -190,7 +199,11 @@ page {
 }
 
 .row-item .detail .time-row {
+<<<<<<< HEAD
   display: flex;
+=======
+  display: block;
+>>>>>>> yzj/master
   margin-top: 25rpx;
 }
 
@@ -199,13 +212,21 @@ page {
   width: 26rpx;
   height: 26rpx;
   vertical-align: middle;
+<<<<<<< HEAD
+=======
+  margin-top:-4rpx;
+>>>>>>> yzj/master
 }
 
 .row-item .detail .time {
   font-size: 26rpx;
   color: #9e9e9e;
   margin-left: 15rpx;
+<<<<<<< HEAD
   flex: 1;
+=======
+  display: inline-block;
+>>>>>>> yzj/master
   vertical-align: middle;
 }
 
@@ -261,7 +282,15 @@ page {
   width: 30rpx;
   height: 30rpx;
   margin-right: 15rpx;
+<<<<<<< HEAD
   vertical-align: bottom;
+=======
+  vertical-align: middle;
+}
+.row-item .team-item .text {
+  display: inline-block;
+  vertical-align: middle;
+>>>>>>> yzj/master
 }
 
 .row-item .team-item .team-content {
@@ -270,3 +299,24 @@ page {
   color: #777;
   font-size: 26rpx;
 }
+<<<<<<< HEAD
+=======
+
+.row-invite {
+  text-align: center;
+  font-family:PingFangSC-Medium;
+  font-size:38rpx;
+  color:#ff6700;
+  letter-spacing:0;
+  text-align:center;
+  background-color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  vertical-align: middle;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  display: block;
+  border-top: 2rpx solid #e2e2e9;
+}
+>>>>>>> yzj/master

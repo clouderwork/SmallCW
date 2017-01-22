@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 云沃客微信小程序
 
 > 此项目由 [shinygang](https://github.com/shinygang)  [zhongru](https://github.com/zhongru)  [Yunkou](https://github.com/Yunkou) 协助完成
@@ -70,3 +71,6 @@
 
  *祝好运 Happy Code* 
 
+=======
+# WeiChat
+>>>>>>> yzj/master

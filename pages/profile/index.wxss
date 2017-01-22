@@ -1,0 +1,165 @@
+/**index.wxss**/
+page {
+  display: block;
+  min-height: 100%;
+  background: #efeff4;
+  padding-bottom: 130rpx;
+}
+.my-profile {
+  background-color: #fff;
+  padding-bottom: 41rpx;
+}
+.profile-avatar {
+  display: block;
+  margin: 57rpx auto 20rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+.profile-name {
+  line-height: 42rpx;
+  font-size: 30rpx;
+  color: #4b4b4b;
+  text-align: center;
+  display: block;
+}
+.profile-title {
+  line-height: 71rpx;
+  font-size: 26rpx;
+  color: #9e9e9e;
+}
+.my-bids {
+  width: 18rpx;
+  height: 23rpx;
+  margin: -2rpx 15rpx 0 21rpx;
+  vertical-align: middle;
+}
+.bid-item {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding-top: 30rpx;
+}
+.bid-item:last-child {
+  margin-bottom: 0;
+}
+.bid-title {
+  font-size: 30rpx;
+  color: #4b4b4b;
+  margin: 0 30rpx 0 20rpx;
+  line-height: 42rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.bid-content {
+  margin: 20rpx 20rpx 29rpx;
+  font-size: 30rpx;
+  color: #6e6e70;
+  line-height: 42rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 84rpx;
+  word-break: break-all;
+}
+.bid-time {
+  line-height: 79rpx;
+  border-top: 2rpx solid #efeff4;
+  font-size: 26rpx;
+  color: #9e9e9e;
+  padding: 0 30rpx 0 20rpx;
+}
+.go-next {
+  float: right;
+  font-size: 24rpx;
+  color: #cfcfcf;
+}
+.go-next .next-icon {
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+.my-invite {
+  width: 24rpx;
+  height: 24rpx;
+  vertical-align:middle;
+  margin: -3rpx 12rpx 0 20rpx;
+}
+.invite-item {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 0 28rpx 0 15rpx;
+  height: 150rpx;
+}
+.invite-item:last-child {
+  margin-bottom: 0;
+}
+.freelancer-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  float: left;
+  margin-top: 35rpx;
+  border-radius: 50%;
+}
+.freelancer-info {
+  margin: 12rpx 0 11rpx 20rpx;
+  float: left;
+}
+.freelancer-info .name {
+  line-height: 42rpx;
+  font-size: 30rpx;
+  color: #4b4b4b;
+  display: block;
+}
+.freelancer-info .team-name {
+  margin-top: 20rpx;
+}
+.freelancer-info .position {
+  line-height: 38rpx;
+  font-size: 26rpx;
+  color: #6e6e70;
+  display: block;
+  margin-top: 5rpx;
+}
+.freelancer-info .time {
+  line-height: 38rpx;
+  font-size: 26rpx;
+  color: #cfcfcf;
+  display: block;
+  margin-top: 4rpx;
+}
+.go-invite {
+  width: 14rpx;
+  height: 26rpx;
+  float: right;
+  margin-top: 63rpx;
+}
+.switch-role {
+  background-color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #4b4b4b;
+  margin-top: 40rpx;
+}
+.no-profile-data {
+  margin: 208rpx 0;
+}
+.no-data-icon {
+  width: 340rpx;
+  height: 212rpx;
+  display: block;
+  margin: 0 auto;
+}
+.no-data-tips {
+  display: block;
+  line-height: 36rpx;
+  margin-top: 21rpx;
+  font-size: 26rpx;
+  color: #9e9e9e;
+  text-align:center;
+}
