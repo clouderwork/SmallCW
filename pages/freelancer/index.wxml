@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <import src="../../components/freelancer-item.wxml"/>
 <view class="user-container">
-  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" lower-threshold="150" bindscrolltolower="lower">
+  <scroll-view style="height: {{windowHeight}}px;" scroll-y="true" lower-threshold="100" lower-threshold="150" bindscrolltolower="lower">
     <block wx:for="{{users}}" wx:key="id" wx:for-item="user">
       <template is="freelancerItem" data="{{...user}}" />
     </block>
