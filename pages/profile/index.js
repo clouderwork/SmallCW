@@ -70,6 +70,13 @@ Page({
           proposals: proposals,
           listLoad: true
         })
+      } else if (res.error_code === 80001) {
+        // 去登录页面
+        wx.redirectTo({
+          url: '../signin/index'
+        })
+      } else {
+        console.log(res)
       }
       wx.hideToast()
     }, (err) => {
