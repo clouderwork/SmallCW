@@ -130,7 +130,7 @@ Page({
       duration: 10000
     })
     this.setData({
-      role: wx.getStorageSync('role') || '',
+      role: wx.getStorageSync('role') || ''
     })
     this.getProfile()
   }
