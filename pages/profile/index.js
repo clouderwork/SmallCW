@@ -6,7 +6,8 @@ Page({
     role: '',
     proposals: [],
     listLoad: false,
-    roles: {}
+    roles: {},
+    isGet: false
   },
   filterTime (time) {
     let date = new Date(time.replace(/-/g, '/'))
@@ -68,7 +69,8 @@ Page({
         })
         this.setData({
           proposals: proposals,
-          listLoad: true
+          listLoad: true,
+          isGet: true
         })
       } else if (res.error_code === 80001) {
         // 去登录页面
@@ -128,6 +130,11 @@ Page({
       title: '云沃客',
       desc: '个人中心',
       path: '/pages/profile/index'
+    }
+  },
+  onShow () {
+    if (this.data.isGet) {
+      this.getInfo()
     }
   },
   onLoad () {
